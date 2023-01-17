@@ -1,13 +1,13 @@
 ---
-title: Alert 警告提示
+title: Button 按钮
 nav:
   title: 组件
   order: 2
 ---
 
-# Alert 警告提示
+# Button 按钮
 
-警告提示，展现需要关注的信息。
+按钮用于开始一个即时操作。
 
 ## 代码演示
 

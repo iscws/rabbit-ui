@@ -1,12 +1,15 @@
 import React from 'react';
 import t from 'prop-types';
 
+import { AlterWrapper } from './style'
+
 export interface AlertProps {
   /**
    * @description       Alert 的类型
    * @default           'info'
    */
   kind?: 'info' | 'positive' | 'negative' | 'warning';
+  children: any
 }
 
 export type KindMap = Record<Required<AlertProps>['kind'], string>;
@@ -21,15 +24,17 @@ const kinds: KindMap = {
 };
 
 const Alert: React.FC<AlertProps> = ({ children, kind = 'info', ...rest }) => (
-  <div
-    className={prefixCls}
-    style={{
-      background: kinds[kind],
-    }}
-    {...rest}
-  >
-    {children}
-  </div>
+  <AlterWrapper>
+    <div
+      className={prefixCls}
+      style={{
+        background: kinds[kind],
+      }}
+      {...rest}
+    >
+      {children}
+    </div>
+  </AlterWrapper>
 );
 
 Alert.propTypes = {
