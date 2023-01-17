@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz",
     "dev": "dumi dev",
-    "build:site": "rimraf doc-site && dumi build", 
-    "preview:site": "npm run build:site && serve doc-site" 
+    "build:site": "rimraf doc-site && dumi build",
+    "preview:site": "npm run build:site && serve doc-site"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +16,13 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@umijs/fabric": "^3.0.0",
     "commitizen": "^4.2.6",
     "cz-conventional-changelog": "^3.3.0",
     "dumi": "^2.1.3",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
     "serve": "^14.1.2",
     "typescript": "^4.9.4"
   },
