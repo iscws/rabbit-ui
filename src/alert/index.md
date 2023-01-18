@@ -1,5 +1,5 @@
 ---
-title: Alert 警告提示
+title: 组件示例
 nav:
   title: 组件
   order: 2
@@ -8,7 +8,7 @@ group:
   order: 1
 ---
 
-# Alert 警告提示
+# 组件示例
 
 警告提示，展现需要关注的信息。
 
