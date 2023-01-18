@@ -1,7 +1,7 @@
 import React from 'react';
 import t from 'prop-types';
 
-import { AlterWrapper } from './style'
+
 
 export interface AlertProps {
   /**
@@ -24,17 +24,15 @@ const kinds: KindMap = {
 };
 
 const Alert: React.FC<AlertProps> = ({ children, kind = 'info', ...rest }) => (
-  <AlterWrapper>
-    <div
-      className={prefixCls}
-      style={{
-        background: kinds[kind],
-      }}
-      {...rest}
-    >
-      {children}
-    </div>
-  </AlterWrapper>
+  <div
+    className={prefixCls}
+    style={{
+      background: kinds[kind],
+    }}
+    {...rest}
+  >
+    {children}
+  </div>
 );
 
 Alert.propTypes = {
