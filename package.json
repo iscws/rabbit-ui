@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz",
     "dev": "dumi dev",
     "build:site": "rimraf doc-site && dumi build",
-    "preview:site": "npm run build:site && serve doc-site"
+    "preview:site": "npm run build:site && serve doc-site",
+    "build:types": "tsc -p tsconfig.build.json && cpr lib esm"
   },
   "keywords": [],
   "author": "",
