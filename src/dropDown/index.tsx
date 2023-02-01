@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import t from 'prop-types';
-import Dropdown from 'rc-dropdown';
+import Trigger from 'rc-trigger';
+import 'rc-trigger/assets/index.css';
 
 
 export interface DropDownProps {
@@ -10,6 +11,11 @@ export interface DropDownProps {
      * @default            hower
      */
     trigger?: 'click' | 'hover';
+    /**
+     * @description       下拉菜单位置
+     * @default            bottom
+     */
+    popupPlacement?: 'bottom' | 'left' | 'right' | 'top';
     /**
      * @description       下拉菜单承载的内容元素
      * @default            []
@@ -20,42 +26,87 @@ export interface DropDownProps {
      * @default            <Button>按钮<Button/>
      */
     children: any
-    //children: any;
 }
+
+export interface MenuProps {
+    /**
+         * @description       列表数组
+         * @default            []
+         */
+    items?: any;
+}
+
+const builtinPlacements = {
+    left: {
+        points: ['cr', 'cl'],
+    },
+    right: {
+        points: ['cl', 'cr'],
+    },
+    top: {
+        points: ['bc', 'tc'],
+    },
+    bottom: {
+        points: ['tc', 'bc'],
+    },
+    topLeft: {
+        points: ['bl', 'tl'],
+    },
+    topRight: {
+        points: ['br', 'tr'],
+    },
+    bottomRight: {
+        points: ['tr', 'br'],
+    },
+    bottomLeft: {
+        points: ['tl', 'bl'],
+    },
+};
+
+const popupBorderStyle = {
+    border: '1px solid red',
+    padding: "10px",
+};
 
 export type KindMap = Record<Required<DropDownProps>['trigger'], string>;
 
 const prefixCls = 'rabbit-dropdown';
 
-const DropDown: React.FC<DropDownProps> = ({ items, children }) => {
-    const [displayMenu, setDisplayMenu] = useState<boolean>(false)
-    const [title, setTitle] = useState<string>('');//高亮先前选择的元素
-    const showDropdownMenu = () => setDisplayMenu(!displayMenu)
-
-    const hideDropdownMenu = v => {
-        setDisplayMenu(false)
-        setTitle(v)
-    }
+//下拉菜单承载的内容
+const Menu: React.FC<MenuProps> = ({ items }) => {
     return (
-        <>
-            <div style={{ 'position': 'fixed', 'inset': '0px' }} onClick={() => setDisplayMenu(false)}></div>
-            <div className='dropdown'>
-                <div className='button' onClick={() => showDropdownMenu()}>
-                    {children}
-                </div>
-                {
-                    displayMenu && (
-                        <div className='menu'>
-                            {items.map((item) => (
-                                <div className={item === title ? "active" : ""} onClick={() => hideDropdownMenu(item)} key={item.toString()}>
-                                    {item}
-                                </div>
-                            ))}
-                        </div>
-                    )
-                }
-            </div>
-        </>
+        <div className="menu">
+            {
+                items.map(item => {
+                    return <div style={popupBorderStyle} key={item} className="menu-item">{item}</div>
+                })
+            }
+
+        </div>
+
+    )
+}
+
+//下拉菜单
+const DropDown: React.FC<DropDownProps> = (
+    {
+        items = [],
+        trigger = 'hover',
+        popupPlacement = 'bottom',
+        children }
+) => {
+
+    return (
+        <div>
+            <Trigger
+                popupPlacement={popupPlacement}
+                action={[trigger]}
+                builtinPlacements={builtinPlacements}
+                popup={<Menu items={items}></Menu>}
+            >
+                <button style={{ margin: 20 }}>{children}</button>
+            </Trigger>
+        </div>
     )
 };
 
@@ -63,8 +114,5 @@ DropDown.propTypes = {
     trigger: t.oneOf(['click', 'hover']),
 };
 
-Dropdown.propTypes = {
-    //items: PropTypes.array
-}
 
 export default DropDown;

@@ -10228,9 +10228,9 @@
     "rc-resize-observer" "^1.0.0"
     "rc-util" "^5.5.0"
 
-"rc-trigger@^5.1.2", "rc-trigger@^5.3.1":
+"rc-trigger@^5.1.2", "rc-trigger@^5.3.1", "rc-trigger@^5.3.4":
   "integrity" "sha512-mQv+vas0TwKcjAO2izNPkqR4j86OemLRmvL2nOzdP9OWNWA1ivoTt5hzFqYNW9zACwmTezRiN8bttrC7cZzYSw=="
-  "resolved" "https://registry.npmjs.org/rc-trigger/-/rc-trigger-5.3.4.tgz"
+  "resolved" "https://registry.npmmirror.com/rc-trigger/-/rc-trigger-5.3.4.tgz"
   "version" "5.3.4"
   dependencies:
     "@babel/runtime" "^7.18.3"
