@@ -7,11 +7,7 @@ export interface AlertProps {
    * @default           'info'
    */
   kind?: 'info' | 'positive' | 'negative' | 'warning';
-<<<<<<< HEAD
   [key: string]: any;
-=======
-  children: any;
->>>>>>> dev
 }
 
 export type KindMap = Record<Required<AlertProps>['kind'], string>;
