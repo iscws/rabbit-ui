@@ -1,0 +1,63 @@
+@popupPrefix: rabbit-modal;
+
+.@{popupPrefix} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-Index: 999;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0, 0, 0, 0.3);
+
+  .rabbit-modal-content {
+        position: relative;
+        width: 220px;
+        padding: 20px 24px;
+        transition: transform .3s, opacity .3s;
+        background-color: #fff;
+
+        // 关闭按钮
+        .rabbit-modal-close-x {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            padding: 3px;
+            color: #8c8c8c;
+            transition: all ease 0.3s;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+              color: #000;
+              background-color: rgba(0,0,0,0.1);
+            }
+        }
+        .rabbit-modal-header {
+
+          border-radius: 8px 8px 0 0;
+          margin-bottom: 8px;
+
+          .rabbit-modal-title {
+            color: rgba(0,0,0,.88);
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.5;
+            word-wrap: break-word;
+          }
+        }
+
+        .rabbit-modal-body {
+          font-size: 14px;
+        }
+
+        .rabbit-modal-footer {
+          text-align: end;
+          background: 0 0;
+          margin-top: 12px
+        }
+
+    }
+}

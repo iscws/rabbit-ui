@@ -3,7 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import { demos as dm0, frontmatter as fm0, toc as toc0, texts as txt0 } from 'D:/Desktop/rabbit-ui/docs/index.md?type=meta';
 import { demos as dm1, frontmatter as fm1, toc as toc1, texts as txt1 } from 'D:/Desktop/rabbit-ui/src/alert/index.md?type=meta';
-import { demos as dm2, frontmatter as fm2, toc as toc2, texts as txt2 } from 'D:/Desktop/rabbit-ui/src/menu/index.md?type=meta';
+import { demos as dm2, frontmatter as fm2, toc as toc2, texts as txt2 } from 'D:/Desktop/rabbit-ui/src/modal/index.md?type=meta';
 
 export { components } from './atoms';
 export { tabs } from './tabs';
@@ -21,7 +21,7 @@ export const filesMeta = {
     texts: txt1,
     demos: dm1,
   },
-  'components/menu/index': {
+  'components/modal/index': {
     frontmatter: fm2,
     toc: toc2,
     texts: txt2,
