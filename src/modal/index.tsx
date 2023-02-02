@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+// import { CSSTransition } from 'react-transition-group';
 
 export interface ModalProps {
   // 标题
@@ -13,22 +14,50 @@ export interface ModalProps {
 const prefixCls = 'rabbit-modal';
 
 const Modal: React.FC<ModalProps> = ({ title, width, children, onOk, onCancel, open, ...rest }) => {
+  // 使用该变量用于控制对话框的开启和关闭
+  const [visible, setVisible] = useState(open);
+  const [transformOrigin, setTransformOrigin] = useState('center');
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  // 控制动画的开启和关闭
+  const [animateStart, setAnimateStart] = useState(!open);
+
   useEffect(() => {
     // 禁止滚动
     document.body.style.overflow = !open ? '' : 'hidden';
   }, [open]);
 
+  // 淡入淡出
+  useEffect(() => {
+    // 遮罩层的淡入淡出
+    if (open) {
+      setVisible(true);
+      setTimeout(() => {
+        // 然后再开始动画
+        setAnimateStart(true);
+      }, 30);
+    } else {
+      setAnimateStart(false);
+      setTimeout(() => {
+        // 动画结束后把模态框设置为 display: none
+        setVisible(false);
+      }, 300);
+    }
+  }, [open]);
   const modal = (
-    <div
-      className={prefixCls}
-      style={{
-        display: open ? 'flex' : 'none',
-      }}
-    >
+    <div className={prefixCls} style={{ display: visible ? 'flex' : 'none' }}>
+      <div
+        className="rabbit-modal-mask"
+        style={{
+          backgroundColor: animateStart ? 'rgba(0, 0, 0, .3)' : '',
+        }}
+      ></div>
       <div
         className="rabbit-modal-content"
+        ref={modalRef}
         style={{
           width,
+          opacity: animateStart ? 1 : 0,
+          transform: animateStart ? 'scale(1)' : 'scale(0)',
         }}
       >
         <div className="rabbit-modal-close-x" onClick={onCancel}>
