@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import t from 'prop-types';
 import Trigger from 'rc-trigger';
 import 'rc-trigger/assets/index.css';
@@ -33,7 +33,10 @@ export interface MenuProps {
          * @description       列表数组
          * @default            []
          */
-    items?: any;
+    items?: Array<{
+        content: string,
+        className: 'menu-item' | 'menu-item-forbidden'
+    }>;
 }
 
 const builtinPlacements = {
@@ -63,10 +66,6 @@ const builtinPlacements = {
     },
 };
 
-const popupBorderStyle = {
-    border: '1px solid red',
-    padding: "10px",
-};
 
 export type KindMap = Record<Required<DropDownProps>['trigger'], string>;
 
@@ -74,16 +73,28 @@ const prefixCls = 'rabbit-dropdown';
 
 //下拉菜单承载的内容
 const Menu: React.FC<MenuProps> = ({ items }) => {
+
+    const [selected, setselected] = useState<number>(-1);
+
+    //高亮先前选择的元素
+    function lightSelected(index, className) {
+        if (className != 'menu-item-forbidden') setselected(index);
+    }
+
     return (
-        <div className="menu">
-            {
-                items.map(item => {
-                    return <div style={popupBorderStyle} key={item} className="menu-item">{item}</div>
-                })
-            }
-
+        <div className={prefixCls}>
+            <div className='menu'>
+                {
+                    items.map((item, index) => {
+                        return <div
+                            key={index}
+                            className={item.className == 'menu-item-forbidden' ? item.className : index == selected ? "menu-item-focus" : "menu-item"}
+                            onClick={() => lightSelected(index, item.className)}
+                        >{item.content}</div>
+                    })
+                }
+            </div>
         </div>
-
     )
 }
 
