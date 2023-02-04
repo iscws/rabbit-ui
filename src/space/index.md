@@ -21,8 +21,15 @@ group:
 
 ## 代码演示
 
-### 基本用法
-
 <code src="./demo/basic.tsx"></code>
 
+<code src="./demo/vertical.tsx"></code>
+
+<code src="./demo/align.tsx"></code>
+
+<code src="./demo/split.tsx"></code>
+
+<code src="./demo/wrap.tsx"></code>
+
 ## API
+<API src="./index.tsx"></API>
