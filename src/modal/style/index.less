@@ -10,7 +10,32 @@
   z-Index: 999;
   justify-content: center;
   align-items: center;
-  background-color:rgba(0, 0, 0, 0.3);
+  // background-color: pink;
+  .rabbit-modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: transparent;
+  }
+
+  // 动画部分样式
+  .rabbit-mask-enter {
+    background-color: transparent;
+  }
+  .rabbit-mask-enter-active {
+    background-color: rgba(0,0,0,0.3);
+    transition: background 300ms;
+  }
+
+  .rabbit-mask-enter-done,.rabbit-mask-exit {
+    background-color: rgba(0,0,0,0.3);
+  }
+  .rabbit-mask-exit-active {
+    background-color: transparent;
+    transition: background 300ms;
+  }
 
   .rabbit-modal-content {
         position: relative;
@@ -62,4 +87,27 @@
         }
 
     }
+
+  // 动画部分样式
+  .rabbit-modal-enter {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .rabbit-modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opactity transform 300ms;
+  }
+
+  .rabbit-modal-enter-done,.rabbit-modal-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .rabbit-modal-exit-active {
+    opacity: 0;
+    transform: scale(0);
+    transition: opactity transform 300ms;
+  }
+
 }
