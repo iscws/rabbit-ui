@@ -14,3 +14,12 @@ nav:
 <code src="./demo/basic.tsx"></code>
 
 <code src="./demo/width.tsx"></code>
+
+## API
+
+| 参数     | 说明                                 | 类型        | 默认值 |
+| -------- | ------------------------------------ | ----------- | ------ |
+| onCancel | 点击遮罩层或右上角叉或取消按钮的回调 | `function`  |        |
+| onOk     | 点击确定回调                         | `function`  |        |
+| title    | 标题                                 | `ReactNode` |        |
+| width    | 对话框长度                           | `Number`    | 520    |

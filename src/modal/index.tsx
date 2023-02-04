@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-// import { CSSTransition } from 'react-transition-group';
 
 export interface ModalProps {
+  // 子类的类型
+  children: React.ReactNode;
   // 标题
   title?: React.ReactNode;
-  children: React.ReactNode;
+  onCancel: () => void;
   open: boolean;
   onOk: () => void;
-  onCancel: () => void;
   width?: number;
 }
 const prefixCls = 'rabbit-modal';
