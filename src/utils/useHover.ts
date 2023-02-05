@@ -7,6 +7,7 @@ interface Options {
     onChange?: (isHover: boolean) => void;
 }
 
+//监听DOM元素是否有鼠标悬停
 const useHover = (target: any, options?: Options) => {
     const { onEnter, onLeave, onChange } = options || {};
     const [isHover, setHover] = useState<boolean>(false);
