@@ -10,7 +10,7 @@ const Destroy = () => {
   const [count, setCount] = useState(0);
   return (<div>
     <p>计数器：{count}</p>
-    <p>默认值为0</p>
+    <p>初始值为0</p>
     <button onClick={e => setCount(count + 1)}>数字＋1</button>
   </div>)
 }
@@ -19,7 +19,7 @@ const NoDestroy = () => {
   const [count, setCount] = useState(0);
   return (<div>
     <p>计数器：{count}</p>
-    <p>默认值为0</p>
+    <p>初始值为0</p>
     <button onClick={e => setCount(count + 1)}>数字＋1</button>
   </div>)
 }

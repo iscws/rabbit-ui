@@ -3,13 +3,8 @@
 // DO NOT CHANGE IT MANUALLY!
 import { history } from 'dumi';
 import React, { useState, useLayoutEffect, useCallback, type ReactNode } from 'react';
-<<<<<<< HEAD
-import { RawIntlProvider, createIntl, createIntlCache } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/react-intl';
-import { useIsomorphicLayoutEffect } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/dist/client/theme-api/utils.js'
-=======
 import { RawIntlProvider, createIntl, createIntlCache } from 'D:/Desktop/rabbit-ui/node_modules/react-intl';
 import { useIsomorphicLayoutEffect } from 'D:/Desktop/rabbit-ui/node_modules/dumi/dist/client/theme-api/utils.js'
->>>>>>> d10a81420b0a45802b312fba20bc50d3b5b2a957
 import { locales, messages } from './config';
 
 const cache = createIntlCache();

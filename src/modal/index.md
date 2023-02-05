@@ -25,5 +25,6 @@ nav:
 | onOk           | 点击确定回调                         | `function`  |        |
 | title          | 标题                                 | `ReactNode` |        |
 | width          | 对话框长度                           | `Number`    | 520    |
-| mask           | 是否展示遮罩层                       | `Boolean`   | true   |
-| destroyOnClose | 关闭后是否销毁子元素                 | `Boolean`   | false  |
+| mask           | 是否展示遮罩层                       | `boolean`   | true   |
+| destroyOnClose | 关闭后是否销毁子元素                 | `boolean`   | false  |
+| keyboard       | 是否支持键盘 esc 关闭                | `boolean`   | false  |

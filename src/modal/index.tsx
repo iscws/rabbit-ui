@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { func } from '@hapi/joi';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -11,6 +12,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
  * @param {width} string Modal宽度
  * @param {toCancel} func 点击遮罩或者取消按钮，或者键盘esc按键时的回调
  * @param {toOk} func 点击确定的回调
+ * @param {keyboard} func 键盘esc关闭弹窗
+ * 
  */
 
 export interface ModalProps {
@@ -22,6 +25,7 @@ export interface ModalProps {
   width?: number;
   destroyOnClose?: boolean;
   mask?: boolean;
+  keyboard?: boolean;
 }
 const prefixCls = 'rabbit-modal';
 
@@ -30,10 +34,11 @@ const Modal: React.FC<ModalProps> = ({
   title,
   width,
   children,
-  toOk,
-  toCancel,
+  toOk = () => { return },
+  toCancel = () => { return },
   open = false,
   mask = true,
+  keyboard = true,
   ...rest
 }) => {
   // 使用该变量用于控制对话框的开启和关闭
@@ -68,9 +73,25 @@ const Modal: React.FC<ModalProps> = ({
     }
   }, [open]);
 
+  // 键盘关闭弹窗
+  useEffect(() => {
+    if (keyboard) {
+      const closeModal = function (event: KeyboardEvent) {
+        let e = event || window.event;
+        if (e && e.key === 'Escape') {
+          toCancel()
+        }
+      }
+      document.addEventListener('keydown', closeModal, false)
+      return () => {
+        document.removeEventListener('keydown', closeModal, false)
+      }
+    }
+  }, [])
+
   const modal = (
     <TransitionGroup>
-      <div className={prefixCls} style={{ display: visible ? 'flex' : 'none' }}>
+      <div className={prefixCls} style={{ display: visible ? 'flex' : 'none' }} ref={modalRef}>
         {mask && <CSSTransition classNames="rabbit-mask" in={animateStart} timeout={300}>
           <div className="rabbit-modal-mask"></div>
         </CSSTransition>}
@@ -78,7 +99,6 @@ const Modal: React.FC<ModalProps> = ({
         <CSSTransition classNames={'rabbit-modal'} in={animateStart} timeout={300}>
           <div
             className="rabbit-modal-content"
-            ref={modalRef}
             style={{
               width,
             }}
