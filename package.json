@@ -17,6 +17,7 @@
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@umijs/fabric": "^3.0.0",
+    "classnames": "^2.3.2",
     "commitizen": "^4.2.6",
     "cz-conventional-changelog": "^3.3.0",
     "dumi": "^2.1.3",

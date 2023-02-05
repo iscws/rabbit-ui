@@ -2,18 +2,46 @@
   padding: 6px 12px;
   color: #fff;
   font-weight: 400;
-  font-size: 16px;
-  background-color: #5352ed;
+  font-size: 1rem;
+  text-align: center;
+  background-color: skyblue;
   border-color: #ccc;
-  border-radius: 2px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.1s ease;
-}
-.btn:hover {
-  background-color: #ffc;
 }
 .btn:active {
-  background-color: #000;
+  background-color: #6aafcb;
+}
+.btn.circle {
+  width: 3.75rem;
+  height: 3.75rem;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: normal;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+@keyframes run {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.btn .loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 3s infinite;
 }
 .btn[disabled] {
   background-color: red;
@@ -21,16 +49,32 @@
   opacity: 0.75;
 }
 .btn[disabled]:hover {
-  background-color: #ccc;
+  background-color: #ad0606;
 }
 .btn[disabled]:active {
-  background-color: #fff;
+  background-color: #000;
 }
 .btn-small {
   padding: 4px 8px;
   font-size: 12px;
 }
+.btn-small.circle {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.btn-small .loading {
+  width: 10px;
+  height: 10px;
+}
 .btn-large {
   padding: 8px 16px;
   font-size: 28px;
+}
+.btn-large.circle {
+  width: 5rem;
+  height: 5rem;
+}
+.btn-large .loading {
+  width: 30px;
+  height: 30px;
 }

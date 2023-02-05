@@ -3,7 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import './core/polyfill';
 
-import { renderClient } from 'D:/code/Rabbit UI/rabbit-ui/node_modules/@umijs/renderer-react';
+import { renderClient } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/node_modules/@umijs/renderer-react';
 import { getRoutes } from './core/route';
 import { createPluginManager } from './core/plugin';
 import { createHistory } from './core/history';

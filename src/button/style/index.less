@@ -1,30 +1,73 @@
 //size 为 small 时的样式
 @btn-small-padding: 4px 8px;
 @btn-small-fontSize: 12px;
+@btn-small-wight: 2.5rem;
+@btn-small-height: 2.5rem;
 //size 为 large 时的样式
 @btn-large-padding: 8px 16px;
 @btn-large-fontSize: 28px;
+@btn-large-wight: 5rem;
+@btn-large-height: 5rem;
+
+// 圆形按钮样式
+@circle: {
+  width: 3.75rem;
+  height: 3.75rem;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: normal;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+};
+
 .btn {
   padding: 6px 12px;
   color: #fff;
   font-weight: 400;
-
-  font-size: 16px;
-
-  background-color: #5352ed;
+  font-size: 1rem;
+  text-align: center;
+  background-color: skyblue;
   border-color: #ccc;
-  border-radius: 2px;
-
+  border-radius: 15px;
   cursor: pointer;
 
-  transition: background-color 0.1s ease;
+  // transition: background-color 0.1s ease;
   // 悬停颜色
-  &:hover {
-    background-color: #ffc;
-  }
+  // &:hover {
+  //    background-color: rgb(204, 224, 255);
+  // }
+
   // 按下后颜色
   &:active {
-    background-color: #000;
+    background-color: rgb(106, 175, 203);
+  }
+  // 圆形按钮
+  &.circle {
+    @circle();
+  }
+  //loading状态
+  @keyframes run {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  & .loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    margin-right: 5px;
+    background: url(./icon/loading.png) no-repeat;
+    background-size: 100%;
+    cursor: not-allowed;
+    // border: 1px solid #000;
+    animation: run 3s infinite;
   }
   // 禁用状态
   &[disabled] {
@@ -32,23 +75,37 @@
     cursor: not-allowed;
     opacity: 0.75;
     &:hover {
-      background-color: #ccc;
+      background-color: rgb(173, 6, 6);
     }
-
+    // 禁用按钮按下状态
     &:active {
-      background-color: #fff;
+      background-color: #000;
     }
   }
 }
 
 .btn-small {
   padding: @btn-small-padding;
-
   font-size: @btn-small-fontSize;
+  &.circle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  & .loading {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .btn-large {
   padding: @btn-large-padding;
-
   font-size: @btn-large-fontSize;
+  &.circle {
+    width: 5rem;
+    height: 5rem;
+  }
+  & .loading {
+    width: 30px;
+    height: 30px;
+  }
 }
