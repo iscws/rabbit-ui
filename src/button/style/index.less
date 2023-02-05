@@ -1,0 +1,54 @@
+//size 为 small 时的样式
+@btn-small-padding: 4px 8px;
+@btn-small-fontSize: 12px;
+//size 为 large 时的样式
+@btn-large-padding: 8px 16px;
+@btn-large-fontSize: 28px;
+.btn {
+  padding: 6px 12px;
+  color: #fff;
+  font-weight: 400;
+
+  font-size: 16px;
+
+  background-color: #5352ed;
+  border-color: #ccc;
+  border-radius: 2px;
+
+  cursor: pointer;
+
+  transition: background-color 0.1s ease;
+  // 悬停颜色
+  &:hover {
+    background-color: #ffc;
+  }
+  // 按下后颜色
+  &:active {
+    background-color: #000;
+  }
+  // 禁用状态
+  &[disabled] {
+    background-color: red;
+    cursor: not-allowed;
+    opacity: 0.75;
+    &:hover {
+      background-color: #ccc;
+    }
+
+    &:active {
+      background-color: #fff;
+    }
+  }
+}
+
+.btn-small {
+  padding: @btn-small-padding;
+
+  font-size: @btn-small-fontSize;
+}
+
+.btn-large {
+  padding: @btn-large-padding;
+
+  font-size: @btn-large-fontSize;
+}
