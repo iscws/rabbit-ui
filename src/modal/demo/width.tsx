@@ -27,8 +27,8 @@ export default () => {
       <Modal
         title="modal组件标题"
         open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
+        toOk={handleOk}
+        toCancel={handleCancel}
         width={1000}
       >
         扩展对话框长度.

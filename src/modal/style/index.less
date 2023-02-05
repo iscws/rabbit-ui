@@ -10,7 +10,6 @@
   z-Index: 999;
   justify-content: center;
   align-items: center;
-  // background-color: pink;
   .rabbit-modal-mask {
     position: absolute;
     top: 0;
@@ -25,12 +24,12 @@
     background-color: transparent;
   }
   .rabbit-mask-enter-active {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,.45);
     transition: background 300ms;
   }
 
   .rabbit-mask-enter-done,.rabbit-mask-exit {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,.45);
   }
   .rabbit-mask-exit-active {
     background-color: transparent;
@@ -43,9 +42,9 @@
         padding: 20px 24px;
         transition: transform .3s, opacity .3s;
         background-color: #fff;
-        transform: center;
         box-sizing: border-box;
-
+        box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+        border-radius: 8px;
         // 关闭按钮
         .rabbit-modal-close-x {
             position: absolute;
@@ -53,7 +52,7 @@
             right: 24px;
             padding: 3px;
             color: #8c8c8c;
-            transition: all ease 0.3s;
+            transition: all ease .45s;
             border-radius: 5px;
             cursor: pointer;
 

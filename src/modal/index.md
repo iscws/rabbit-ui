@@ -15,11 +15,15 @@ nav:
 
 <code src="./demo/width.tsx"></code>
 
+<code src="./demo/destroyOnClose.tsx"></code>
+
 ## API
 
-| 参数     | 说明                                 | 类型        | 默认值 |
-| -------- | ------------------------------------ | ----------- | ------ |
-| onCancel | 点击遮罩层或右上角叉或取消按钮的回调 | `function`  |        |
-| onOk     | 点击确定回调                         | `function`  |        |
-| title    | 标题                                 | `ReactNode` |        |
-| width    | 对话框长度                           | `Number`    | 520    |
+| 参数           | 说明                                 | 类型        | 默认值 |
+| -------------- | ------------------------------------ | ----------- | ------ |
+| onCancel       | 点击遮罩层或右上角叉或取消按钮的回调 | `function`  |        |
+| onOk           | 点击确定回调                         | `function`  |        |
+| title          | 标题                                 | `ReactNode` |        |
+| width          | 对话框长度                           | `Number`    | 520    |
+| mask           | 是否展示遮罩层                       | `Boolean`   | true   |
+| destroyOnClose | 关闭后是否销毁子元素                 | `Boolean`   | false  |

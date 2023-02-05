@@ -2,51 +2,78 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
+/**
+ * Modal Modal组件
+ * @param {destroyOnClose} bool 关闭时销毁Modal里的子元素
+ * @param {mask} bool 是否展示遮罩
+ * @param {title} ReactNode 标题内容
+ * @param {open} bool Modal是否可见
+ * @param {width} string Modal宽度
+ * @param {toCancel} func 点击遮罩或者取消按钮，或者键盘esc按键时的回调
+ * @param {toOk} func 点击确定的回调
+ */
+
 export interface ModalProps {
-  // 子类的类型
   children: React.ReactNode;
-  // 标题
   title?: React.ReactNode;
-  onCancel: () => void;
+  toCancel?: (...rest: any[]) => void;
   open: boolean;
-  onOk: () => void;
+  toOk?: (...rest: any[]) => void;
   width?: number;
+  destroyOnClose?: boolean;
+  mask?: boolean;
 }
 const prefixCls = 'rabbit-modal';
 
-const Modal: React.FC<ModalProps> = ({ title, width, children, onOk, onCancel, open, ...rest }) => {
+const Modal: React.FC<ModalProps> = ({
+  destroyOnClose = false,
+  title,
+  width,
+  children,
+  toOk,
+  toCancel,
+  open = false,
+  mask = true,
+  ...rest
+}) => {
   // 使用该变量用于控制对话框的开启和关闭
   const [visible, setVisible] = useState(open);
   const modalRef = useRef<HTMLDivElement | null>(null);
   // 控制动画的开启和关闭
   const [animateStart, setAnimateStart] = useState(open);
-
-  useEffect(() => {
-    // 禁止滚动
-    document.body.style.overflow = !open ? '' : 'hidden';
-  }, [open]);
+  // 是否销毁弹窗
+  const [destroyModal, setDestryoModal] = useState(false);
 
   // 淡入淡出
   useEffect(() => {
+    // 禁止滚动
+    document.body.style.overflow = !open ? '' : 'hidden';
     // 遮罩层的淡入淡出
     if (open) {
       setVisible(true);
       // 然后再开始动画
       setAnimateStart(true);
+      // 确保每一次打开弹窗子元素不被销毁
+      setDestryoModal(false);
     } else {
       setAnimateStart(false);
       setTimeout(() => {
         // 动画结束后把模态框设置为 display: none
         setVisible(false);
+        // 动画结束后将子元素销毁，添加visible是保证弹窗关闭的时候才销毁子元素，
+        if (destroyOnClose && visible) {
+          setDestryoModal(true);
+        }
       }, 300);
     }
   }, [open]);
+
   const modal = (
     <TransitionGroup>
       <div className={prefixCls} style={{ display: visible ? 'flex' : 'none' }}>
-        <CSSTransition classNames="rabbit-mask" in={animateStart} timeout={300}>
+        {mask && <CSSTransition classNames="rabbit-mask" in={animateStart} timeout={300}>
           <div className="rabbit-modal-mask"></div>
-        </CSSTransition>
+        </CSSTransition>}
 
         <CSSTransition classNames={'rabbit-modal'} in={animateStart} timeout={300}>
           <div
@@ -54,11 +81,9 @@ const Modal: React.FC<ModalProps> = ({ title, width, children, onOk, onCancel, o
             ref={modalRef}
             style={{
               width,
-              // opacity: animateStart ? 1 : 0,
-              // transform: animateStart ? 'scale(1)' : 'scale(0)',
             }}
           >
-            <div className="rabbit-modal-close-x" onClick={onCancel}>
+            <div className="rabbit-modal-close-x" onClick={toCancel}>
               <svg
                 viewBox="64 64 896 896"
                 focusable="false"
@@ -75,13 +100,13 @@ const Modal: React.FC<ModalProps> = ({ title, width, children, onOk, onCancel, o
             <div className="rabbit-modal-header">
               <div className="rabbit-modal-title">{title}</div>
             </div>
-            <div className="rabbit-modal-body">{children}</div>
+            <div className="rabbit-modal-body">{!destroyModal && children}</div>
 
             <div className="rabbit-modal-footer">
-              <button className="rabbit-modal-button rabbit-default" onClick={onCancel}>
+              <button className="rabbit-modal-button rabbit-default" onClick={toCancel}>
                 取消
               </button>
-              <button className="rabbit-modal-button rabbit-primary" onClick={onOk}>
+              <button className="rabbit-modal-button rabbit-primary" onClick={toOk}>
                 确定
               </button>
             </div>

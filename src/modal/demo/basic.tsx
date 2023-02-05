@@ -24,7 +24,7 @@ export default () => {
   return (
     <div>
       <button onClick={showModal}>启动modal</button>
-      <Modal title="modal组件标题" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title="modal组件标题" destroyOnClose={true} open={isModalOpen} toOk={handleOk} toCancel={handleCancel}>
         这是一条警告提示
       </Modal>
     </div>
