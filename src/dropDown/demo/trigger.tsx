@@ -1,6 +1,6 @@
 /**
  * title: 触发方式
- * description: 默认是鼠标移入触发，可以点击触发
+ * description: 默认是鼠标移入触发，可以选择点击触发
  */
 
 import React from 'react';
