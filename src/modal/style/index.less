@@ -1,0 +1,112 @@
+@popupPrefix: rabbit-modal;
+
+.@{popupPrefix} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-Index: 999;
+  justify-content: center;
+  align-items: center;
+  .rabbit-modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: transparent;
+  }
+
+  // 动画部分样式
+  .rabbit-mask-enter {
+    background-color: transparent;
+  }
+  .rabbit-mask-enter-active {
+    background-color: rgba(0,0,0,.45);
+    transition: background 300ms;
+  }
+
+  .rabbit-mask-enter-done,.rabbit-mask-exit {
+    background-color: rgba(0,0,0,.45);
+  }
+  .rabbit-mask-exit-active {
+    background-color: transparent;
+    transition: background 300ms;
+  }
+
+  .rabbit-modal-content {
+        position: relative;
+        width: 520px;
+        padding: 20px 24px;
+        transition: transform .3s, opacity .3s;
+        background-color: #fff;
+        box-sizing: border-box;
+        box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+        border-radius: 8px;
+        // 关闭按钮
+        .rabbit-modal-close-x {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            padding: 3px;
+            color: #8c8c8c;
+            transition: all ease .45s;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+              color: #000;
+              background-color: rgba(0,0,0,0.1);
+            }
+        }
+        .rabbit-modal-header {
+
+          border-radius: 8px 8px 0 0;
+          margin-bottom: 8px;
+
+          .rabbit-modal-title {
+            color: rgba(0,0,0,.88);
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.5;
+            word-wrap: break-word;
+          }
+        }
+
+        .rabbit-modal-body {
+          font-size: 14px;
+        }
+
+        .rabbit-modal-footer {
+          text-align: end;
+          background: 0 0;
+          margin-top: 12px
+        }
+
+    }
+
+  // 动画部分样式
+  .rabbit-modal-enter {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .rabbit-modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opactity transform 300ms;
+  }
+
+  .rabbit-modal-enter-done,.rabbit-modal-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .rabbit-modal-exit-active {
+    opacity: 0;
+    transform: scale(0);
+    transition: opactity transform 300ms;
+  }
+
+}
