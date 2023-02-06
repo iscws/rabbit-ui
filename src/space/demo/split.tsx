@@ -4,9 +4,8 @@
  */
 
 import React from 'react';
-import Space from '..';
+import { Space } from 'rabbit-ui';
 
-import '../style';
 
 const Split = () => (<span> | </span>)
 
