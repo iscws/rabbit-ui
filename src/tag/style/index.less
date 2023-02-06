@@ -1,0 +1,58 @@
+@import url(../../ThemeStyle/default.less);
+@tag-padding-y: .1rem ;
+@tag-padding-y-lg: .1rem;
+@tag-padding-y-sm: 1px;
+@tag-padding-x:  .25rem;
+@tag-padding-x-lg:.3rem;
+@tag-padding-x-sm:  2px;
+@tag-font-size: 0.875rem;
+@tag-font-size-sm:@tag-font-size* .875;
+@tag-font-size-lg:@tag-font-size* 1.25;
+.rabbit-tag-size(@tag-padding-y, @tag-padding-x, @tag-font-size) {
+  padding: @tag-padding-y @tag-padding-x;
+  font-size: @tag-font-size;
+}
+
+.rabbit-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 20px;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin: 1px 2px;
+  .rabbit-tag-size(@tag-padding-y, @tag-padding-x, @tag-font-size) ;
+  .rabbit-tag-text {
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .rabbit-tag-close-icon {
+    margin-left: 3px;
+    vertical-align: middle;
+    font-size: .875rem;
+  }
+}
+
+.rabbit-tag-large {
+  .rabbit-tag-size(@tag-padding-y-lg, @tag-padding-x-lg, @tag-font-size-lg); 
+  padding-bottom: 4px;
+}
+.rabbit-tag-small {
+  .rabbit-tag-size(@tag-padding-y-sm, @tag-padding-x-sm, @tag-font-size-sm)
+}
+ each(@theme-colors,{
+  .rabbit-tag-@{key} { 
+    color: @value; 
+    background-color: rgba(@value, 0.2); 
+    border: 1px solid rgba(@value, 0.55);
+    .rabbit-tag-close-icon {
+      &:hover {
+        color: darken(@value, 10%);
+      }
+    }
+  }
+  }
+)

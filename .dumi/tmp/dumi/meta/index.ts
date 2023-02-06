@@ -6,6 +6,7 @@ import { demos as dm1, frontmatter as fm1, toc as toc1, texts as txt1 } from 'E:
 import { demos as dm2, frontmatter as fm2, toc as toc2, texts as txt2 } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/src/button/index.md?type=meta';
 import { demos as dm3, frontmatter as fm3, toc as toc3, texts as txt3 } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/src/menu/index.md?type=meta';
 import { demos as dm4, frontmatter as fm4, toc as toc4, texts as txt4 } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/src/space/index.md?type=meta';
+import { demos as dm5, frontmatter as fm5, toc as toc5, texts as txt5 } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/src/tag/index.md?type=meta';
 
 export { components } from './atoms';
 export { tabs } from './tabs';
@@ -40,6 +41,12 @@ export const filesMeta = {
     toc: toc4,
     texts: txt4,
     demos: dm4,
+  },
+  'components/tag/index': {
+    frontmatter: fm5,
+    toc: toc5,
+    texts: txt5,
+    demos: dm5,
   },
 }
 

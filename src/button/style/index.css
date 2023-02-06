@@ -9,6 +9,9 @@
   border-radius: 15px;
   cursor: pointer;
 }
+.btn:hover {
+  background-color: #9bd8f0;
+}
 .btn:active {
   background-color: #6aafcb;
 }

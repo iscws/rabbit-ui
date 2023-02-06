@@ -36,7 +36,7 @@ class Button extends Component<Props> {
     );
   }
 }
-Button.defaultProps = {
+Button.defaultProp = {
   children: 'Button',
   className: '',
   size: 'default',
