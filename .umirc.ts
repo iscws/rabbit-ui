@@ -6,7 +6,7 @@ export default defineConfig({
   title: 'Rabbit UI', // 站点名称
   mode: 'site',
   devSever: {
-    port: 8080
+    port: 8080//部署端口
   },
   outputPath: 'doc-site', // 输出文件夹
   base: process.env.NODE_ENV === 'production' ? `/${repo}/` : '/',
