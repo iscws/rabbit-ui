@@ -1,7 +1,8 @@
-import { array, object } from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
+import toArray from '../_utils/toArray';
+import './style';
 
 /**
  * Modal Modal组件
@@ -59,7 +60,6 @@ const Modal: React.FC<ModalProps> = ({
   // 是否销毁弹窗
   const [destroyModal, setDestryoModal] = useState(false);
 
-  console.log(footer instanceof Object);
 
   // 淡入淡出
   useEffect(() => {
@@ -88,9 +88,6 @@ const Modal: React.FC<ModalProps> = ({
   // 键盘关闭弹窗
 
   useEffect(() => {
-    if (footer instanceof object) {
-
-    }
     if (keyboard) {
       const closeModal = function (event: KeyboardEvent) {
         let e = event || window.event;
@@ -147,15 +144,22 @@ const Modal: React.FC<ModalProps> = ({
               // 显示自定义footer
               footer === 'default' ? (
                 <>
-                  <button className="rabbit-modal-button rabbit-default" onClick={toCancel}>
-                    取消
-                  </button>
-                  <button className="rabbit-modal-button rabbit-primary" onClick={toOk}>
-                    确定
-                  </button>
+                  <span className='rabbit-modal-footer-item'>
+                    <button className="rabbit-modal-button rabbit-default" onClick={toCancel}>
+                      取消
+                    </button>
+                  </span>
+
+                  <span className='rabbit-modal-footer-item'>
+                    <button className="rabbit-modal-button rabbit-primary" onClick={toOk}>
+                      确定
+                    </button>
+                  </span>
                 </>
               ) : (
-                footer
+                toArray(footer).map((item, index) => {
+                  return <span className='rabbit-modal-footer-item' key={index}>{item}</span>
+                })
               )
             }
           </div>

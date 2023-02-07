@@ -3,8 +3,8 @@
  * description: 不需要默认确定取消按钮时，你可以把 footer 设为 null。
  */
 import React, { useState } from 'react';
-import Modal from '..';
-import '../style';
+import { Modal } from 'rabbit-ui';
+
 
 export default () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +30,7 @@ export default () => {
                 open={isModalOpen}
                 toOk={handleOk}
                 toCancel={handleCancel}
-                footer={[<button style={{ marginRight: "20px" }}>你好你好</button>, <button onClick={handleCancel}>走吧走吧</button>]}
+                footer={[<button>你好你好</button>, <button onClick={handleCancel}>走吧走吧</button>]}
             >
                 这是一条提示
             </Modal>
