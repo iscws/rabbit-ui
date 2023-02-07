@@ -71,7 +71,7 @@ export type KindMap = Record<Required<DropDownProps>['trigger'], string>;
 
 const prefixCls = 'rabbit-dropdown';
 
-//下拉菜单承载的内容
+//下拉菜单承载内容
 const Menu: React.FC<MenuProps> = ({ items }) => {
 
     const [selected, setselected] = useState<number>(-1);
