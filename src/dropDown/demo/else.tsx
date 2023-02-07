@@ -1,6 +1,6 @@
 /**
- * title: 基本用法
- * description: 鼠标悬浮按钮触发下拉菜单
+ * title: 其他用法
+ * description: 下拉菜单的可选项与禁选项
  */
 
 import React from 'react';
@@ -18,7 +18,7 @@ const menu = [
     },
     {
         content: "3rd menu item",
-        className: "menu-item"
+        className: "menu-item-forbidden"
     }
 ]
 

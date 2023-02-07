@@ -1,6 +1,6 @@
 /**
- * title: 基本用法
- * description: 鼠标悬浮按钮触发下拉菜单
+ * title: 触发方式
+ * description: 默认是鼠标移入触发，可以选择点击触发
  */
 
 import React from 'react';
@@ -22,4 +22,4 @@ const menu = [
     }
 ]
 
-export default () => <DropDown items={menu} trigger="hover" popupPlacement="bottom">hover it</DropDown>;
+export default () => <DropDown items={menu} trigger="click" popupPlacement="bottom">click it</DropDown>;

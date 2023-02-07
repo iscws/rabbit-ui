@@ -108,16 +108,16 @@ const DropDown: React.FC<DropDownProps> = (
 ) => {
 
     return (
-        <div>
+        <>
             <Trigger
                 popupPlacement={popupPlacement}
                 action={[trigger]}
                 builtinPlacements={builtinPlacements}
                 popup={<Menu items={items}></Menu>}
             >
-                <button style={{ margin: 20 }}>{children}</button>
+                <button style={{ padding: "8px" }}>{children}</button>
             </Trigger>
-        </div>
+        </>
     )
 };
 

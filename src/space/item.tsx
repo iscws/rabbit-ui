@@ -2,7 +2,7 @@
 import React, { FC, ReactNode, useContext } from 'react';
 import { SpaceContext } from '.';
 
-type ItemProps = {
+type SpaceItemProps = {
     index: number;
     direction?: 'vertical' | 'horizontal';
     split?: string | ReactNode;
@@ -11,7 +11,7 @@ type ItemProps = {
     className?: string;
 };
 
-export const SpaceItem: FC<ItemProps> = (props) => {
+export const SpaceItem: FC<SpaceItemProps> = (props) => {
     const { index, direction, split, wrap, children, className, ...rest } = props
 
     const { latestIndex } = useContext(SpaceContext);

@@ -4,8 +4,15 @@ import { Button } from 'rabbit-ui';
 export default () => {
   return (
     <div>
+      <Button size={'small'} circle>
+        small
+      </Button>
       <Button size={'small'}>small</Button>
       <Button>normal</Button>
+      <Button circle>x</Button>
+      <Button size={'large'} circle>
+        large
+      </Button>
       <Button size={'large'}>large</Button>
       <Button
         className="btn"
@@ -16,8 +23,9 @@ export default () => {
         clickme
       </Button>
       <Button disabled>disabled</Button>
+      <Button size={'small'} loading>
+        loading
+      </Button>
     </div>
   );
-  let className = document.querySelector('.btn');
-  console.log(className.className);
 };

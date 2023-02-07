@@ -4,9 +4,8 @@
  */
 
 import React from 'react';
-import Space from '..';
+import { Space } from 'rabbit-ui';
 
-import '../style';
 
 export default () => {
     return (
@@ -14,7 +13,7 @@ export default () => {
             style={{ display: 'flex', flexWrap: 'wrap', }}>
             <div
                 style={{
-                    border: '1px dotted #000',
+                    border: '1px dotted skyblue',
                     padding: 8,
                     margin: 4,
                 }}>
@@ -32,7 +31,7 @@ export default () => {
             </div>
             <div
                 style={{
-                    border: '1px dotted #000',
+                    border: '1px dotted skyblue',
                     padding: 8,
                     margin: 4,
                 }}>
@@ -50,7 +49,7 @@ export default () => {
             </div>
             <div
                 style={{
-                    border: '1px dotted #000',
+                    border: '1px dotted skyblue',
                     padding: 8,
                     margin: 4,
                 }}>
@@ -68,7 +67,7 @@ export default () => {
             </div>
             <div
                 style={{
-                    border: '1px dotted #000',
+                    border: '1px dotted skyblue',
                     padding: 8,
                     margin: 4,
                 }}>

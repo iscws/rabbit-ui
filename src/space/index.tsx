@@ -1,14 +1,11 @@
 
-
 import React, { CSSProperties, FC, ReactElement, ReactNode, useMemo } from 'react';
-import toArray from '../utils/toArray';
+import toArray from '../_utils/toArray';
 import { SpaceItem } from './item';
-
+import './style'
 
 export const SpaceContext = React.createContext({
     latestIndex: 0,
-    horizontalSize: 0,
-    verticalSize: 0,
 });
 
 
@@ -16,7 +13,7 @@ export interface SpaceProps {
 
     /**
    * @description       对齐方式
-   * @default           'start'
+   * @default           'center'
    */
     align?: 'start' | 'end' | 'center' | 'baseline';
 
@@ -53,7 +50,6 @@ const Space: FC<SpaceProps> = (props) => {
         () => (Array.isArray(size) ? size : [size, size]),
         [size]
     );
-
     const Prefix = 'rabbit-space'
     const nclassName = `${Prefix}-wrapper`
     const itemClassName = `${Prefix}-item`
@@ -69,6 +65,8 @@ const Space: FC<SpaceProps> = (props) => {
     } else {
         gapStyle.alignItems = `flex-${align}`
     }
+    gapStyle.rowGap = horizontalSize
+    gapStyle.columnGap = verticalSize
 
 
     const childNodes = toArray(children, { keepEmpty: true })
@@ -95,9 +93,7 @@ const Space: FC<SpaceProps> = (props) => {
 
     const spaceContext = useMemo(() => ({
         latestIndex,
-        horizontalSize,
-        verticalSize
-    }), [latestIndex, horizontalSize, verticalSize])
+    }), [latestIndex])
 
     return (
         <>
