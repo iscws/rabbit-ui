@@ -1,6 +1,7 @@
 import t from 'prop-types';
 import React from 'react';
 
+
 export interface AlertProps {
   /**
    * @description       Alert 的类型
