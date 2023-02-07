@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrabbit_ui=self.webpackChunkrabbit_ui||[]).push([[819],{81818:function(c,n,u){u.r(n),u.d(n,{default:function(){return r}});var i=u(67294),t=u(70208),a=u(85893),r=function(){return(0,a.jsx)(t.Z,{kind:"warning",children:"\u8FD9\u662F\u4E00\u6761\u8B66\u544A\u63D0\u793A"})}}}]);
