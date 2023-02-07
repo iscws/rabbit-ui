@@ -1,7 +1,7 @@
 # 项目名
-name: dumi book test
+name: rabbit-ui
 
-# 只有在main分支发生push事件时触发
+# 只有在dev_zjh分支发生push事件时触发
 on:
   push:
     branches:
