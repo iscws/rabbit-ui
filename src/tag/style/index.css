@@ -1,0 +1,71 @@
+.rabbit-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 20px;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin: 1px 2px;
+  padding: 0.1rem 0.25rem;
+  font-size: 0.875rem;
+}
+.rabbit-tag .rabbit-tag-text {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.rabbit-tag .rabbit-tag-close-icon {
+  margin-left: 3px;
+  vertical-align: middle;
+  font-size: 0.875rem;
+}
+.rabbit-tag-large {
+  padding: 0.1rem 0.3rem;
+  font-size: 1.09375rem;
+  padding-bottom: 4px;
+}
+.rabbit-tag-small {
+  padding: 1px 2px;
+  font-size: 0.765625rem;
+}
+.rabbit-tag-primary {
+  color: #1890ff;
+  background-color: rgba(24, 144, 255, 0.2);
+  border: 1px solid rgba(24, 144, 255, 0.55);
+}
+.rabbit-tag-primary .rabbit-tag-close-icon:hover {
+  color: #0076e4;
+}
+.rabbit-tag-success {
+  color: #88f336;
+  background-color: rgba(136, 243, 54, 0.2);
+  border: 1px solid rgba(136, 243, 54, 0.55);
+}
+.rabbit-tag-success .rabbit-tag-close-icon:hover {
+  color: #6de80e;
+}
+.rabbit-tag-info {
+  color: #17a2b8;
+  background-color: rgba(23, 162, 184, 0.2);
+  border: 1px solid rgba(23, 162, 184, 0.55);
+}
+.rabbit-tag-info .rabbit-tag-close-icon:hover {
+  color: #117a8b;
+}
+.rabbit-tag-warning {
+  color: #fadb14;
+  background-color: rgba(250, 219, 20, 0.2);
+  border: 1px solid rgba(250, 219, 20, 0.55);
+}
+.rabbit-tag-warning .rabbit-tag-close-icon:hover {
+  color: #d6ba05;
+}
+.rabbit-tag-danger {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.2);
+  border: 1px solid rgba(220, 53, 69, 0.55);
+}
+.rabbit-tag-danger .rabbit-tag-close-icon:hover {
+  color: #bd2130;
+}
