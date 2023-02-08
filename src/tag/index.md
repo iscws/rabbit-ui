@@ -1,7 +1,7 @@
 ---
 title: Tag组件
 nav:
-  title: Tag组件
+  title: 组件
   order: 1
 ---
 
