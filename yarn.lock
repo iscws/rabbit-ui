@@ -11089,6 +11089,11 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-4.0.1.tgz"
   "version" "4.0.1"
 
+"rabbit-ui@^0.0.1":
+  "integrity" "sha512-ya0jTrZ7cn8lB6Ub0JTgOAzrGF+zmZ634f+ypzD2iOUZX1ldXDsBJUMx/EpljYn0u517x1PQlJn4BdtciY5Ltw=="
+  "resolved" "https://registry.npmmirror.com/rabbit-ui/-/rabbit-ui-0.0.1.tgz"
+  "version" "0.0.1"
+
 "railroad-diagrams@^1.0.0":
   "integrity" "sha512-cz93DjNeLY0idrCNOH6PviZGRN9GJhsdm9hpn1YCS879fj4W+x5IFJhhkRZcwVgMmFF7R82UA/7Oh+R8lLZg6A=="
   "resolved" "https://registry.npmjs.org/railroad-diagrams/-/railroad-diagrams-1.0.0.tgz"
