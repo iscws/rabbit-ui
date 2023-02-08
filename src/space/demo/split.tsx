@@ -1,15 +1,17 @@
 /**
- * title: 基本用法
- * description: 相邻组件水平间距。
+ * title: 分隔符
+ * description: 相邻组件分隔符。
  */
 
 import React from 'react';
 import { Space } from 'rabbit-ui';
 
 
+const Split = () => (<span> | </span>)
+
 export default () => {
     return (
-        <Space>
+        <Space split={<Split />}>
             Space
             <button>Button</button>
             <input type="text" />
