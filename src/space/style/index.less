@@ -1,7 +1,18 @@
 @Prefix: rabbit-space;
+@PrefixC : rabbit-space-compact;
 
 .@{Prefix}-wrapper {
     display: inline-flex;
+}
+
+.@{PrefixC}-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.@{PrefixC}-vertical-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 // .@{Prefix}-item {
@@ -9,3 +20,51 @@
 
 // .@{Prefix}-item-split {
 // }
+
+// .@{Prefix}-compact-item {
+// }
+
+.@{PrefixC}-item.@{PrefixC}-first-item:not(.@{PrefixC}-last-item) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.@{PrefixC}-item.@{PrefixC}-last-item:not(.@{PrefixC}-first-item) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+.@{PrefixC}-vertical-item.@{PrefixC}-vertical-first-item:not(.@{PrefixC}-vertical-last-item) {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.@{PrefixC}-vertical-item:not(.@{PrefixC}-vertical-first-item):not(.@{PrefixC}-vertical-last-item),
+.@{PrefixC}-item:not(.@{PrefixC}-first-item):not(.@{PrefixC}-last-item) {
+    border-radius: 0;
+}
+
+.@{PrefixC}-vertical-item:not(.@{PrefixC}-vertical-last-item) {
+    margin-bottom: -1px;
+}
+
+.@{PrefixC}-item:not(.@{PrefixC}-last-item) {
+    margin-right: -1px;
+}
+
+.@{PrefixC}-vertical-item.@{PrefixC}-vertical-last-item:not(.@{PrefixC}-vertical-first-item) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.@{PrefixC}-vertical-item.@{PrefixC}-block-item {
+    width: 100%;
+}
+
+.demo-btn {
+    border: 1px solid;
+    border-radius: 4px;
+    height: 32px;
+    width: 80px;
+}
