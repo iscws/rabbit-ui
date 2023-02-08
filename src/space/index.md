@@ -21,17 +21,23 @@ group:
 
 ## 代码演示
 
-<code src="./demo/basic.tsx"></code>
+<code src="./demo/basic.tsx">基本用法</code>
 
-<code src="./demo/vertical.tsx"></code>
+<code src="./demo/vertical.tsx">垂直间距</code>
 
-<code src="./demo/align.tsx"></code>
+<code src="./demo/align.tsx">对齐</code>
 
-<code src="./demo/split.tsx"></code>
+<code src="./demo/split.tsx">分隔符</code>
 
-<code src="./demo/wrap.tsx"></code>
+<code src="./demo/wrap.tsx">自动换行</code>
+
+<code src="./demo/compact-buttons.tsx">Button 紧凑布局</code>
+
+<code src="./demo/compact-buttons-vertical.tsx">垂直方向紧凑布局</code>
 
 ## API
+
+### Space
 
 | 属性        | 说明             | 类型                               | 默认值                |
 | :------- | :------------| :---------------------------   | :---------------- |
@@ -40,3 +46,10 @@ group:
 | size        | 间距大小         | `number` \| `number[]`                 | 8                    |
 | split       | 分隔符           | `ReactNode`                          | -                    |
 | wrap        | 是否自动换行      | `boolean   `                         | false                |
+
+### Space.Compact
+
+| 属性        | 说明             | 类型                               | 默认值                |
+| :------- | :------------| :---------------------------   | :---------------- |
+| block       |将宽度调整为父元素宽度的选项| `boolean`       |  false                    |
+| direction   | 间距方向                 | `'vertical'` \| `'horizontal'`         | `'horizontal'`         |
