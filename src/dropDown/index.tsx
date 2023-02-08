@@ -3,6 +3,7 @@ import PropTypes, { func } from 'prop-types';
 import t from 'prop-types';
 import Trigger from 'rc-trigger';
 import 'rc-trigger/assets/index.css';
+import './style'
 
 
 export interface DropDownProps {
