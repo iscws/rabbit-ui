@@ -1,6 +1,6 @@
 
 import React, { createContext, CSSProperties, FC, ReactNode, useMemo } from 'react';
-import toArray from '../utils/toArray';
+import toArray from '../_utils/toArray';
 import Compact from './compact';
 import { SpaceItem } from './item';
 import './style'

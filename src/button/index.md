@@ -13,27 +13,12 @@ nav:
 
 <code src="./demo/basic.tsx"></code>
 
-## 代码演示
-
-```tsx|pure
- <div>
-      <Button size={'small'}>small</Button>
-      <Button>normal</Button>
-      <Button size={'large'}>large</Button>
-      <Button
-        className="btn"
-        handleClick={() => {
-          console.log('click');
-        }}
-      >clickme</Button>
-      <Button disabled >disabled</Button>
- </div>
-```
-
 ## API
 
 | 属性        | 说明             | 类型                              | 默认值               |
 | ----------- | ---------------- | --------------------------------- | -------------------- |
 | size        | 按钮大小         | 'small'、'large'、'default'       | default              |
 | handleClick | 点击事件回调函数 | (e: React.SyntheticEvent) => void | () => {return null;} |
-| disabled    | 禁用             | true、false                       | false                |
+| disabled    | 禁用             | boolean                           | false                |
+| circle      | 圆形按钮         | boolean                           | false                |
+| loading     | 加载按钮         | boolean                           | false                |

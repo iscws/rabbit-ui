@@ -3,6 +3,7 @@ import PropTypes, { func } from 'prop-types';
 import t from 'prop-types';
 import Trigger from 'rc-trigger';
 import 'rc-trigger/assets/index.css';
+import './style'
 
 
 export interface DropDownProps {
@@ -71,7 +72,7 @@ export type KindMap = Record<Required<DropDownProps>['trigger'], string>;
 
 const prefixCls = 'rabbit-dropdown';
 
-//下拉菜单承载的内容
+//下拉菜单承载内容
 const Menu: React.FC<MenuProps> = ({ items }) => {
 
     const [selected, setselected] = useState<number>(-1);
@@ -108,16 +109,16 @@ const DropDown: React.FC<DropDownProps> = (
 ) => {
 
     return (
-        <div>
+        <>
             <Trigger
                 popupPlacement={popupPlacement}
                 action={[trigger]}
                 builtinPlacements={builtinPlacements}
                 popup={<Menu items={items}></Menu>}
             >
-                <button style={{ margin: 20 }}>{children}</button>
+                <button style={{ padding: "8px" }}>{children}</button>
             </Trigger>
-        </div>
+        </>
     )
 };
 

@@ -2,10 +2,8 @@
  * title: 基本用法
  * description: 点击按钮弹出对话框
  */
-import Modal from '..';
-import '../style';
 import React, { useState } from 'react';
-
+import { Modal } from 'rabbit-ui';
 export default () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

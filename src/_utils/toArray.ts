@@ -1,6 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { isFragment } from 'react-is';
 
+// 将节点对象转化成数组
 export interface Option {
   keepEmpty?: boolean;
 }
