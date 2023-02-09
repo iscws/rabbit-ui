@@ -20,8 +20,21 @@ export default () => {
 /*
 .demo-btn {
     border: 1px solid;
-    border-radius: 4px;
+    border-radius: 8px;
     height: 32px;
     width: 80px;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+    &:hover {
+        cursor: pointer;
+        z-index: 1;
+        color: #4096ff;
+        border-color: #4096ff;
+        background-color: azure;
+    }
+    &:active {
+        color: skyblue;
+        border-color: skyblue;
+        background-color: #fff;
+    }
 }
 */

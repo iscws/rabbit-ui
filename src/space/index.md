@@ -3,9 +3,6 @@ title: Space 间距
 nav:
   title: 组件
   order: 1
-group:
-  title: 布局
-  order: 1
 ---
 
 # Space 间距

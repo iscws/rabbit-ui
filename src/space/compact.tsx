@@ -1,6 +1,6 @@
 
 import React, { cloneElement, createContext, CSSProperties, FC, PropsWithChildren, ReactNode, useContext, useMemo } from 'react';
-import toArray from '../utils/toArray';
+import toArray from '../_utils/toArray';
 import './style'
 
 export interface SpaceCompactItemContextType {
