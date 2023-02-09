@@ -52,8 +52,8 @@ export default () => {
       <Modal
         title="不销毁子元素"
         open={isModalOpen}
-        toOk={(e) => handleOk()}
-        toCancel={handleCancel}
+        onOk={(e) => handleOk()}
+        onCancel={handleCancel}
       >
         <div>
           <NoDestroy />
@@ -65,8 +65,8 @@ export default () => {
         title="销毁子元素"
         destroyOnClose={true}
         open={isModalOpen2}
-        toOk={(e) => handleOk(false)}
-        toCancel={(e) => handleCancel(false)}
+        onOk={(e) => handleOk(false)}
+        onCancel={(e) => handleCancel(false)}
       >
         <div>
           <Destroy />

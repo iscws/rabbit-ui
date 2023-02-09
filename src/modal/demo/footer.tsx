@@ -1,6 +1,6 @@
 /**
  * title: 自定义页脚内容
- * description: 不需要默认确定取消按钮时，你可以把 footer 设为 null。
+ * description: 不需要默认确定取消按钮时，你可以把 `footer` 设为`null`。
  */
 import React, { useState } from 'react';
 import { Modal } from 'rabbit-ui';
@@ -28,8 +28,8 @@ export default () => {
                 title="modal组件标题"
                 destroyOnClose={true}
                 open={isModalOpen}
-                toOk={handleOk}
-                toCancel={handleCancel}
+                onOk={handleOk}
+                onCancel={handleCancel}
                 footer={[<button>你好你好</button>, <button onClick={handleCancel}>走吧走吧</button>]}
             >
                 这是一条提示
