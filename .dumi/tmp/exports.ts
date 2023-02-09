@@ -12,4 +12,4 @@ export { TestBrowser } from './testBrowser';
 // plugins
 // plugins types.d.ts
 export { defineApp } from './core/defineApp'
-export type {  RuntimeConfig } from './core/defineApp'
+export type { RuntimeConfig } from './core/defineApp'
