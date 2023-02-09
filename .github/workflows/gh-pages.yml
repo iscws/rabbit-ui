@@ -37,11 +37,11 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: master
-        FOLDER: dist
-        REPOSITORY_NAME: sinsuke-301/sinsuke-301.github.io
-        TARGET_FOLDER: dist
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master
+        folder: dist
+        repository_name: sinsuke-301/sinsuke-301.github.io
+        target_folder: dist
 
       env:
-        CI: true
+        cl: true
