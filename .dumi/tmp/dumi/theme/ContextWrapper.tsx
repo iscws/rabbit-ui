@@ -3,11 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useState, useEffect, useRef } from 'react';
 import { useOutlet, history } from 'dumi';
-<<<<<<< HEAD
 import { SiteContext } from 'D:/rabbit UI/node_modules/dumi/dist/client/theme-api/context.js';
-=======
-import { SiteContext } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
->>>>>>> dev
 import { demos, components } from '../meta';
 import { locales } from '../locales/config';
 
