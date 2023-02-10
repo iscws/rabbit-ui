@@ -1,3 +1,4 @@
+import React from 'react';
 import classnames from 'classnames';
 import { Component } from 'react';
 import './style/index.less';
@@ -8,9 +9,11 @@ type Props = {
   disabled?: boolean;
   circle?: boolean;
   loading?: boolean;
+  defaultProp: any
 };
 
-class Button extends Component<Props> {
+
+class Button extends Component<Props>{
   render() {
     const { children, size, handleClick, disabled, circle, loading } = this.props;
     const className = classnames({
@@ -36,16 +39,17 @@ class Button extends Component<Props> {
     );
   }
 }
-Button.defaultProp = {
-  children: 'Button',
-  className: '',
-  size: 'default',
-  handleClick: () => {
-    return null;
-  },
-  disabled: false,
-  circle: false,
-  loading: false,
-};
+
+// Button.defaultProp = {
+//   children: 'Button',
+//   className: '',
+//   size: 'default',
+//   handleClick: () => {
+//     return null;
+//   },
+//   disabled: false,
+//   circle: false,
+//   loading: false,
+// };
 
 export default Button;
