@@ -3,7 +3,7 @@
  * description: 在关闭时可以销毁弹窗内的子元素，使得每次打开弹窗显示组件的初始状态
  */
 import React, { useState } from 'react';
-import { Modal } from 'rabbit-ui';
+import  Modal  from '../index';
 
 
 const Destroy = () => {

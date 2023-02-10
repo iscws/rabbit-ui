@@ -1,4 +1,5 @@
-import { Tag } from 'rabbit-ui';
+import  Tag  from '../index';
+import React from 'react';
 
 export default () => {
   const handleClick = () => {
