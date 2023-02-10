@@ -21,11 +21,11 @@ nav:
 
 
 ## API
-| 参数           | 说明             | 类型                          | 默认值   |
-| -------------- | ---------------- | ----------------------------- | -------- |
-| trigger        | 下拉菜单触发方式 | 'click','hover'               | 'hover'  |
-| popupPlacement | 下拉菜单位置     | 'bottom','left','top','right' | 'bottom' |
-| items          | 菜单配置项       | `Array`                       | []       |
-| children       | 按钮内容         | `String`                      | --       |
+| 参数           | 说明             | 类型                                     | 默认值     |
+| -------------- | ---------------- | ---------------------------------------- | ---------- |
+| trigger        | 下拉菜单触发方式 | `'click'`\|`'hover'`                     | `'hover'`  |
+| popupPlacement | 下拉菜单位置     | `'bottom'`\|`'left'`\|`'top'`\|`'right'` | `'bottom'` |
+| items          | 菜单配置项       | `Array`                                  | []         |
+| children       | 按钮内容         | `String`                                 | --         |
 
 
