@@ -2,7 +2,7 @@
  * title: 自定义位置
  * description: 使用`center`或`style.top`设置位置
  */
-import { Modal } from 'rabbit-ui';
+import { Modal } from 'rabbit-ui-antd';
 import React, { useState } from 'react';
 export default () => {
     const [isModalOpen, setIsModalOpen] = useState(false);

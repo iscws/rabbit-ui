@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import toArray from '../_utils/toArray';
-import './style';
+import './style/index.less';
 
 /**
  * Modal Modal组件
