@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import  DropDown  from '../index';
+import { DropDown } from 'rabbit-ui-antd';
 
 const menu = [
     {

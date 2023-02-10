@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import  Space  from '../index';
+import { Space } from 'rabbit-ui-antd';
 
 
 const Split = () => (<span> | </span>)
