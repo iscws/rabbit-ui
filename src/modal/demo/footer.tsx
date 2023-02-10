@@ -3,7 +3,7 @@
  * description: 不需要默认确定取消按钮时，你可以把 footer 设为 null。
  */
 import React, { useState } from 'react';
-import { Modal } from 'rabbit-ui';
+import { Modal } from 'rabbit-ui-antd';
 
 
 export default () => {
