@@ -3,7 +3,7 @@
  * description: 点击按钮弹出对话框
  */
 import React, { useState } from 'react';
-import { Modal } from 'rabbit-ui';
+import  Modal  from '../index';
 export default () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { DropDown } from 'rabbit-ui';
+import  DropDown  from '../index';
 
 const menu = [
     {

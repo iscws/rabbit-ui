@@ -12,7 +12,7 @@ nav:
 ## 基本用法
 
 ```tsx
-import { Tag } from 'rabbit-ui';
+import  Tag  from '../index';
 export default () => {
   const handleClick = () => {
     console.log('close');
