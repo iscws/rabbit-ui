@@ -1,7 +1,7 @@
-import Button from '../../button';
-import '../style/index.less';
+// import Button from '../../button';
+// import '../style/index.less';
 import React from 'react';
-// import { Button } from 'rabbit-ui';
+import { Button } from 'rabbit-ui-antd';
 export default () => {
   return (
     <div>

@@ -1,4 +1,4 @@
-import  Tag  from '../index';
+import  {Tag}  from 'rabbit-ui-antd';
 import React from 'react';
 
 export default () => {
