@@ -11,8 +11,6 @@ nav:
 
 ## 代码演示
 
-<code src="./demo/test.tsx"></code>
-
 <code src="./demo/basic.tsx"></code>
 
 <code src="./demo/width.tsx"></code>
@@ -22,6 +20,8 @@ nav:
 <code src="./demo/footer.tsx"></code>
 
 <code src="./demo/style.tsx"></code>
+
+<code src="./demo/useModal.tsx"></code>
 
 ## API
 
@@ -37,3 +37,4 @@ nav:
 | footer         | 自定义页脚内容                       | `ReactNode`     | 确认和取消按钮 |
 | style          | 对话框样式                           | `CSSProperties` |                |
 | center         | 是否居中展示对话框                   | `boolean`       | false          |
+| afterClose     | 在对话框关闭后执行的函数             | `function`      |                |

@@ -19,6 +19,7 @@ import './style/index.less';
  * @param {closable} boolean 是否展示右上角的关闭按钮
  * @param {center} boolean 是否将对话框居中处理
  * @param {outside} boolean 是否将对话框挂载在外部，即body下
+ * @param {afterClose} func 在对话框完全关闭之后执行的函数
  *
  *
  */
@@ -38,13 +39,14 @@ export interface ModalProps {
   center?: boolean;
   style?: React.CSSProperties;
   outside?: boolean;
+  afterClose?: (...rest: any) => void;
 }
 
 export interface ModalFuncProps {
-  title?: React.ReactNode;
-  open: boolean;
-  content?: React.ReactNode;
+  title: React.ReactNode;
+  content: React.ReactNode;
 }
+
 const prefixCls = 'rabbit-modal';
 
 const Modal: React.FC<ModalProps> = ({
@@ -62,6 +64,7 @@ const Modal: React.FC<ModalProps> = ({
   center = false,
   style = {},
   outside = true,
+  afterClose,
   ...rest
 }) => {
   // 使用该变量用于控制对话框的开启和关闭
@@ -74,12 +77,21 @@ const Modal: React.FC<ModalProps> = ({
 
   const modalCancel = useCallback(() => {
     if (onCancel) onCancel();
-    else setVisible(false);
+    else {
+      document.body.style.overflow = '';
+      setVisible(false);
+    }
+    afterClose && afterClose();
   }, [visible]);
 
   const modalOk = useCallback(() => {
     if (onOk) onOk();
-    else setVisible(false);
+    else {
+      document.body.style.overflow = '';
+      setVisible(false);
+    }
+
+    afterClose && afterClose();
   }, [visible]);
 
   // 淡入淡出

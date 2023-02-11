@@ -1,28 +1,25 @@
-import React, { forwardRef, useState, ForwardRefRenderFunction } from "react"
-import Modal, { ModalFuncProps } from "../modal"
+import React, { FC, useEffect, useState } from 'react';
+import Modal, { ModalProps } from '../modal';
 
-
-export interface HookModalProps {
-    afterClose: () => void;
-    // config: ModalFuncProps;
-}
-
-export interface HookModalRef {
-    destroy: () => void;
-    update: (config: ModalFuncProps) => void;
-}
-
-// 获取两个参数，一个是绑定的ref，一个是传递过来的参数
-const HookModal: ForwardRefRenderFunction<HookModalRef, HookModalProps> = ({
-    afterClose
-}, ref) => {
-    const [open, setOpen] = useState(false);
-
+const HookModal: FC<ModalProps> = ({
+    open = false,
+    title,
+    children,
+    afterClose = () => {
+        return;
+    },
+}) => {
+    const [vis, setVis] = useState(open);
+    useEffect(() => {
+        setTimeout(() => {
+            setVis(true);
+        }, 300);
+    }, []);
     return (
-        <Modal open={open} >
-            123
+        <Modal open={vis} title={title} outside={false} afterClose={afterClose}>
+            {children}
         </Modal>
-    )
-}
+    );
+};
 
-export default forwardRef(HookModal);
+export default HookModal;
