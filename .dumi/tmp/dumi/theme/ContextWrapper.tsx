@@ -3,7 +3,11 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useState, useEffect, useRef } from 'react';
 import { useOutlet, history } from 'dumi';
+<<<<<<< HEAD
 import { SiteContext } from 'D:/code/Rabbit UI/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
+=======
+import { SiteContext } from 'D:/rabbit UI/node_modules/dumi/dist/client/theme-api/context.js';
+>>>>>>> 88258c4778d2956ace6c6329b5847ea9c6f532e7
 import { demos, components } from '../meta';
 import { locales } from '../locales/config';
 
@@ -33,7 +37,7 @@ export default function DumiContextWrapper() {
 
   return (
     <SiteContext.Provider value={{
-      pkg: {"name":"rabbit-ui","description":"","version":"1.0.0","license":"ISC","author":""},
+      pkg: {"name":"rabbit-ui-antd","description":"","version":"1.0.0","license":"ISC","author":""},
       entryExports,
       demos,
       components,
