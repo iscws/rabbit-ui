@@ -14,7 +14,7 @@ type Props = {
 };
 
 const Button: FC<Props> = (props) => {
-  const { children, color, size, handleClick, disabled, circle, loading, ...restProps } = props;
+  const { children, color, size, handleClick, disabled, circle, loading } = props;
   const className = classnames({
     //根据父组件传进来的 size 来判断使用什么类名
     btn: true,
