@@ -16,6 +16,7 @@ export async function getRoutes() {
 'components/dropDown/index': React.lazy(() => import(/* webpackChunkName: "dropDown__index.md" */'D:/code/Rabbit UI/rabbit-ui/src/dropDown/index.md')),
 'components/modal/index': React.lazy(() => import(/* webpackChunkName: "modal__index.md" */'D:/code/Rabbit UI/rabbit-ui/src/modal/index.md')),
 'components/space/index': React.lazy(() => import(/* webpackChunkName: "space__index.md" */'D:/code/Rabbit UI/rabbit-ui/src/space/index.md')),
+'components/switch/index': React.lazy(() => import(/* webpackChunkName: "switch__index.md" */'D:/code/Rabbit UI/rabbit-ui/src/switch/index.md')),
 'components/tag/index': React.lazy(() => import(/* webpackChunkName: "tag__index.md" */'D:/code/Rabbit UI/rabbit-ui/src/tag/index.md')),
 'demo-render': React.lazy(() => import(/* webpackChunkName: "D:__code__Rabbit UI__rabbit-ui__node_modules__dumi__dist__client__pages__Demo__index" */'D:/code/Rabbit UI/rabbit-ui/node_modules/dumi/dist/client/pages/Demo/index.js')),
 },
