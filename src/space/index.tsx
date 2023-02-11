@@ -1,10 +1,11 @@
 
-import React, { CSSProperties, FC, ReactElement, ReactNode, useMemo } from 'react';
+import React, { createContext, CSSProperties, FC, ReactNode, useMemo } from 'react';
 import toArray from '../_utils/toArray';
+import Compact from './compact';
 import { SpaceItem } from './item';
 import './style'
 
-export const SpaceContext = React.createContext({
+export const SpaceContext = createContext({
     latestIndex: 0,
 });
 
@@ -111,5 +112,14 @@ const Space: FC<SpaceProps> = (props) => {
     )
 };
 
+Space.displayName = 'Space'
 
-export default Space;
+type CompoundedComponent = FC<SpaceProps> & {
+    Compact: typeof Compact;
+}
+
+const CompoundedSpace = Space as CompoundedComponent;
+
+CompoundedSpace.Compact = Compact;
+
+export default CompoundedSpace;

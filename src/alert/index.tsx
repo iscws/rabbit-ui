@@ -1,6 +1,6 @@
 import t from 'prop-types';
 import React from 'react';
-import './style';
+import './style/index.less';
 
 export interface AlertProps {
   /**
@@ -8,7 +8,7 @@ export interface AlertProps {
    * @default           'info'
    */
   kind?: 'info' | 'positive' | 'negative' | 'warning';
-  children: any;
+  [key: string]: any;
 }
 
 export type KindMap = Record<Required<AlertProps>['kind'], string>;

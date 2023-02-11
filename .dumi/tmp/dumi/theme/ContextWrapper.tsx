@@ -33,7 +33,7 @@ export default function DumiContextWrapper() {
 
   return (
     <SiteContext.Provider value={{
-      pkg: {"name":"rabbit-ui","description":"","version":"1.0.0","license":"ISC","author":""},
+      pkg: {"name":"rabbit-ui-antd","description":"","version":"1.0.0","license":"ISC","author":""},
       entryExports,
       demos,
       components,

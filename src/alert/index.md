@@ -10,7 +10,7 @@ nav:
 警告提示，展现需要关注的信息。分为四种样式分别是'info' | 'positive' | 'negative' | 'warning';
 
 ```tsx
-import { Alert } from 'rabbit-ui';
+import { Alert } from 'rabbit-ui-antd';
 export default () => {
   return (
     <div>

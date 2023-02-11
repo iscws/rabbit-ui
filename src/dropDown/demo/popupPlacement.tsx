@@ -4,8 +4,7 @@
  */
 
 import React from 'react';
-import DropDown from '../../dropDown';
-import '../style';
+import { DropDown } from 'rabbit-ui-antd';
 
 const menu = [
     {
@@ -25,8 +24,8 @@ const menu = [
 const prefixCls = 'rabbit-dropdown-box';
 
 export default () => <div className={prefixCls}>
-    <DropDown items={menu} trigger="hover" popupPlacement="bottom">bottom</DropDown>
-    <DropDown items={menu} trigger="hover" popupPlacement="left">left</DropDown>
-    <DropDown items={menu} trigger="hover" popupPlacement="top">top</DropDown>
-    <DropDown items={menu} trigger="hover" popupPlacement="right">right</DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="bottom"><button style={{ padding: "8px" }}>bottom</button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="left"><button style={{ padding: "8px" }}>left</button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="top"><button style={{ padding: "8px" }}>top</button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="right"><button style={{ padding: "8px" }}>right</button></DropDown>
 </div>;

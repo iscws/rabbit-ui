@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import PropTypes, { func } from 'prop-types';
+// import PropTypes, { func } from 'prop-types';
+import {
+    RightOutlined
+} from '@ant-design/icons'
 import t from 'prop-types';
 import Trigger from 'rc-trigger';
 import 'rc-trigger/assets/index.css';
+import './style/index.less'
 
 
 export interface DropDownProps {
@@ -33,10 +37,11 @@ export interface MenuProps {
          * @description       列表数组
          * @default            []
          */
-    items?: Array<{
+    items?: {
         content: string,
-        className: 'menu-item' | 'menu-item-forbidden'
-    }>;
+        className: 'menu-item' | 'menu-item-forbidden',
+        childrens: any
+    }[];
 }
 
 const builtinPlacements = {
@@ -71,13 +76,13 @@ export type KindMap = Record<Required<DropDownProps>['trigger'], string>;
 
 const prefixCls = 'rabbit-dropdown';
 
-//下拉菜单承载的内容
+//下拉菜单承载内容
 const Menu: React.FC<MenuProps> = ({ items }) => {
 
     const [selected, setselected] = useState<number>(-1);
 
     //高亮先前选择的元素
-    function lightSelected(index, className) {
+    function lightSelected(index: any, className: any) {
         if (className != 'menu-item-forbidden') setselected(index);
     }
 
@@ -85,12 +90,27 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
         <div className={prefixCls}>
             <div className='menu'>
                 {
-                    items.map((item, index) => {
-                        return <div
+                    items && items.map((item, index) => {
+                        return !item.childrens ? <div
                             key={index}
                             className={item.className == 'menu-item-forbidden' ? item.className : index == selected ? "menu-item-focus" : "menu-item"}
                             onClick={() => lightSelected(index, item.className)}
-                        >{item.content}</div>
+                        >
+                            {item.content}
+                        </div> :
+
+                            <DropDown trigger="click" items={item.childrens} popupPlacement="right" key={index}>
+                                <div
+                                    key={index}
+                                    className={item.className == 'menu-item-forbidden' ? item.className : index == selected ? "menu-item-focus" : "menu-item"}
+                                    onClick={() => lightSelected(index, item.className)}
+                                >
+                                    <>
+                                        {item.content}
+                                        <div className="item-arrow"><RightOutlined /></div>
+                                    </>
+                                </div>
+                            </DropDown>
                     })
                 }
             </div>
@@ -115,7 +135,7 @@ const DropDown: React.FC<DropDownProps> = (
                 builtinPlacements={builtinPlacements}
                 popup={<Menu items={items}></Menu>}
             >
-                <button style={{ padding: "8px" }}>{children}</button>
+                {children}
             </Trigger>
         </>
     )

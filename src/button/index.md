@@ -16,7 +16,7 @@ nav:
 ## 代码示例
 
 ```tsx
-import { Button } from 'rabbit-ui';
+import { Button } from 'rabbit-ui-antd';
 export default () => {
   return (
     <div>

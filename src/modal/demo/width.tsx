@@ -2,8 +2,7 @@
  * title: 自定义扩展对话框长度
  * description: 使用`width`来设置宽度
  */
-import Modal from '..';
-import '../style';
+import { Modal } from 'rabbit-ui-antd';
 import React, { useState } from 'react';
 
 export default () => {
@@ -27,8 +26,8 @@ export default () => {
       <Modal
         title="modal组件标题"
         open={isModalOpen}
-        toOk={handleOk}
-        toCancel={handleCancel}
+        onOk={handleOk}
+        onCancel={handleCancel}
         width={1000}
       >
         扩展对话框长度.

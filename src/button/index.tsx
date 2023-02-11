@@ -1,5 +1,6 @@
 import classnames from 'classnames';
-import React, { FC } from 'react';
+import type { FC } from 'react';
+import React from 'react';
 import './style/index.less';
 export type ColorProps = 'primary' | 'success' | 'warning' | 'danger';
 type Props = {
@@ -31,7 +32,7 @@ const Button: FC<Props> = (props) => {
         onClick={handleClick} //点击按钮执行的回调函数
         disabled={disabled} //禁用按钮
       >
-        {loading ? <div className="loading"></div> : null}
+        {loading ? <div className="loading" /> : null}
         {children}
       </button>
     </div>
