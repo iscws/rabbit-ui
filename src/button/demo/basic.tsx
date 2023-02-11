@@ -4,28 +4,9 @@ import { Button } from 'rabbit-ui';
 export default () => {
   return (
     <div>
-      <Button size={'small'} circle>
-        small
-      </Button>
-      <Button size={'small'}>small</Button>
-      <Button>normal</Button>
-      <Button circle>x</Button>
-      <Button size={'large'} circle>
-        large
-      </Button>
-      <Button size={'large'}>large</Button>
-      <Button
-        className="btn"
-        handleClick={() => {
-          console.log('click');
-        }}
-      >
-        clickme
-      </Button>
-      <Button disabled>disabled</Button>
-      <Button size={'small'} loading>
-        loading
-      </Button>
+      <Button size={'small'}>button</Button>
+      <Button>button</Button>
+      <Button size={'large'}>button</Button>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+@import url(../../ThemeStyle/default.less);
 //size 为 small 时的样式
 @btn-small-padding: 4px 8px;
 @btn-small-fontSize: 12px;
@@ -29,15 +30,15 @@
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
-  background-color: skyblue;
+  // background-color: skyblue;
   border-color: #ccc;
   border-radius: 15px;
   cursor: pointer;
 
   // transition: background-color 0.1s ease;
-  &:hover {
-    background-color: rgb(155, 216, 240);
-  }
+  // &:hover {
+  //   background-color: rgb(155, 216, 240);
+  // }
 
   // 按下后颜色
   &:active {
@@ -99,6 +100,7 @@
 .btn-large {
   padding: @btn-large-padding;
   font-size: @btn-large-fontSize;
+  border-radius: 25px;
   &.circle {
     width: 5rem;
     height: 5rem;
@@ -108,3 +110,13 @@
     height: 30px;
   }
 }
+each(@theme-colors,{
+  .rabbit-btn-@{key} { 
+    // color: @value; 
+    background-color: rgba(@value); 
+    &:hover {
+      background-color: darken(@value, 10%);
+    }
+  }
+  }
+);
