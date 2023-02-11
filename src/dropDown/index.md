@@ -19,6 +19,8 @@ nav:
 
 <code src="./demo/else.tsx"></code>
 
+<code src="./demo/childrens.tsx"></code>
+
 
 ## API
 | 参数           | 说明             | 类型                                     | 默认值     |

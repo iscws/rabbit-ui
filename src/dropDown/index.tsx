@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 // import PropTypes, { func } from 'prop-types';
+import {
+    RightOutlined
+} from '@ant-design/icons'
 import t from 'prop-types';
 import Trigger from 'rc-trigger';
 import 'rc-trigger/assets/index.css';
@@ -36,7 +39,8 @@ export interface MenuProps {
          */
     items?: {
         content: string,
-        className: 'menu-item' | 'menu-item-forbidden'
+        className: 'menu-item' | 'menu-item-forbidden',
+        childrens: any
     }[];
 }
 
@@ -87,11 +91,26 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
             <div className='menu'>
                 {
                     items && items.map((item, index) => {
-                        return <div
+                        return !item.childrens ? <div
                             key={index}
                             className={item.className == 'menu-item-forbidden' ? item.className : index == selected ? "menu-item-focus" : "menu-item"}
                             onClick={() => lightSelected(index, item.className)}
-                        >{item.content}</div>
+                        >
+                            {item.content}
+                        </div> :
+
+                            <DropDown trigger="click" items={item.childrens} popupPlacement="right" key={index}>
+                                <div
+                                    key={index}
+                                    className={item.className == 'menu-item-forbidden' ? item.className : index == selected ? "menu-item-focus" : "menu-item"}
+                                    onClick={() => lightSelected(index, item.className)}
+                                >
+                                    <>
+                                        {item.content}
+                                        <div className="item-arrow"><RightOutlined /></div>
+                                    </>
+                                </div>
+                            </DropDown>
                     })
                 }
             </div>
@@ -116,7 +135,7 @@ const DropDown: React.FC<DropDownProps> = (
                 builtinPlacements={builtinPlacements}
                 popup={<Menu items={items}></Menu>}
             >
-                <button style={{ padding: "8px" }}>{children}</button>
+                {children}
             </Trigger>
         </>
     )
