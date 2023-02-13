@@ -25,7 +25,7 @@ function useModal(props: ModalFuncProps): [open: () => void] {
                 {props.content}
             </Modal>
         );
-    }, [open]);
+    }, [props]);
 
     return [showModal];
 }

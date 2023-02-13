@@ -63,6 +63,22 @@ const Dialog: React.FC<ModalProps> = ({
         }
     }, [open]);
 
+
+    // 键盘关闭弹窗
+    useEffect(() => {
+        if (keyboard) {
+            const closeModal = function (event: KeyboardEvent) {
+                let e = event || window.event;
+                if (e && e.key === 'Escape') {
+                    onCancel && onCancel();
+                }
+            };
+            document.addEventListener('keydown', closeModal, false);
+            return () => {
+                document.removeEventListener('keydown', closeModal, false);
+            };
+        }
+    }, []);
     return (
         <div
             className={prefixCls}
