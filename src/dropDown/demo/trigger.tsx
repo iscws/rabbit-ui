@@ -21,4 +21,4 @@ const menu = [
     }
 ]
 
-export default () => <DropDown items={menu} trigger="click" popupPlacement="bottom">click it</DropDown>;
+export default () => <DropDown items={menu} trigger="click" popupPlacement="bottom"><button style={{ padding: "8px" }}>hover it</button></DropDown>;
