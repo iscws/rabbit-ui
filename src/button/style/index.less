@@ -82,6 +82,9 @@
       background-color: #000;
     }
   }
+  &.link {
+    text-decoration: none;
+  }
 }
 
 .btn-small {
@@ -111,7 +114,7 @@
   }
 }
 each(@theme-colors,{
-  .rabbit-btn-@{key} { 
+  .@{key} { 
     // color: @value; 
     background-color: rgba(@value); 
     &:hover {

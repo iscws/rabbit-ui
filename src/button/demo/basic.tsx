@@ -1,13 +1,20 @@
 // import Button from '../../button';
 // import '../style/index.less';
-import React from 'react';
 import { Button } from 'rabbit-ui-antd';
+import React from 'react';
 export default () => {
+  const clickHandler = () => {
+    console.log('事件被触发了');
+  };
   return (
     <div>
-      <Button size={'small'}>button</Button>
-      <Button>button</Button>
-      <Button size={'large'}>button</Button>
+      <Button size={'small'} onClick={clickHandler}>
+        button
+      </Button>
+      <Button onClick={clickHandler}>button</Button>
+      <Button size={'large'} onClick={clickHandler}>
+        button
+      </Button>
     </div>
   );
 };

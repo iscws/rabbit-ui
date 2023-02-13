@@ -15,26 +15,87 @@ nav:
 
 ## 代码示例
 
+### size
+
 ```tsx
 import { Button } from 'rabbit-ui-antd';
 export default () => {
   return (
     <div>
-      <h3>尺寸</h3>
       <Button size={'small'}>small</Button>
       <Button>normal</Button>
       <Button size={'large'}>large</Button>
+    </div>
+  );
+};
+```
+
+### type
+
+```tsx
+import { Button } from 'rabbit-ui-antd';
+export default () => {
+  return (
+    <div>
+      <Button type="primary">primary</Button>
+      <Button type="success">success</Button>
+      <Button type="warning">warning</Button>
+      <Button type="danger">danger</Button>
+      <Button type="link" href="https://baidu.com">
+        百度
+      </Button>
+      <Button type="submit">submit</Button>
+      <Button type="reset">reset</Button>
+      <Button type="menu">menu</Button>
+    </div>
+  );
+};
+```
+
+实际上 type 的值也可以是 htmltype，因为原生 btn 的 type 属性就是用来设置 htmltype 的，但是本组件库使用 type 来设置 htmltype 的颜色是不能改变的，而使用 htmltype 则可以再次使用 type 来设置颜色
+
+### htmltype
+
+```tsx
+import { Button } from 'rabbit-ui-antd';
+export default () => {
+  return (
+    <div>
+      <form>
+        <Button type="success" htmltype="submit">
+          submit
+        </Button>
+        <Button type="danger" htmltype="reset">
+          reset
+        </Button>
+        <Button htmltype="menu">menu</Button>
+      </form>
       <br />
-      <h3>颜色</h3>
-      <Button color="primary">primary</Button>
-      <Button color="success">success</Button>
-      <Button color="warning">warning</Button>
-      <Button color="danger">danger</Button>
-      <br />
-      <h3>圆形</h3>
+    </div>
+  );
+};
+```
+
+### circle
+
+```tsx
+import { Button } from 'rabbit-ui-antd';
+export default () => {
+  return (
+    <div>
       <Button circle>circle</Button>
-      <br />
-      <h3>加载中</h3>
+    </div>
+  );
+};
+```
+
+### loading
+
+```tsx
+import { Button } from 'rabbit-ui-antd';
+export default () => {
+  return (
+    <div>
       <Button loading>loading</Button>
     </div>
   );
@@ -43,13 +104,15 @@ export default () => {
 
 ## API
 
-| 属性        | 说明             | 类型                                   | 默认值               |
-| ----------- | ---------------- | -------------------------------------- | -------------------- |
-| size        | 按钮大小         | 'small'、'large'、'default'            | default              |
-| handleClick | 点击事件回调函数 | (e: React.SyntheticEvent) => void      | () => {return null;} |
-| disabled    | 禁用             | boolean                                | false                |
-| circle      | 圆形按钮         | boolean                                | false                |
-| loading     | 加载按钮         | boolean                                | false                |
-| color       | 按钮颜色         | 'primary' 'success' 'warning' 'danger' | primary              |
+| 属性 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| size | 按钮大小 | 'small'、'large'、'default' | default |
+| handleClick | 点击事件回调函数 | (e: React.SyntheticEvent) => void | () => {return null;} |
+| disabled | 禁用 | boolean | false |
+| circle | 圆形按钮 | boolean | false |
+| loading | 加载按钮 | boolean | false |
+| type | 按钮类型 | 'primary' 'success' 'warning' 'danger''link' | primary |
+| herf | 要跳转的链接 | herf |  |
+| htmltype | 设置 button 原生的 type 值 | string | button |
 
 支持原生 button 的其他所有属性。
