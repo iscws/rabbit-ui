@@ -3,11 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useEffect, useState } from 'react';
 import { ApplyPluginsType } from 'umi';
-<<<<<<< HEAD
-import { renderClient, RenderClientOpts } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/@umijs/renderer-react';
-=======
 import { renderClient, RenderClientOpts } from 'D:/Desktop/rabbit-ui/node_modules/@umijs/renderer-react';
->>>>>>> 684761717a0019dbbae743b56ef700466a11effc
 import { createHistory } from './core/history';
 import { createPluginManager } from './core/plugin';
 import { getRoutes } from './core/route';
