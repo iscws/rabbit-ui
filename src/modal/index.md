@@ -33,7 +33,7 @@ nav:
 | width          | 对话框长度                           | `Number`        | 520            |
 | mask           | 是否展示遮罩层                       | `boolean`       | true           |
 | destroyOnClose | 关闭后是否销毁子元素                 | `boolean`       | false          |
-| keyboard       | 是否支持键盘 esc 关闭                | `boolean`       | false          |
+| keyboard       | 是否支持键盘 esc 关闭                | `boolean`       | true           |
 | footer         | 自定义页脚内容                       | `ReactNode`     | 确认和取消按钮 |
 | style          | 对话框样式                           | `CSSProperties` |                |
 | center         | 是否居中展示对话框                   | `boolean`       | false          |

@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import type { FC } from 'react';
 import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 import './style/index.less';
 // export type ColorProps = 'primary' | 'success' | 'warning' | 'danger';
 export type ButtonHTMLTypes = 'submit' | 'button' | 'reset';
@@ -62,7 +63,10 @@ const Button: FC<ButtonProps> = (ButtonProps) => {
       disabled={disabled} //禁用按钮
       {...restProps}
     >
-      {loading ? <div className="loading" /> : null}
+      <CSSTransition in={loading} classNames="loading" timeout={500}>
+        <div />
+      </CSSTransition>
+      {/* {loading ? <div className="loading" /> : null} */}
       {children}
     </button>
   );

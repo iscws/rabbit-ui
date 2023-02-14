@@ -4,9 +4,12 @@
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
-  border-color: #ccc;
+  vertical-align: middle;
+  border: 1px solid #ccc;
   border-radius: 15px;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  transition: background-color 0.1s ease;
 }
 .btn:active {
   background-color: #6aafcb;
@@ -22,6 +25,7 @@
   word-break: normal;
   border: 2px solid #ccc;
   border-radius: 50%;
+  box-shadow: none;
 }
 @keyframes run {
   from {
@@ -31,16 +35,79 @@
     transform: rotate(360deg);
   }
 }
-.btn .loading {
+.btn .loading-enter {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 0px;
+  height: 0px;
   margin: auto;
   margin-right: 5px;
   background: url(icon/loading.png) no-repeat;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 3s infinite;
+  animation: run 2s infinite;
+}
+.btn .loading-enter-active {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 14px;
+  height: 14px;
+  transition: all 0.5s;
+}
+.btn .loading-enter-done {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 14px;
+  height: 14px;
+}
+.btn .loading-exit {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 14px;
+  height: 14px;
+}
+.btn .loading-exit-active {
+  display: inline-block;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 0px;
+  height: 0px;
+  transition: all 0.5s;
+}
+.btn .loading-exit-done {
+  display: inline-block;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 0px;
+  height: 0px;
 }
 .btn[disabled] {
   background-color: red;
@@ -68,6 +135,80 @@
   width: 10px;
   height: 10px;
 }
+.btn-small .loading-enter {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+}
+.btn-small .loading-enter-active {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 10px;
+  height: 10px;
+  transition: all 0.5s;
+}
+.btn-small .loading-enter-done {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 10px;
+  height: 10px;
+}
+.btn-small .loading-exit {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 10px;
+  height: 10px;
+}
+.btn-small .loading-exit-active {
+  display: inline-block;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 0px;
+  transition: all 0.5s;
+}
+.btn-small .loading-exit-done {
+  display: inline-block;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 0px;
+}
 .btn-large {
   padding: 8px 16px;
   font-size: 28px;
@@ -78,8 +219,82 @@
   height: 5rem;
 }
 .btn-large .loading {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
+}
+.btn-large .loading-enter {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+}
+.btn-large .loading-enter-active {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 26px;
+  height: 26px;
+  transition: all 0.5s;
+}
+.btn-large .loading-enter-done {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 26px;
+  height: 26px;
+}
+.btn-large .loading-exit {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 26px;
+  height: 26px;
+}
+.btn-large .loading-exit-active {
+  display: inline-block;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 0px;
+  height: 0px;
+  transition: all 0.5s;
+}
+.btn-large .loading-exit-done {
+  display: inline-block;
+  margin: auto;
+  margin-right: 5px;
+  background: url(icon/loading.png) no-repeat;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite;
+  width: 0px;
+  height: 0px;
 }
 .primary {
   background-color: #1890ff;
@@ -118,8 +333,20 @@
   background-color: #117a8b;
 }
 .submit {
-  background-color: #88f336;
+  background-color: #1890ff;
 }
 .submit:hover {
-  background-color: #6de80e;
+  background-color: #0076e4;
+}
+.reset {
+  background-color: #dc3545;
+}
+.reset:hover {
+  background-color: #bd2130;
+}
+.menu {
+  background-color: #6f42c1;
+}
+.menu:hover {
+  background-color: #59339d;
 }

@@ -7,11 +7,9 @@ nav:
 
 # 按钮组件
 
-按钮组件有三种大小、四种颜色、三种模式：基本、圆形、加载中；按需选择对应的属性加入类名即可使用
-
 ## 基本用法
 
-<code src="./demo/basic.tsx"></code>
+按钮组件有三种大小、五种类型、三种模式：基本、圆形、加载中；按需选择对应的属性加入类名即可使用
 
 ## 代码示例
 
@@ -91,16 +89,7 @@ export default () => {
 
 ### loading
 
-```tsx
-import { Button } from 'rabbit-ui-antd';
-export default () => {
-  return (
-    <div>
-      <Button loading>loading</Button>
-    </div>
-  );
-};
-```
+<code src="./demo/basic.tsx"></code>
 
 ## API
 

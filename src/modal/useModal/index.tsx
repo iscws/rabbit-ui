@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import Modal from '..';
 import { ModalFuncProps } from '../modal';
-import HookModal from './HookModal';
 
 function useModal(props: ModalFuncProps): [open: () => void] {
     const showModal = useCallback(() => {
@@ -20,13 +20,12 @@ function useModal(props: ModalFuncProps): [open: () => void] {
             containerRoot.unmount();
         };
 
-        const modalContainer = (
-            <HookModal open={false} title={props.title} afterClose={closeModal}>
+        containerRoot.render(
+            <Modal open={true} title={props.title} afterClose={closeModal} node={container} outside={false}>
                 {props.content}
-            </HookModal>
+            </Modal>
         );
-        containerRoot.render(modalContainer);
-    }, [open]);
+    }, [props]);
 
     return [showModal];
 }
