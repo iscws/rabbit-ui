@@ -12,11 +12,13 @@ export interface DrawerProps {
     maskStyle?: React.CSSProperties;
     placement?: 'top' | 'right' | 'bottom' | 'left';
     size?: 'default' | 'large';
-    style?: React.CSSProperties;
+    contentStyle?: React.CSSProperties;
     title?: React.ReactNode;
     headerStyle?: React.CSSProperties;
-    mainStyle?: React.CSSProperties;
+    bodyStyle?: React.CSSProperties;
     rootStyle?: React.CSSProperties;
+    titleStyle?: React.CSSProperties;
+    closeBtnStyle?: React.CSSProperties;
     open?: boolean;
     width?: string | number;
     zIndex?: number;
@@ -27,42 +29,48 @@ const prefixCls = 'rabbit-drawer'
 
 const Drawer: React.FC<DrawerProps> = props => {
 
-    const [pushed, setPushed] = useState(true)
+    const [animShow, setAnimShow] = useState(false)
     const [masked, setMasked] = useState(false)
     // let pushed = true
     // let masked = false
 
     const {
-        // autoFocus = true,
-        // closable = true,
-        height = 378,
-        // keyboard = true,
+        open,
+        onClose,
+
+        //root
+        rootStyle = {},
+        zIndex = 1000,
 
         // mask
         mask = true,
         maskClosable = true,
         maskStyle = {},
 
-        // drawer
-        children,
-        placement = 'top',
+        //wrapper
+        placement = 'right',
         size = 'default',
-        style = {},
+        width = 378,
+        height = 378,
+
+        // content
+        children,
+        contentStyle = {},
 
         //header
         title,
         headerStyle = {},
 
-        //main
-        mainStyle = {},
 
-        open,
-        width = 378,
+        //closeBtn
+        closable = true,
+        closeBtnStyle = {},
 
-        //root
-        rootStyle = {},
-        zIndex = 1000,
-        onClose
+        //title
+        titleStyle = {},
+
+        //body
+        bodyStyle = {},
 
     } = props
 
@@ -73,12 +81,12 @@ const Drawer: React.FC<DrawerProps> = props => {
 
 
         if (open) {
-            setPushed(false)
+
+            setAnimShow(true)
             if (mask) {
                 setMasked(true)
             }
         } else {
-            setPushed(true)
             setMasked(false)
         }
     }, [open])
@@ -102,23 +110,10 @@ const Drawer: React.FC<DrawerProps> = props => {
 
     const wrapperStyle: React.CSSProperties = {};
 
-    if (masked) {
-        if (open) {
-            maskStyle.display = 'block'
-        }
-        maskStyle.opacity = 1
-
-    } else {
-        if (!open) {
-            maskStyle.display = 'none'
-        }
-        maskStyle.opacity = 0
-    }
 
     const onHide = () => {
         if (typeof onClose === 'function') {
-            setMasked(false)
-            setPushed(true)
+            setAnimShow(false)
             const timer = setTimeout(() => {
                 onClose()
                 clearTimeout(timer)
@@ -126,7 +121,7 @@ const Drawer: React.FC<DrawerProps> = props => {
         }
     }
 
-    if (pushed) {
+    if (!animShow) {
         switch (placement) {
             case 'top':
                 wrapperStyle.transform = `translateY(${-realHeight}px)`;
@@ -152,47 +147,67 @@ const Drawer: React.FC<DrawerProps> = props => {
 
     return (
         <div className={prefixCls} style={{ ...rootStyle }}>
-            {/* {masked
+            {masked
                 ?
                 <div
                     className={classNames(
-                        `${prefixCls}-mask`
+                        `${prefixCls}-mask`,
+                        {
+                            [`${prefixCls}-mask-in`]: animShow,
+                            [`${prefixCls}-mask-out`]: !animShow,
+                        }
                     )}
                     style={{ ...maskStyle }}
-                    onClick={maskClosable && open ? onClose : undefined}
+                    onClick={maskClosable && open ? onHide : undefined}
                 />
                 : null
-            } */}
-            <div
+            }
+            {/* <div
                 className={classNames(
                     `${prefixCls}-mask`
                 )}
                 style={{ ...maskStyle }}
                 onClick={maskClosable && open ? onHide : undefined}
-            />
-            {open ? <div
+            /> */}
+            <div
                 className={classNames(
-                    `${prefixCls}-content`,
+                    `${prefixCls}-wrapper`,
                     `${prefixCls}-${placement}`
                 )}
                 style={{
-                    ...style,
                     ...wrapperStyle
                 }}>
-                <header
+                {open ? <div
                     className={classNames(
-                        `${prefixCls}-header`
+                        `${prefixCls}-content`,
                     )}
-                    style={{ ...headerStyle }}>
-                    {title}
-                </header>
-                <main className={classNames(
-                    `${prefixCls}-main`
-                )}
-                    style={{ ...mainStyle }}>
-                    {children}
-                </main>
-            </div> : null}
+                    style={{
+                        ...contentStyle,
+                    }}>
+                    <header
+                        className={classNames(
+                            `${prefixCls}-header`
+                        )}
+                        style={{ ...headerStyle }}>
+
+                        {closable ? <span
+                            className={`${prefixCls}-close`}
+                            onClick={open ? onHide : undefined}
+                            style={{ ...closeBtnStyle }}
+                        /> : null}
+
+                        <div className={`${prefixCls}-title`} style={{ ...titleStyle }}>{title}</div>
+
+                    </header>
+                    <main className={classNames(
+                        `${prefixCls}-body`
+                    )}
+                        style={{ ...bodyStyle }}>
+                        {children}
+                    </main>
+                </div> : null}
+
+            </div>
         </div>
 
     )
