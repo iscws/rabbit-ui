@@ -3,17 +3,13 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useState, useEffect, useRef } from 'react';
 import { useOutlet, history } from 'dumi';
-<<<<<<< HEAD
 import { SiteContext } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
-=======
-import { SiteContext } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
->>>>>>> e9fa1244043001700162506b00f236fe3f5c4495
 import { demos, components } from '../meta';
 import { locales } from '../locales/config';
 
 const entryExports = {
-  
-  
+
+
 };
 
 export default function DumiContextWrapper() {
@@ -37,14 +33,14 @@ export default function DumiContextWrapper() {
 
   return (
     <SiteContext.Provider value={{
-      pkg: {"name":"rabbit-ui-antd","description":"","version":"1.0.0","license":"ISC","author":""},
+      pkg: { "name": "rabbit-ui-antd", "description": "", "version": "1.0.0", "license": "ISC", "author": "" },
       entryExports,
       demos,
       components,
       locales,
       loading,
       setLoading,
-      themeConfig: {"footer":"Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>","prefersColor":{"default":"light","switch":true}},
+      themeConfig: { "footer": "Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>", "prefersColor": { "default": "light", "switch": true } },
     }}>
       {outlet}
     </SiteContext.Provider>
