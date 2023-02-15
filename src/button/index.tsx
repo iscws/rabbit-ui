@@ -12,7 +12,7 @@ type BaseButtonProps = {
   href?: string;
   className?: string;
   children?: React.ReactNode;
-  size?: 'small' | 'large';
+  size?: 'small' | 'large' | 'default';
   // handleClick?: (e: React.SyntheticEvent) => void;
   disabled?: boolean;
   circle?: boolean;

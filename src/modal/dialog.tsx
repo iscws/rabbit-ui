@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import toArray from '../_utils/toArray';
 import { ModalProps } from './modal';
@@ -21,7 +21,11 @@ const Dialog: React.FC<ModalProps> = ({
     closable = true,
     center = false,
     style = {},
-    useModal = false,
+    wrapClassName,
+    wrapId,
+    _useModal = false,
+    _useModalClick = false,
+    type = 'default',
     afterClose,
     ...rest
 }) => {
@@ -30,6 +34,33 @@ const Dialog: React.FC<ModalProps> = ({
     const [visible, setVisible] = useState(false);
     // 是否销毁弹窗内部的子元素
     const [destroyModalChi, setDestryoModalChi] = useState(false);
+
+    const buttonArea: { default: ReactNode; simple: ReactNode } = {
+        default: (
+            <>
+                <span className={`${prefixCls}-footer-item`}>
+                    <button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
+                        取消
+                    </button>
+                </span>
+
+                <span className={`${prefixCls}-footer-item`}>
+                    <button className={`${prefixCls}-button rabbit-primary`} onClick={onOk}>
+                        确定
+                    </button>
+                </span>
+            </>
+        ),
+        simple: (
+            <>
+                <span className={`${prefixCls}-footer-item`}>
+                    <button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
+                        知道了
+                    </button>
+                </span>
+            </>
+        ),
+    };
     useEffect(() => {
         if (firstStart) {
             setFirstStart(false);
@@ -63,7 +94,6 @@ const Dialog: React.FC<ModalProps> = ({
         }
     }, [open]);
 
-
     // 键盘关闭弹窗
     useEffect(() => {
         if (keyboard) {
@@ -81,7 +111,8 @@ const Dialog: React.FC<ModalProps> = ({
     }, []);
     return (
         <div
-            className={prefixCls}
+            id={wrapId !== undefined ? wrapId : ''}
+            className={`${prefixCls} ${wrapClassName !== undefined ? wrapClassName : ''}`}
             style={firstStart ? { display: 'none' } : { display: visible ? 'flex' : 'none' }}
         >
             {mask && (
@@ -124,29 +155,15 @@ const Dialog: React.FC<ModalProps> = ({
                     <div className={`${prefixCls}-footer`}>
                         {
                             // 显示自定义footer
-                            footer === 'default' ? (
-                                <>
-                                    <span className={`${prefixCls}-footer-item`}>
-                                        <button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
-                                            取消
-                                        </button>
-                                    </span>
-
-                                    <span className={`${prefixCls}-footer-item`}>
-                                        <button className={`${prefixCls}-button rabbit-primary`} onClick={onOk}>
-                                            确定
-                                        </button>
-                                    </span>
-                                </>
-                            ) : (
-                                toArray(footer).map((item, index) => {
+                            footer === 'default'
+                                ? buttonArea[type]
+                                : toArray(footer).map((item, index) => {
                                     return (
                                         <span className={`${prefixCls}-footer-item`} key={index}>
                                             {item}
                                         </span>
                                     );
                                 })
-                            )
                         }
                     </div>
                 </div>
