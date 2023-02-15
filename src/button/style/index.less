@@ -1,3 +1,4 @@
+@import url(../../ThemeStyle/default.less);
 //size 为 small 时的样式
 @btn-small-padding: 4px 8px;
 @btn-small-fontSize: 12px;
@@ -21,23 +22,40 @@
   word-break: normal;
   border: 2px solid #ccc;
   border-radius: 50%;
+  box-shadow: none;
+};
+@loading: {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  background: url(./icon/loading.png) no-repeat;
+  background-size: 100%;
+  // transform: translateX(0px);
+  cursor: not-allowed;
+  // opacity: 0;
+  // border: 1px solid #000;
+  animation: run 2s infinite;
 };
 
-.btn {
+.rabbit-btn {
   padding: 6px 12px;
   color: #fff;
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
-  background-color: skyblue;
-  border-color: #ccc;
+  vertical-align: middle;
+  // background-color: skyblue;
+  border: 1px solid #ccc;
+  // border-color: #ccc;
   border-radius: 15px;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-
-  // transition: background-color 0.1s ease;
-  &:hover {
-    background-color: rgb(155, 216, 240);
-  }
+  transition: background-color 0.1s ease;
+  // &:hover {
+  //   background-color: rgb(155, 216, 240);
+  // }
 
   // 按下后颜色
   &:active {
@@ -56,18 +74,37 @@
       transform: rotate(360deg);
     }
   }
-  .loading {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: auto;
-    margin-right: 5px;
-    background: url(./icon/loading.png) no-repeat;
-    background-size: 100%;
-    cursor: not-allowed;
-    // border: 1px solid #000;
-    animation: run 3s infinite;
+  .loading-enter {
+    @loading();
   }
+  .loading-enter-active {
+    @loading();
+    width: 14px;
+    height: 14px;
+    transition: all 0.5s;
+  }
+  .loading-enter-done {
+    @loading();
+    width: 14px;
+    height: 14px;
+  }
+  .loading-exit {
+    @loading();
+    width: 14px;
+    height: 14px;
+  }
+  .loading-exit-active {
+    @loading();
+    width: 0px;
+    height: 0px;
+    transition: all 0.5s;
+  }
+  .loading-exit-done {
+    @loading();
+    width: 0px;
+    height: 0px;
+  }
+
   // 禁用状态
   &[disabled] {
     background-color: red;
@@ -80,6 +117,9 @@
     &:active {
       background-color: #000;
     }
+  }
+  &.link {
+    text-decoration: none;
   }
 }
 
@@ -94,17 +134,88 @@
     width: 10px;
     height: 10px;
   }
+  .loading-enter {
+    @loading();
+  }
+  .loading-enter-active {
+    @loading();
+    width: 10px;
+    height: 10px;
+
+    transition: all 0.5s;
+  }
+  .loading-enter-done {
+    @loading();
+    width: 10px;
+    height: 10px;
+  }
+  .loading-exit {
+    @loading();
+    width: 10px;
+    height: 10px;
+  }
+  .loading-exit-active {
+    @loading();
+    width: 0px;
+    transition: all 0.5s;
+  }
+  .loading-exit-done {
+    @loading();
+    width: 0px;
+  }
 }
 
 .btn-large {
   padding: @btn-large-padding;
   font-size: @btn-large-fontSize;
+  border-radius: 25px;
   &.circle {
     width: 5rem;
     height: 5rem;
   }
   & .loading {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
+  }
+  .loading-enter {
+    @loading();
+  }
+  .loading-enter-active {
+    @loading();
+    width: 26px;
+    height: 26px;
+
+    transition: all 0.5s;
+  }
+  .loading-enter-done {
+    @loading();
+    width: 26px;
+    height: 26px;
+  }
+  .loading-exit {
+    @loading();
+    width: 26px;
+    height: 26px;
+  }
+  .loading-exit-active {
+    @loading();
+    width: 0px;
+    height: 0px;
+    transition: all 0.5s;
+  }
+  .loading-exit-done {
+    @loading();
+    width: 0px;
+    height: 0px;
   }
 }
+each(@theme-colors,{
+  .@{key} { 
+    // color: @value; 
+    background-color: rgba(@value); 
+    &:hover {
+      background-color: darken(@value, 10%);
+    }
+  }
+  }
+);
