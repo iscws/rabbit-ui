@@ -15,7 +15,7 @@
   "include": [
     "src",
     "typings.d.ts",
-    ".dumi/**/*"
+    ".dumi"
   ],
   "exclude": [
     "node_modules",
