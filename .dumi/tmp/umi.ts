@@ -3,11 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import './core/polyfill';
 
-<<<<<<< HEAD
 import { renderClient } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/@umijs/renderer-react';
-=======
-import { renderClient } from 'D:/Desktop/rabbit-ui/node_modules/@umijs/renderer-react';
->>>>>>> 684761717a0019dbbae743b56ef700466a11effc
 import { getRoutes } from './core/route';
 import { createPluginManager } from './core/plugin';
 import { createHistory } from './core/history';

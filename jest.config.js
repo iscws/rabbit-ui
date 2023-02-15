@@ -11,4 +11,8 @@ module.exports = {
     testPathIgnorePatterns: ['/node_modules/', '/lib/', '/esm/', '/dist/'],
     preset: 'ts-jest',
     testEnvironment: 'jsdom',
+    clearMocks: true,
+    collectCoverage: true,
+    coverageDirectory: "coverage",
+    coverageProvider: "v8"
 };
