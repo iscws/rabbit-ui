@@ -6,12 +6,16 @@ import { Modal } from 'rabbit-ui-antd';
 import React from 'react';
 
 export default () => {
-    const [open] = Modal.useModal({ title: '一次性的modal', content: "销毁销毁" });
+    const [open, modal] = Modal.useModal({
+        title: '一次性的modal',
+        content: "你好你好"
+    });
 
 
     return (
         <div>
-            <button onClick={open}>useModal</button>
+            {/* <button onClick={forRender}>打开打开</button> */}
+            <button onClick={open}>简洁版的</button>
         </div>
     );
 };

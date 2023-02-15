@@ -21,7 +21,10 @@ const Dialog: React.FC<ModalProps> = ({
     closable = true,
     center = false,
     style = {},
-    useModal = false,
+    wrapClassName,
+    wrapId,
+    _useModal = false,
+    _useModalClick = false,
     afterClose,
     ...rest
 }) => {
@@ -81,7 +84,8 @@ const Dialog: React.FC<ModalProps> = ({
     }, []);
     return (
         <div
-            className={prefixCls}
+            id={wrapId !== undefined ? wrapId : ''}
+            className={`${prefixCls} ${wrapClassName !== undefined ? wrapClassName : ''}`}
             style={firstStart ? { display: 'none' } : { display: visible ? 'flex' : 'none' }}
         >
             {mask && (

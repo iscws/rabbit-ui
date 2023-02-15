@@ -38,3 +38,5 @@ nav:
 | style          | 对话框样式                           | `CSSProperties` |                |
 | center         | 是否居中展示对话框                   | `boolean`       | false          |
 | afterClose     | 在对话框关闭后执行的函数             | `function`      |                |
+| wrapClassName  | 对话框外层容器的类名                 | `string`        |                |
+| wrapId         | 对话框外层容器的 id                  | `string`        |                |

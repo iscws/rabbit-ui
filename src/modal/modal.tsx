@@ -1,4 +1,3 @@
-import { node } from 'prop-types';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Dialog from './dialog';
@@ -19,6 +18,10 @@ import './style/index.less';
  * @param {center} boolean 是否将对话框居中处理
  * @param {afterClose} func 在对话框完全关闭之后执行的函数
  *@param {useModal} boolean 内部变量：用于useModal的判断
+ *@param {wrapClassName} string 对话框外层容器的类名
+ *@param {wrapId} string 对话框外层容器的id
+
+
  *
  */
 
@@ -37,7 +40,10 @@ export interface ModalProps {
   center?: boolean;
   style?: React.CSSProperties;
   afterClose?: (...rest: any) => void;
-  useModal?: boolean;
+  wrapClassName?: string;
+  wrapId?: string;
+  _useModal?: boolean;
+  _useModalClick?: boolean;
 }
 
 export interface ModalFuncProps {
@@ -52,12 +58,11 @@ interface openProps {
 const prefixCls = 'rabbit-modal';
 
 const Modal: React.FC<ModalProps> = (props) => {
-
   // 该变量保证是用户第一次
   const openModal = useRef<openProps>({ isOpen: false, time: 0 });
   // 除了第一次启动生成以外其他时候直接隐藏
   if (openModal.current.time === 0 && props.open === true) {
-    props.useModal
+    props._useModal
       ? (openModal.current = { isOpen: true, time: 0 })
       : (openModal.current = { isOpen: true, time: 1 });
   }
@@ -86,15 +91,12 @@ const Modal: React.FC<ModalProps> = (props) => {
   }, [props.onOk, visible]);
 
   const modal = openModal.current.isOpen && (
-    <Dialog  {...props} open={visible} onCancel={handleClose} onOk={handleOk}>
+    <Dialog {...props} open={visible} onCancel={handleClose} onOk={handleOk}>
       {props.children}
     </Dialog>
   );
 
-
   return createPortal(modal, document.body);
-
-
 };
 
 export default Modal;
