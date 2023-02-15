@@ -40,22 +40,19 @@ export interface ModalProps {
   center?: boolean;
   style?: React.CSSProperties;
   afterClose?: (...rest: any) => void;
+  type?: "simple" | "default";
   wrapClassName?: string;
   wrapId?: string;
   _useModal?: boolean;
   _useModalClick?: boolean;
 }
 
-export interface ModalFuncProps {
-  title: React.ReactNode;
-  content: React.ReactNode;
-}
+
 
 interface openProps {
   isOpen: boolean;
   time: number;
 }
-const prefixCls = 'rabbit-modal';
 
 const Modal: React.FC<ModalProps> = (props) => {
   // 该变量保证是用户第一次

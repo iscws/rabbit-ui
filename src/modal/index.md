@@ -9,6 +9,12 @@ nav:
 
 弹出一个对话框展示对应内容
 
+## 何时使用
+
+需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 Modal 在当前页面正中打开一个浮层，承载相应的操作。
+
+另外当需要一个简洁的确认框询问用户时，可以使用 App.useApp 封装的语法糖方法。
+
 ## 代码演示
 
 <code src="./demo/basic.tsx"></code>
@@ -22,6 +28,8 @@ nav:
 <code src="./demo/style.tsx"></code>
 
 <code src="./demo/useModal.tsx"></code>
+
+<code src="./demo/update.tsx"></code>
 
 ## API
 
@@ -40,3 +48,29 @@ nav:
 | afterClose     | 在对话框关闭后执行的函数             | `function`      |                |
 | wrapClassName  | 对话框外层容器的类名                 | `string`        |                |
 | wrapId         | 对话框外层容器的 id                  | `string`        |                |
+
+### Modal.useModal()
+
+该方法可以简化 modal 的启动方式，会返回两个函数方法 `openSimple` 及 `modal`，
+
++ `opensSimple`:用于启动一个一次性的对话框，在关闭时会销毁。不会对内容进行监听。
+
++ `modal`：返回一个对象，拥有`init`方法，调用该函数之后，会返回一个引用，可以通过该引用更新和关闭弹窗。
+
+  ```typescript
+  const modal = Modal.init();
+  
+  modal.update({
+    title: '修改的标题',
+    content: '修改的内容',
+  });
+  
+  modal.update((prevConfig) => ({
+    ...prevConfig,
+    title: `${prevConfig.title}（新）`,
+  }));
+  
+  modal.destroy();
+  ```
+
+  
