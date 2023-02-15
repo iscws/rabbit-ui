@@ -1,25 +1,34 @@
-import React, { FC, useEffect, useState } from 'react';
-import Modal, { ModalProps } from '../modal';
+import React, { useImperativeHandle, useState } from 'react';
+import { ModalFuncProps } from '.';
+import Modal from '..';
+import { ModalProps } from '../modal';
 
-const HookModal: FC<ModalProps> = ({
-    open = false,
-    title,
-    children,
-    afterClose = () => {
-        return;
-    },
-}) => {
-    const [vis, setVis] = useState(open);
-    useEffect(() => {
-        setTimeout(() => {
-            setVis(true);
-        }, 300);
-    }, []);
+export interface HookModalRef {
+    destroy: () => void;
+    update: (props: ModalFuncProps) => void;
+}
+
+const HookModal: React.ForwardRefRenderFunction<HookModalRef, ModalProps> = (props, ref) => {
+    const [info, setInfo] = useState({
+        title: props.title,
+        content: props.children,
+    });
+    const [open, setOpen] = useState(props.open);
+
+    // 向父组件暴露子组件的方法
+    useImperativeHandle(ref, () => ({
+        update: (props: ModalFuncProps) => {
+            setInfo({ ...info, ...props });
+        },
+        destroy: () => {
+            setOpen(false);
+        },
+    }));
     return (
-        <Modal open={vis} title={title} outside={false} afterClose={afterClose}>
-            {children}
+        <Modal {...props} open={open} title={info.title}>
+            {info.content}
         </Modal>
     );
 };
 
-export default HookModal;
+export default React.forwardRef(HookModal);

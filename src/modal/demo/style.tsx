@@ -4,6 +4,7 @@
  */
 import { Modal } from 'rabbit-ui-antd';
 import React, { useState } from 'react';
+import Confirm from '../modal';
 export default () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalOpen2, setIsModalOpen2] = useState(false);
