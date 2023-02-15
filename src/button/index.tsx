@@ -40,7 +40,7 @@ const Button: FC<ButtonProps> = (ButtonProps) => {
 
   const classNames = classnames('rabbit-btn', className, {
     //根据父组件传进来的 size 来判断使用什么类名
-    btn: true,
+    // btn: true,
     'btn-small': size === 'small',
     'btn-large': size === 'large',
     circle: circle,
