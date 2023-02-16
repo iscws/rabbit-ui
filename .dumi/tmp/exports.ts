@@ -10,6 +10,7 @@ export { history, createHistory } from './core/history';
 export { terminal } from './core/terminal';
 export { TestBrowser } from './testBrowser';
 // plugins
+export { Icon } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/.dumi/tmp/plugin-icons';
 // plugins types.d.ts
 export { defineApp } from './core/defineApp'
 export type {  RuntimeConfig } from './core/defineApp'

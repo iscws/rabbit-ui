@@ -2,27 +2,49 @@ import classNames from 'classnames';
 import React, { useState } from 'react'
 
 export interface DrawerProps {
-    children?: React.ReactNode;
-    autoFocus?: boolean;
-    closable?: boolean;
-    height?: string | number;
-    keyboard?: boolean;
+    inline?: boolean
+    open: boolean;
+    onClose: (event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => void;
+
+    //root
+    rootClassname?: string;
+    rootStyle?: React.CSSProperties;
+    zIndex?: number;
+
+    //mask
     mask?: boolean;
     maskClosable?: boolean;
+    maskClassname?: string;
     maskStyle?: React.CSSProperties;
+
+    //wrapper
+    height?: string | number;
     placement?: 'top' | 'right' | 'bottom' | 'left';
     size?: 'default' | 'large';
-    contentStyle?: React.CSSProperties;
-    title?: React.ReactNode;
-    headerStyle?: React.CSSProperties;
-    bodyStyle?: React.CSSProperties;
-    rootStyle?: React.CSSProperties;
-    titleStyle?: React.CSSProperties;
-    closeBtnStyle?: React.CSSProperties;
-    open?: boolean;
     width?: string | number;
-    zIndex?: number;
-    onClose?: (event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => void;
+
+    //content
+    contentClassname?: string;
+    contentStyle?: React.CSSProperties;
+
+    //header
+    headerClassname?: string;
+    headerStyle?: React.CSSProperties;
+
+    // closeBtn
+    closable?: boolean;
+    closeBtnClassname?: string;
+    closeBtnStyle?: React.CSSProperties;
+
+    //title
+    title?: React.ReactNode;
+    titleClassname?: string
+    titleStyle?: React.CSSProperties;
+
+    //body
+    children?: React.ReactNode;
+    bodyClassname?: string
+    bodyStyle?: React.CSSProperties;
 }
 
 const prefixCls = 'rabbit-drawer'
@@ -37,14 +59,17 @@ const Drawer: React.FC<DrawerProps> = props => {
     const {
         open,
         onClose,
+        inline = false,
 
         //root
+        rootClassname = '',
         rootStyle = {},
         zIndex = 1000,
 
         // mask
         mask = true,
         maskClosable = true,
+        maskClassname = '',
         maskStyle = {},
 
         //wrapper
@@ -54,22 +79,27 @@ const Drawer: React.FC<DrawerProps> = props => {
         height = 378,
 
         // content
-        children,
+        contentClassname = '',
         contentStyle = {},
 
         //header
-        title,
+        headerClassname = '',
         headerStyle = {},
 
 
         //closeBtn
         closable = true,
+        closeBtnClassname = '',
         closeBtnStyle = {},
 
         //title
+        title,
+        titleClassname = '',
         titleStyle = {},
 
         //body
+        children,
+        bodyClassname = '',
         bodyStyle = {},
 
     } = props
@@ -146,12 +176,13 @@ const Drawer: React.FC<DrawerProps> = props => {
     }
 
     return (
-        <div className={prefixCls} style={{ ...rootStyle }}>
+        <div className={classNames(prefixCls, rootClassname, { [`${prefixCls}-inline`]: inline })} style={{ ...rootStyle }}>
             {masked
                 ?
                 <div
                     className={classNames(
                         `${prefixCls}-mask`,
+                        maskClassname,
                         {
                             [`${prefixCls}-mask-in`]: animShow,
                             [`${prefixCls}-mask-out`]: !animShow,
@@ -180,27 +211,33 @@ const Drawer: React.FC<DrawerProps> = props => {
                 {open ? <div
                     className={classNames(
                         `${prefixCls}-content`,
+                        contentClassname
                     )}
                     style={{
                         ...contentStyle,
                     }}>
                     <header
                         className={classNames(
-                            `${prefixCls}-header`
+                            `${prefixCls}-header`,
+                            headerClassname,
                         )}
                         style={{ ...headerStyle }}>
 
                         {closable ? <span
-                            className={`${prefixCls}-close`}
+                            className={classNames(
+                                `${prefixCls}-close`,
+                                closeBtnClassname
+                            )}
                             onClick={open ? onHide : undefined}
                             style={{ ...closeBtnStyle }}
                         /> : null}
 
-                        <div className={`${prefixCls}-title`} style={{ ...titleStyle }}>{title}</div>
+                        <div className={classNames(`${prefixCls}-title`, titleClassname)} style={{ ...titleStyle }}>{title}</div>
 
                     </header>
                     <main className={classNames(
-                        `${prefixCls}-body`
+                        `${prefixCls}-body`,
+                        bodyClassname
                     )}
                         style={{ ...bodyStyle }}>
                         {children}
