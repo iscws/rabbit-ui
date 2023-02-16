@@ -6,7 +6,7 @@ hero:
   desc: 文档站点基于 dumi 生成
   actions:
     - text: Getting Started
-      link: /getting-started
+      link: /guide
 features:
   - title: 开箱即用
     emoji: 📦
