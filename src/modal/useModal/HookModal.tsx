@@ -1,7 +1,6 @@
 import React, { useImperativeHandle, useState } from 'react';
-import { ModalFuncProps } from '.';
 import Modal from '..';
-import { ModalProps } from '../modal';
+import { ModalFuncProps, ModalProps } from '../modal';
 
 export interface HookModalRef {
     destroy: () => void;
@@ -25,7 +24,7 @@ const HookModal: React.ForwardRefRenderFunction<HookModalRef, ModalProps> = (pro
         },
     }));
     return (
-        <Modal {...props} open={open} title={info.title}>
+        <Modal {...props} open={open} title={info.title} outside={false} >
             {info.content}
         </Modal>
     );

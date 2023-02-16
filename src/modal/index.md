@@ -27,50 +27,49 @@ nav:
 
 <code src="./demo/style.tsx"></code>
 
-<code src="./demo/useModal.tsx"></code>
-
 <code src="./demo/update.tsx"></code>
+
+<code src="./demo/confirm.tsx"></code>
 
 ## API
 
-| 参数           | 说明                                 | 类型            | 默认值         |
-| -------------- | ------------------------------------ | --------------- | -------------- |
-| onCancel       | 点击遮罩层或右上角叉或取消按钮的回调 | `function`      |                |
-| onOk           | 点击确定回调                         | `function`      |                |
-| title          | 标题                                 | `ReactNode`     |                |
-| width          | 对话框长度                           | `Number`        | 520            |
-| mask           | 是否展示遮罩层                       | `boolean`       | true           |
-| destroyOnClose | 关闭后是否销毁子元素                 | `boolean`       | false          |
-| keyboard       | 是否支持键盘 esc 关闭                | `boolean`       | true           |
-| footer         | 自定义页脚内容                       | `ReactNode`     | 确认和取消按钮 |
-| style          | 对话框样式                           | `CSSProperties` |                |
-| center         | 是否居中展示对话框                   | `boolean`       | false          |
-| afterClose     | 在对话框关闭后执行的函数             | `function`      |                |
-| wrapClassName  | 对话框外层容器的类名                 | `string`        |                |
-| wrapId         | 对话框外层容器的 id                  | `string`        |                |
+| 参数           | 说明                                 | 类型                | 默认值         |
+| -------------- | ------------------------------------ | ------------------- | -------------- |
+| onCancel       | 点击遮罩层或右上角叉或取消按钮的回调 | `function`          |                |
+| onOk           | 点击确定回调                         | `function`          |                |
+| title          | 标题                                 | `ReactNode`         |                |
+| width          | 对话框长度                           | `Number`            | 520            |
+| mask           | 是否展示遮罩层                       | `boolean`           | true           |
+| destroyOnClose | 关闭后是否销毁子元素                 | `boolean`           | false          |
+| keyboard       | 是否支持键盘 esc 关闭                | `boolean`           | true           |
+| footer         | 自定义页脚内容                       | `ReactNode`         | 确认和取消按钮 |
+| style          | 对话框样式                           | `CSSProperties`     |                |
+| center         | 是否居中展示对话框                   | `boolean`           | false          |
+| afterClose     | 在对话框关闭后执行的函数             | `function`          |                |
+| wrapClassName  | 对话框外层容器的类名                 | `string`            |                |
+| wrapId         | 对话框外层容器的 id                  | `string`            |                |
+| type           | `footer` 按钮的样式                  | ` simple` `default` | default        |
 
 ### Modal.useModal()
 
 该方法可以简化 modal 的启动方式，会返回两个函数方法 `openSimple` 及 `modal`，
 
-+ `opensSimple`:用于启动一个一次性的对话框，在关闭时会销毁。不会对内容进行监听。
+- `opensSimple`:用于启动一个一次性的对话框，在关闭时会销毁。不会对内容进行监听。
 
-+ `modal`：返回一个对象，拥有`init`方法，调用该函数之后，会返回一个引用，可以通过该引用更新和关闭弹窗。
+- `modal`：返回一个对象，拥有`init`方法，调用该函数之后，会返回一个引用，可以通过该引用更新和关闭弹窗。
 
   ```typescript
   const modal = Modal.init();
-  
+
   modal.update({
     title: '修改的标题',
     content: '修改的内容',
   });
-  
+
   modal.update((prevConfig) => ({
     ...prevConfig,
     title: `${prevConfig.title}（新）`,
   }));
-  
+
   modal.destroy();
   ```
-
-  
