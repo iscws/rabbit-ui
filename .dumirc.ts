@@ -5,9 +5,9 @@ const repo = 'rabbit-ui';
 export default defineConfig({
   themeConfig: {
     name: 'Rabbit UI',
-    logo: 'https://pic.imgdb.cn/item/63ee36dff144a01007cd9ce7.png',
+    logo: 'https://github.com/iscws/Demo/blob/main/logo.png?raw=true',
   },
-  favicons: ['https://pic.imgdb.cn/item/63ee36dff144a01007cd9ce7.png'],
+  favicons: ['https://github.com/iscws/Demo/blob/main/logo.png?raw=true'],
   outputPath: 'doc-site', // 输出文件夹
   base: process.env.NODE_ENV === 'production' ? `/${repo}/` : undefined,
   publicPath: process.env.NODE_ENV === 'production' ? `/${repo}/` : undefined,
