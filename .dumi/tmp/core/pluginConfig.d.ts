@@ -236,7 +236,6 @@ srcDir?: string[]
 exclude?: {
 
 }[]
-peerDeps?: boolean
 })
 test?: {
 
@@ -273,7 +272,6 @@ dir?: string
 entityDirs?: unknown
 codeBlockMode?: ("active" | "passive")
 entryFile?: string
-forceKebabCaseRouting?: boolean
 }
 autoAlias?: boolean
 analytics?: ({
