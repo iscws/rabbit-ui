@@ -2,11 +2,11 @@
  * title: 手动更新和移除
  * description: 通过返回的 instance 手动更新和关闭对话框
  */
-import { Modal } from 'rabbit-ui-antd';
+import { Modal, Button } from 'rabbit-ui-antd';
 import React from 'react';
 
 export default () => {
-    const [openSimple, modal] = Modal.useModal();
+    const modal = Modal.useModal();
 
     const countDown = () => {
         let secondsToGo = 5;
@@ -27,12 +27,11 @@ export default () => {
             instance.destroy();
         }, secondsToGo * 1000);
 
-
     }
 
     return (
         <div>
-            <button onClick={countDown} style={{ marginRight: "10px" }}>5秒后关闭对话框</button>
+            <Button onClick={countDown} style={{ marginRight: "10px" }}>5秒后关闭对话框</Button>
         </div>
     );
 };

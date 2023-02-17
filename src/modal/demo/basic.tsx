@@ -3,7 +3,7 @@
  * description: 点击按钮弹出对话框
  */
 import React, { useState } from 'react';
-import { Modal } from 'rabbit-ui-antd';
+import { Modal, Button } from 'rabbit-ui-antd';
 export default () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -21,7 +21,7 @@ export default () => {
 
   return (
     <div>
-      <button onClick={showModal}>启动modal</button>
+      <Button onClick={showModal} >启动modal</Button>
       <Modal title="modal组件标题" destroyOnClose={true} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         这是一条警告提示
       </Modal>

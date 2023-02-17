@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Dialog from './dialog';
 import './style/index.less';
@@ -20,6 +20,9 @@ import './style/index.less';
  *@param {useModal} boolean 内部变量：用于useModal的判断
  *@param {wrapClassName} string 对话框外层容器的类名
  *@param {wrapId} string 对话框外层容器的id
+ *@param {outside} boolean 是否渲染在body下
+ @param {type}  'simple' | 'default' 按钮样式
+
 
 
  *
@@ -28,9 +31,9 @@ import './style/index.less';
 export interface ModalProps {
   children: React.ReactNode;
   title?: React.ReactNode;
-  onCancel?: (...rest: any[]) => void;
+  onCancel?: () => void;
   open: boolean;
-  onOk?: (...rest: any[]) => void;
+  onOk?: () => void;
   width?: number;
   destroyOnClose?: boolean;
   mask?: boolean;
@@ -45,8 +48,19 @@ export interface ModalProps {
   wrapId?: string;
   _useModal?: boolean;
   _useModalClick?: boolean;
+  outside?: boolean;
+  content?: React.ReactNode;
+  confirmLoading?: boolean;
 }
 
+export interface ModalFuncProps {
+  title?: React.ReactNode;
+  content?: React.ReactNode;
+  onCancel?: () => void;
+  onOk?: () => void;
+  afterClose?: (...rest: any) => void;
+
+}
 
 
 interface openProps {
@@ -54,9 +68,11 @@ interface openProps {
   time: number;
 }
 
-const Modal: React.FC<ModalProps> = (props) => {
+const Modal: FC<ModalProps> = (props) => {
   // 该变量保证是用户第一次
   const openModal = useRef<openProps>({ isOpen: false, time: 0 });
+  const outside = (props.outside === undefined) ? true : false;
+  let modal = null;
   // 除了第一次启动生成以外其他时候直接隐藏
   if (openModal.current.time === 0 && props.open === true) {
     props._useModal
@@ -86,14 +102,16 @@ const Modal: React.FC<ModalProps> = (props) => {
       setVisible(false);
     }
   }, [props.onOk, visible]);
+  if (openModal.current.isOpen)
+    modal = (
+      <Dialog {...props} open={visible} onCancel={handleClose} onOk={handleOk}>
+        {props.children}
+      </Dialog>
+    );
 
-  const modal = openModal.current.isOpen && (
-    <Dialog {...props} open={visible} onCancel={handleClose} onOk={handleOk}>
-      {props.children}
-    </Dialog>
-  );
+  if (outside) modal = createPortal(modal, document.body);
 
-  return createPortal(modal, document.body);
+  return modal;
 };
 
 export default Modal;

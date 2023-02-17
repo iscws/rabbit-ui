@@ -3,7 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useState, useEffect, useRef } from 'react';
 import { useOutlet, history } from 'dumi';
-import { SiteContext } from 'E:/MyProject_Web/Rabbit组件库开发/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
+import { SiteContext } from 'D:/Desktop/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
 import { demos, components } from '../meta';
 import { locales } from '../locales/config';
 
@@ -33,14 +33,14 @@ export default function DumiContextWrapper() {
 
   return (
     <SiteContext.Provider value={{
-      pkg: {"name":"rabbit-ui-antd","description":"","version":"1.0.0","license":"ISC","author":""},
+      pkg: {"name":"rabbit-ui-antd","description":"","version":"2.0.0","license":"ISC","author":""},
       entryExports,
       demos,
       components,
       locales,
       loading,
       setLoading,
-      themeConfig: {"footer":"Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>","prefersColor":{"default":"light","switch":true}},
+      themeConfig: {"footer":"Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>","prefersColor":{"default":"light","switch":true},"name":"Rabbit UI","logo":"https://pic.imgdb.cn/item/63ee36dff144a01007cd9ce7.png"},
     }}>
       {outlet}
     </SiteContext.Provider>

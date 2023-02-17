@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render button 1`] = `
+<div>
+  <button
+    class="rabbit-btn btn-small primary"
+    htmltype="button"
+  >
+    <div />
+    按钮一
+  </button>
+</div>
+`;
