@@ -48,7 +48,7 @@ const Dialog: React.FC<ModalProps> = ({
                 </span>
 
                 <span className={`${prefixCls}-footer-item`}>
-                    {<Button className={`${prefixCls}-button rabbit-primary`} loading={confirmLoading} onClick={onOk} disabled={confirmLoading} >
+                    {<Button className={`${prefixCls}-button rabbit-primary`} loading={confirmLoading} onClick={onOk} >
                         确定
                     </Button>
                     }
