@@ -4,16 +4,7 @@ import { ModalFuncProps } from '../modal';
 import HookModal, { HookModalRef } from './HookModal';
 
 
-type UseModalProps = [
-    fns: {
-        init: (props: ModalFuncProps) => {
-            update: (props: ModalFuncProps) => void;
-            destroy: () => void;
-        };
-    },
-];
-
-function useModal(): UseModalProps {
+function useModal() {
     const CONTANINER_ID = 'rabbit-useModal-container';
 
     const withInit = (initProps: ModalFuncProps) => {
@@ -36,7 +27,7 @@ function useModal(): UseModalProps {
         };
 
         containerRoot.render(
-            <HookModal open={true} title={initProps.title} afterClose={closeModal} ref={shareRef}>
+            <HookModal {...initProps} open={true} title={initProps.title} afterClose={closeModal} ref={shareRef}>
                 {initProps.content}
             </HookModal>,
         );
@@ -52,7 +43,7 @@ function useModal(): UseModalProps {
         }),
         [],
     );
-    return [fns];
+    return fns;
 }
 
 export default useModal;

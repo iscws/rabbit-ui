@@ -50,6 +50,7 @@ export interface ModalProps {
   _useModalClick?: boolean;
   outside?: boolean;
   content?: React.ReactNode;
+  confirmLoading?: boolean;
 }
 
 export interface ModalFuncProps {
@@ -57,6 +58,8 @@ export interface ModalFuncProps {
   content?: React.ReactNode;
   onCancel?: () => void;
   onOk?: () => void;
+  afterClose?: (...rest: any) => void;
+
 }
 
 

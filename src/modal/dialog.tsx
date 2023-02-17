@@ -28,6 +28,7 @@ const Dialog: React.FC<ModalProps> = ({
     _useModalClick = false,
     type = 'default',
     afterClose,
+    confirmLoading = false,
     ...rest
 }) => {
     const [firstStart, setFirstStart] = useState(true);
@@ -47,9 +48,10 @@ const Dialog: React.FC<ModalProps> = ({
                 </span>
 
                 <span className={`${prefixCls}-footer-item`}>
-                    <Button className={`${prefixCls}-button rabbit-primary`} onClick={onOk}>
+                    {<Button className={`${prefixCls}-button rabbit-primary`} loading={confirmLoading} onClick={onOk} disabled={confirmLoading} >
                         确定
                     </Button>
+                    }
                 </span>
             </>
         ),

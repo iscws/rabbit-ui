@@ -6,7 +6,7 @@ import { Modal, Button } from 'rabbit-ui-antd';
 import React from 'react';
 
 export default () => {
-    const [modal] = Modal.useModal();
+    const modal = Modal.useModal();
 
     const countDown = () => {
         let secondsToGo = 5;

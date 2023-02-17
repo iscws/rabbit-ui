@@ -19,6 +19,8 @@ nav:
 
 <code src="./demo/basic.tsx"></code>
 
+<code src="./demo/async.tsx"></code>
+
 <code src="./demo/width.tsx"></code>
 
 <code src="./demo/destroyOnClose.tsx"></code>
@@ -49,12 +51,11 @@ nav:
 | wrapClassName  | 对话框外层容器的类名                 | `string`            |                |
 | wrapId         | 对话框外层容器的 id                  | `string`            |                |
 | type           | `footer` 按钮的样式                  | ` simple` `default` | default        |
+| confirmLoading | 确定按钮 loading                     | boolean             | false          |
 
 ### Modal.useModal()
 
-该方法可以简化 modal 的启动方式，会返回两个函数方法 `openSimple` 及 `modal`，
-
-- `opensSimple`:用于启动一个一次性的对话框，在关闭时会销毁。不会对内容进行监听。
+该方法可以简化 modal 的启动方式，会返回一个函数方法 `modal`，但需要先使用返回的`init()`对话框进行初始化。
 
 - `modal`：返回一个对象，拥有`init`方法，调用该函数之后，会返回一个引用，可以通过该引用更新和关闭弹窗。
 
@@ -73,3 +74,15 @@ nav:
 
   modal.destroy();
   ```
+
+### Modal.confirm()
+
+该方法同样可以简化 `modal` 的启动方式，会返回一个函数方法 `open`，需要传入两个必传参数`title`与 `content`。与`useModal`最大的不同是：该方法不提供更新和移除的方法，为一次性的弹窗。
+
+使用方式：
+
+```typescript
+const open = Modal.confirm({ title: 'confirm', contetn: 'open confirm' });
+
+return <button onClick={open}>open confirm</button>;
+```
