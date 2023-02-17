@@ -34,6 +34,7 @@
   background-size: 100%;
   // transform: translateX(0px);
   cursor: not-allowed;
+
   // opacity: 0;
   // border: 1px solid #000;
   animation: run 2s infinite;
@@ -73,6 +74,10 @@
     to {
       transform: rotate(360deg);
     }
+  }
+  &.loading {
+    filter: opacity(50%);
+    pointer-events: none;
   }
   .loading-enter {
     @loading();

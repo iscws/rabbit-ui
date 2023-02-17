@@ -35,6 +35,10 @@
     transform: rotate(360deg);
   }
 }
+.rabbit-btn.loading {
+  filter: opacity(50%);
+  pointer-events: none;
+}
 .rabbit-btn .loading-enter {
   display: inline-block;
   width: 0px;
