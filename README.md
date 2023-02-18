@@ -10,7 +10,7 @@
 
 [![Build Status](https://img.shields.io/badge/npm-v2.0.1-%231081c2)](https://www.npmjs.com/package/rabbit-ui-antd) ![](https://img.shields.io/badge/license-ISC-%238fbc07)
 
-Rabbit UI，是一款基于 Dumi，样式参考 antd，由 React + TypeScript 开发的个人组件库 。
+Rabbit UI，是一款基于 Dumi，样式参考 antd，由 React + TypeScript 开发的组件库 。
 
 </div>
 
