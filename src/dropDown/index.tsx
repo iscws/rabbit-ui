@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 // import PropTypes, { func } from 'prop-types';
-import {
-    RightOutlined
-} from '@ant-design/icons'
+import { RightOutlined } from '../icons'
 import t from 'prop-types';
 import Trigger from 'rc-trigger';
 import 'rc-trigger/assets/index.css';
