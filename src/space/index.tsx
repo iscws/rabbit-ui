@@ -3,7 +3,7 @@ import React, { createContext, CSSProperties, FC, ReactNode, useMemo } from 'rea
 import toArray from '../_utils/toArray';
 import Compact from './compact';
 import { SpaceItem } from './item';
-import './style'
+import './style/index.less'
 
 export const SpaceContext = createContext({
     latestIndex: 0,
