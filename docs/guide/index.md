@@ -15,26 +15,24 @@ nav:
 ### 安装和初始化
 
 ```powershell
-# npm install "rabbit-ui-antd"
+ npm install "rabbit-ui-antd"
 ```
 
 ### 使用组件
 
-以使用`button`为例
+以使用`Switch`为例
 
 ```javascript
 import React from 'react';
-import { Button } from 'rabbit-ui-antd';
-import 'rabbit-ui-antd/lib/button/style/index.css
+import { Switch } from 'rabbit-ui-antd';
+//引入样式
+import 'rabbit-ui-antd/lib/switch/style/css';
 
 const App = () => (
-  <div className="App">
-    <Button size="small">Button</Button>
-  </div>
+  <>
+    <Switch />
+  </>
 );
 
 export default App;
 ```
-
-
-

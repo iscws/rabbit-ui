@@ -3,7 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useState, useEffect, useRef } from 'react';
 import { useOutlet, history } from 'dumi';
-import { SiteContext } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
+import { SiteContext } from 'D:/Desktop/rabbit-ui/node_modules/dumi/dist/client/theme-api/context.js';
 import { demos, components } from '../meta';
 import { locales } from '../locales/config';
 
@@ -40,7 +40,7 @@ export default function DumiContextWrapper() {
       locales,
       loading,
       setLoading,
-      themeConfig: {"footer":"Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>","prefersColor":{"default":"light","switch":true},"name":"Rabbit UI","logo":"https://github.com/iscws/Demo/blob/main/logo.png?raw=true"},
+      themeConfig: {"footer":"Copyright © 2023 | Powered by <a href=\"https://d.umijs.org\" target=\"_blank\" rel=\"noreferrer\">dumi</a>","prefersColor":{"default":"light","switch":true},"name":"Rabbit UI","logo":"https://pic.imgdb.cn/item/63ee36dff144a01007cd9ce7.png"},
     }}>
       {outlet}
     </SiteContext.Provider>

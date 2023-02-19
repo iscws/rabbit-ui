@@ -6,11 +6,15 @@ export default () => {
   const [Isloading, setIsloading] = useState(false);
   const clickHandler = () => {
     setIsloading(!Isloading);
+    setTimeout(() => {
+      setIsloading(Isloading);
+      console.log(Isloading);
+    }, 5000);
   };
 
   return (
     <div>
-      <Button onClick={clickHandler} loading={Isloading} disabled={Isloading}>
+      <Button onClick={clickHandler} loading={Isloading}>
         clickme
       </Button>
     </div>

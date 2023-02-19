@@ -1,5 +1,5 @@
 ---
-title: Alert警告提示
+title: Alert 警告提示
 nav:
   title: 组件
   order: 1
@@ -7,21 +7,7 @@ nav:
 
 # Alert 组件
 
-警告提示，展现需要关注的信息。分为四种样式分别是'info' | 'positive' | 'negative' | 'warning';
-
-```tsx
-import { Alert } from 'rabbit-ui-antd';
-export default () => {
-  return (
-    <div>
-      <Alert kind="warning">warning</Alert>
-      <Alert kind="info">info</Alert>
-      <Alert kind="positive">positive</Alert>
-      <Alert kind="negative">negative</Alert>
-    </div>
-  );
-};
-```
+警告提示，展现需要关注的信息。分为四种样式分别是`'info' `| `'positive'` | `'negative'` | `'warning'`
 
 ### 基本用法
 

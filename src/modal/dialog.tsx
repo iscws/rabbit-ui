@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import Button from "../button"
 import IconClose from '../icons/IconClose';
 import toArray from '../_utils/toArray';
 import { ModalProps } from './modal';
@@ -27,6 +28,7 @@ const Dialog: React.FC<ModalProps> = ({
     _useModalClick = false,
     type = 'default',
     afterClose,
+    confirmLoading = false,
     ...rest
 }) => {
     const [firstStart, setFirstStart] = useState(true);
@@ -35,28 +37,30 @@ const Dialog: React.FC<ModalProps> = ({
     // 是否销毁弹窗内部的子元素
     const [destroyModalChi, setDestryoModalChi] = useState(false);
 
+
     const buttonArea: { default: ReactNode; simple: ReactNode } = {
         default: (
             <>
                 <span className={`${prefixCls}-footer-item`}>
-                    <button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
+                    <Button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
                         取消
-                    </button>
+                    </Button>
                 </span>
 
                 <span className={`${prefixCls}-footer-item`}>
-                    <button className={`${prefixCls}-button rabbit-primary`} onClick={onOk}>
+                    {<Button className={`${prefixCls}-button rabbit-primary`} loading={confirmLoading} onClick={onOk} >
                         确定
-                    </button>
+                    </Button>
+                    }
                 </span>
             </>
         ),
         simple: (
             <>
                 <span className={`${prefixCls}-footer-item`}>
-                    <button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
+                    <Button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
                         知道了
-                    </button>
+                    </Button>
                 </span>
             </>
         ),
