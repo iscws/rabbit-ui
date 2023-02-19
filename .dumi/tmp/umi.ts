@@ -3,7 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import './core/polyfill';
 
-import { renderClient } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/@umijs/renderer-react';
+import { renderClient } from 'D:/code/Rabbit UI/rabbit-ui/node_modules/@umijs/renderer-react';
 import { getRoutes } from './core/route';
 import { createPluginManager } from './core/plugin';
 import { createHistory } from './core/history';
@@ -97,5 +97,5 @@ if (
 render();
 
 window.g_umi = {
-  version: '4.0.51',
+  version: '4.0.52',
 };

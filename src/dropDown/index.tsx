@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 // import PropTypes, { func } from 'prop-types';
-import {
-    RightOutlined
-} from '@ant-design/icons'
+import { RightOutlined } from '../icons'
 import t from 'prop-types';
 import Trigger from 'rc-trigger';
 import 'rc-trigger/assets/index.css';
@@ -14,12 +12,12 @@ export interface DropDownProps {
      * @description       触发方式
      * @default            hower
      */
-    trigger?: 'click' | 'hover';
+    trigger?: 'click' | 'hover' | 'contextMenu';
     /**
      * @description       下拉菜单位置
      * @default            bottom
      */
-    popupPlacement?: 'bottom' | 'left' | 'right' | 'top';
+    popupPlacement?: 'bottom' | 'left' | 'right' | 'top' | 'bottomLeft' | 'bottomRight' | 'topLeft' | 'topRight';
     /**
      * @description       下拉菜单承载的内容元素
      * @default            []
@@ -29,7 +27,12 @@ export interface DropDownProps {
      * @description       下拉菜单触发元素
      * @default            <Button>按钮<Button/>
      */
-    children: any
+    children: React.ReactElement,
+    /**
+     * @description       菜单显示状态改变时调用
+     * @default            (visible: boolean) => void) | undefined
+     */
+    onChange?: ((visible: boolean) => void) | undefined,
 }
 
 export interface MenuProps {
@@ -107,7 +110,9 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
                                 >
                                     <>
                                         {item.content}
-                                        <div className="item-arrow"><RightOutlined /></div>
+                                        <div className="item-arrow">
+                                            <RightOutlined />
+                                        </div>
                                     </>
                                 </div>
                             </DropDown>
@@ -124,6 +129,7 @@ const DropDown: React.FC<DropDownProps> = (
         items = [],
         trigger = 'hover',
         popupPlacement = 'bottom',
+        onChange,
         children }
 ) => {
 
@@ -134,6 +140,14 @@ const DropDown: React.FC<DropDownProps> = (
                 action={[trigger]}
                 builtinPlacements={builtinPlacements}
                 popup={<Menu items={items}></Menu>}
+                onPopupVisibleChange={onChange}
+                popupAlign={{
+                    overflow: {
+                        adjustX: 1,
+                        adjustY: 1,
+                    },
+                }}
+                alignPoint={trigger == 'contextMenu' ? true : false}
             >
                 {children}
             </Trigger>
@@ -142,7 +156,7 @@ const DropDown: React.FC<DropDownProps> = (
 };
 
 DropDown.propTypes = {
-    trigger: t.oneOf(['click', 'hover']),
+    trigger: t.oneOf(['click', 'hover', 'contextMenu']),
 };
 
 

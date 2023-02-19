@@ -2,23 +2,23 @@
  * title: 自定义位置
  * description: 使用`center`或`style.top`设置位置
  */
-import { Modal } from 'rabbit-ui-antd';
+import { Modal, Button } from 'rabbit-ui-antd';
 import React, { useState } from 'react';
-import Confirm from '../modal';
+
 export default () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalOpen2, setIsModalOpen2] = useState(false);
 
     return (
         <div>
-            <button
+            <Button
                 onClick={(e) => {
                     setIsModalOpen(true);
                 }}
                 style={{ marginRight: '15px' }}
             >
                 居中展示
-            </button>
+            </Button>
             <Modal
                 title="对话框居中展示"
                 destroyOnClose={true}
@@ -30,13 +30,13 @@ export default () => {
                 这是一个对话框
             </Modal>
 
-            <button
+            <Button
                 onClick={(e) => {
                     setIsModalOpen2(true);
                 }}
             >
                 距离顶部20px
-            </button>
+            </Button>
             <Modal
                 title="距离顶部20px"
                 style={{ top: 20 }}

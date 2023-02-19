@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Space } from 'rabbit-ui-antd';
+import { Space, Button } from 'rabbit-ui-antd';
 
 
 export default () => {
@@ -13,28 +13,28 @@ export default () => {
             <div className='space-align-block'>
                 <Space align='center'>
                     center
-                    <button>Button</button>
+                    <Button>Button</Button>
                     <span className='mock-block'>Block</span>
                 </Space>
             </div>
             <div className='space-align-block'>
                 <Space align='start'>
                     start
-                    <button>Button</button>
+                    <Button>Button</Button>
                     <span className='mock-block'> Block </span>
                 </Space>
             </div>
             <div className='space-align-block'>
                 <Space align='end'>
                     end
-                    <button>Button</button>
+                    <Button>Button</Button>
                     <span className='mock-block'>Block</span>
                 </Space>
             </div>
             <div className='space-align-block'>
                 <Space align='baseline'>
                     baseline
-                    <button>Button</button>
+                    <Button>Button</Button>
                     <span className='mock-block'>Block</span>
                 </Space>
             </div>

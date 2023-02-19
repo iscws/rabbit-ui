@@ -1,12 +1,13 @@
 import classNames from 'classnames';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import Button from "../button"
+import IconClose from '../icons/IconClose';
 import toArray from '../_utils/toArray';
 import { ModalProps } from './modal';
 import './style';
 
 const prefixCls = 'rabbit-modal';
-
 const Dialog: React.FC<ModalProps> = ({
     destroyOnClose = false,
     title,
@@ -27,6 +28,7 @@ const Dialog: React.FC<ModalProps> = ({
     _useModalClick = false,
     type = 'default',
     afterClose,
+    confirmLoading = false,
     ...rest
 }) => {
     const [firstStart, setFirstStart] = useState(true);
@@ -35,28 +37,30 @@ const Dialog: React.FC<ModalProps> = ({
     // 是否销毁弹窗内部的子元素
     const [destroyModalChi, setDestryoModalChi] = useState(false);
 
+
     const buttonArea: { default: ReactNode; simple: ReactNode } = {
         default: (
             <>
                 <span className={`${prefixCls}-footer-item`}>
-                    <button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
+                    <Button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
                         取消
-                    </button>
+                    </Button>
                 </span>
 
                 <span className={`${prefixCls}-footer-item`}>
-                    <button className={`${prefixCls}-button rabbit-primary`} onClick={onOk}>
+                    {<Button className={`${prefixCls}-button rabbit-primary`} loading={confirmLoading} onClick={onOk} >
                         确定
-                    </button>
+                    </Button>
+                    }
                 </span>
             </>
         ),
         simple: (
             <>
                 <span className={`${prefixCls}-footer-item`}>
-                    <button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
+                    <Button className={`${prefixCls}-button rabbit-default`} onClick={onCancel}>
                         知道了
-                    </button>
+                    </Button>
                 </span>
             </>
         ),
@@ -133,17 +137,7 @@ const Dialog: React.FC<ModalProps> = ({
                 >
                     {closable && (
                         <div className={`${prefixCls}-close-x`} onClick={onCancel}>
-                            <svg
-                                viewBox="64 64 896 896"
-                                focusable="false"
-                                data-icon="close"
-                                width="1em"
-                                height="1em"
-                                fill="currentColor"
-                                aria-hidden="true"
-                            >
-                                <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
-                            </svg>
+                            <IconClose />
                         </div>
                     )}
 

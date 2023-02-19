@@ -3,7 +3,7 @@
  * description: 在关闭时可以销毁弹窗内的子元素，使得每次打开弹窗显示组件的初始状态
  */
 import React, { useState } from 'react';
-import { Modal } from 'rabbit-ui-antd';
+import { Modal, Button } from 'rabbit-ui-antd';
 
 
 const Destroy = () => {
@@ -12,7 +12,7 @@ const Destroy = () => {
     <div>
       <p>计数器：{count}</p>
       <p>初始值为0</p>
-      <button onClick={(e) => setCount(count + 1)}>数字＋1</button>
+      <Button onClick={(e) => setCount(count + 1)}>数字＋1</Button>
     </div>
   );
 };
@@ -23,7 +23,7 @@ const NoDestroy = () => {
     <div>
       <p>计数器：{count}</p>
       <p>初始值为0</p>
-      <button onClick={(e) => setCount(count + 1)}>数字＋1</button>
+      <Button onClick={(e) => setCount(count + 1)}>数字＋1</Button>
     </div>
   );
 };
@@ -46,9 +46,9 @@ export default () => {
 
   return (
     <div>
-      <button onClick={(e) => showModal()} style={{ marginRight: '15px' }}>
+      <Button onClick={(e) => showModal()} style={{ marginRight: '15px' }}>
         关闭时不销毁子元素
-      </button>
+      </Button>
       <Modal
         title="不销毁子元素"
         open={isModalOpen}
@@ -60,7 +60,7 @@ export default () => {
         </div>
       </Modal>
 
-      <button onClick={(e) => showModal(false)}>关闭时销毁子元素</button>
+      <Button onClick={(e) => showModal(false)}>关闭时销毁子元素</Button>
       <Modal
         title="销毁子元素"
         destroyOnClose={true}

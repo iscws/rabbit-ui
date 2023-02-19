@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { DropDown } from 'rabbit-ui-antd';
+import { DropDown, Button } from 'rabbit-ui-antd';
 
 const menu = [
     {
@@ -24,8 +24,12 @@ const menu = [
 const prefixCls = 'rabbit-dropdown-box';
 
 export default () => <div className={prefixCls}>
-    <DropDown items={menu} trigger="hover" popupPlacement="bottom"><button style={{ padding: "8px" }}>bottom</button></DropDown>
-    <DropDown items={menu} trigger="hover" popupPlacement="left"><button style={{ padding: "8px" }}>left</button></DropDown>
-    <DropDown items={menu} trigger="hover" popupPlacement="top"><button style={{ padding: "8px" }}>top</button></DropDown>
-    <DropDown items={menu} trigger="hover" popupPlacement="right"><button style={{ padding: "8px" }}>right</button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="bottom"><Button>bottom</Button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="left"><Button>left</Button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="top"><Button>top</Button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="right"><Button>right</Button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="bottomRight"><Button>bottomRight</Button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="topRight"><Button>topRight</Button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="bottomLeft"><Button>bottomLeft</Button></DropDown>
+    <DropDown items={menu} trigger="hover" popupPlacement="topLeft"><Button>topLeft</Button></DropDown>
 </div>;

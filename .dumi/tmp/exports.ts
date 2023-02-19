@@ -4,10 +4,10 @@
 export { defineApp } from './core/defineApp'
 export type { RuntimeConfig } from './core/defineApp'
 // @umijs/renderer-*
-export { createBrowserHistory, createHashHistory, createMemoryHistory, createSearchParams, generatePath, matchPath, matchRoutes, Navigate, NavLink, Outlet, resolvePath, useLocation, useMatch, useNavigate, useOutlet, useOutletContext, useParams, useResolvedPath, useRoutes, useSearchParams, Helmet, useAppData, useSelectedRoutes, useClientLoaderData, useServerLoaderData, renderClient, __getRoot, Link, useRouteData, __useFetcher, withRouter } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/@umijs/renderer-react';
-export type { History } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/@umijs/renderer-react'
+export { createBrowserHistory, createHashHistory, createMemoryHistory, createSearchParams, generatePath, matchPath, matchRoutes, Navigate, NavLink, Outlet, resolvePath, useLocation, useMatch, useNavigate, useOutlet, useOutletContext, useParams, useResolvedPath, useRoutes, useSearchParams, Helmet, useAppData, useSelectedRoutes, useClientLoaderData, useServerLoaderData, renderClient, __getRoot, Link, useRouteData, __useFetcher, withRouter } from 'D:/code/Rabbit UI/rabbit-ui/node_modules/@umijs/renderer-react';
+export type {  History } from 'D:/code/Rabbit UI/rabbit-ui/node_modules/@umijs/renderer-react'
 // umi/client/client/plugin
-export { ApplyPluginsType, PluginManager } from 'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/umi/client/client/plugin.js';
+export { ApplyPluginsType, PluginManager } from 'D:/code/Rabbit UI/rabbit-ui/node_modules/umi/client/client/plugin.js';
 export { history, createHistory } from './core/history';
 export { terminal } from './core/terminal';
 export { TestBrowser } from './testBrowser';

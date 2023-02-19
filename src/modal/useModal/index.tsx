@@ -1,45 +1,15 @@
 import React, { createRef, useCallback } from 'react';
 import toCreateRoot from '../../_utils/toCreateRoot';
+import { ModalFuncProps } from '../modal';
 import HookModal, { HookModalRef } from './HookModal';
 
-export interface ModalFuncProps {
-    title?: React.ReactNode;
-    content?: React.ReactNode;
-}
 
-type UseModalProps = [
-    showModalSimple: () => void,
-    fns: {
-        init: (props: ModalFuncProps) => {
-            update: (props: ModalFuncProps) => void;
-            destroy: () => void;
-        };
-    },
-];
-
-function useModal(props: ModalFuncProps): UseModalProps {
+function useModal() {
     const CONTANINER_ID = 'rabbit-useModal-container';
-
-    const showModalSimple = useCallback(() => {
-        // let container = toCreateRoot(CONTANINER_ID)
-        const containerRoot = toCreateRoot(CONTANINER_ID);
-
-        const closeModal = () => {
-            containerRoot.unmount();
-        };
-
-        containerRoot.render(
-            <HookModal open={true} title={props.title} afterClose={closeModal} type="simple">
-                {props.content}
-            </HookModal>,
-        );
-    }, [props]);
 
     const withInit = (initProps: ModalFuncProps) => {
         // 创建ref，让父组件调用子组件的方法，对modal进行内容的监控
         const shareRef = createRef<HookModalRef>();
-
-        const CONTANINER_ID = 'rabbit-useModal-container';
         const containerRoot = toCreateRoot(CONTANINER_ID);
 
         // 关闭对话框函数
@@ -57,7 +27,7 @@ function useModal(props: ModalFuncProps): UseModalProps {
         };
 
         containerRoot.render(
-            <HookModal open={true} title={initProps.title} afterClose={closeModal} ref={shareRef}>
+            <HookModal {...initProps} open={true} title={initProps.title} afterClose={closeModal} ref={shareRef}>
                 {initProps.content}
             </HookModal>,
         );
@@ -73,7 +43,7 @@ function useModal(props: ModalFuncProps): UseModalProps {
         }),
         [],
     );
-    return [showModalSimple, fns];
+    return fns;
 }
 
 export default useModal;
