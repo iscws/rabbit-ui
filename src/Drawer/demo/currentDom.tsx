@@ -43,6 +43,7 @@ const App: React.FC = () => {
                 onClose={onClose}
                 open={open}
                 inline={true}
+                zIndex={0}
             >
                 <p>Some contents...</p>
             </Drawer>

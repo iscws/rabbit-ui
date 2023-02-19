@@ -247,7 +247,6 @@ editor?: string
 legacy?: {
 buildOnly?: boolean
 nodeModulesTransform?: boolean
-checkOutput?: boolean
 }
 classPropertiesLoose?: {
 
