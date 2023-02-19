@@ -6,6 +6,9 @@ export default defineConfig({
   themeConfig: {
     name: 'Rabbit UI',
     logo: 'https://pic.imgdb.cn/item/63ee36dff144a01007cd9ce7.png',
+    socialLinks: {
+      github: 'https://github.com/iscws/rabbit-ui',
+    },
   },
   favicons: ['https://pic.imgdb.cn/item/63ee36dff144a01007cd9ce7.png'],
   outputPath: 'doc-site', // 输出文件夹

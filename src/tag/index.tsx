@@ -1,4 +1,4 @@
-import CloseOutlined from '@ant-design/icons/CloseOutlined';
+import { IconClose } from '../icons';
 import classNames from 'classnames';
 import React, { FC, useState } from 'react';
 import Transition from '../transition';
@@ -36,7 +36,7 @@ const Tag: FC<TagProps> = (props) => {
     <Transition in={!hide} timeout={300} animation="zoom-in-left">
       <div className={classes} {...restProps}>
         <span className="rabbit-tag-text">{text}</span>
-        {closable && <CloseOutlined className="rabbit-tag-close-icon" onClick={handleClose} />}
+        {closable && <i className="rabbit-tag-close-icon" onClick={handleClose}><IconClose color='#1890ff' /></i>}
       </div>
     </Transition>
   );
