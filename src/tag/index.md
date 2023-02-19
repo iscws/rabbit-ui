@@ -5,36 +5,17 @@ nav:
   order: 1
 ---
 
-# 组件示例
+# Tag 标签
 
-<code src="./demo/basic.tsx"></code>
+用于设置标签
 
 ## 基本用法
 
-```tsx
-import { Tag } from 'rabbit-ui-antd';
-export default () => {
-  const handleClick = () => {
-    console.log('close');
-  };
-  return (
-    <div>
-      <h2>Closable</h2>
-      <Tag text="Tag1" closable onClose={handleClick} />
-      <Tag text="Tag2" closable={false} />
-      <h2>Color</h2>
-      <Tag text="Tag0" color="primary" />
-      <Tag text="Tag1" color="success" />
-      <Tag text="Tag2" color="warning" />
-      <Tag text="Tag3" color="danger" />
-      <h2>Size</h2>
-      <Tag text="Tag1" size="small" />
-      <Tag text="Tag2" />
-      <Tag text="Tag3" size="large" />
-    </div>
-  );
-};
-```
+<code src="./demo/basic.tsx"></code>
+
+<code src="./demo/size.tsx"></code>
+
+<code src="./demo/color.tsx"></code>
 
 ## API
 

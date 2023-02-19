@@ -1,5 +1,8 @@
-// import Button from '../../button';
-// import '../style/index.less';
+/**
+ * title: loading
+ * description: 点击按钮进入loading状态
+ */
+
 import { Button } from 'rabbit-ui-antd';
 import React, { useState } from 'react';
 export default () => {

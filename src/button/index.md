@@ -5,91 +5,21 @@ nav:
   order: 1
 ---
 
-# 按钮组件
+# Button 组件
 
-## 基本用法
+按钮组件有三种大小、八种类型、三种模式：基本、圆形、加载中；按需选择对应的属性加入类名即可使用
 
-按钮组件有三种大小、五种类型、三种模式：基本、圆形、加载中；按需选择对应的属性加入类名即可使用
+## 代码演示
 
-## 代码示例
+<code src="./demo/size.tsx"></code>
 
-### size
+<code src="./demo/type.tsx"></code>
 
-```tsx
-import { Button } from 'rabbit-ui-antd';
-export default () => {
-  return (
-    <div>
-      <Button size={'small'}>small</Button>
-      <Button>normal</Button>
-      <Button size={'large'}>large</Button>
-    </div>
-  );
-};
-```
+<code src="./demo/htmltype.tsx"></code>
 
-### type
+<code src="./demo/circle.tsx"></code>
 
-```tsx
-import { Button } from 'rabbit-ui-antd';
-export default () => {
-  return (
-    <div>
-      <Button type="primary">primary</Button>
-      <Button type="success">success</Button>
-      <Button type="warning">warning</Button>
-      <Button type="danger">danger</Button>
-      <Button type="link" href="https://baidu.com">
-        百度
-      </Button>
-      <Button type="submit">submit</Button>
-      <Button type="reset">reset</Button>
-      <Button type="menu">menu</Button>
-    </div>
-  );
-};
-```
-
-实际上 type 的值也可以是 htmltype，因为原生 btn 的 type 属性就是用来设置 htmltype 的，但是本组件库使用 type 来设置 htmltype 的颜色是不能改变的，而使用 htmltype 则可以再次使用 type 来设置颜色
-
-### htmltype
-
-```tsx
-import { Button } from 'rabbit-ui-antd';
-export default () => {
-  return (
-    <div>
-      <form>
-        <Button type="success" htmltype="submit">
-          submit
-        </Button>
-        <Button type="danger" htmltype="reset">
-          reset
-        </Button>
-        <Button htmltype="menu">menu</Button>
-      </form>
-      <br />
-    </div>
-  );
-};
-```
-
-### circle
-
-```tsx
-import { Button } from 'rabbit-ui-antd';
-export default () => {
-  return (
-    <div>
-      <Button circle>circle</Button>
-    </div>
-  );
-};
-```
-
-### loading
-
-<code src="./demo/basic.tsx"></code>
+<code src="./demo/loading.tsx"></code>
 
 ## API
 
