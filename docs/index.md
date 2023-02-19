@@ -6,10 +6,12 @@ nav:
   order: 1
 hero:
   title: Rabbit UI
-  desc: 文档站点基于 dumi 生成
+  description: 🏆青训营项目，React+TypeScript的UI组件库
   actions:
     - text: Getting Started
       link: /guide
+    - text: GitHub
+      link: https://github.com/iscws/rabbit-ui
 features:
   - title: 开箱即用
     emoji: 📦
