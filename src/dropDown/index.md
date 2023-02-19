@@ -17,17 +17,26 @@ nav:
 
 <code src="./demo/trigger.tsx"></code>
 
+<code src="./demo/rightClick.tsx"></code>
+
 <code src="./demo/else.tsx"></code>
 
 <code src="./demo/childrens.tsx"></code>
 
 
 ## API
-| 参数           | 说明             | 类型                                     | 默认值     |
-| -------------- | ---------------- | ---------------------------------------- | ---------- |
-| trigger        | 下拉菜单触发方式 | `'click'`\|`'hover'`                     | `'hover'`  |
-| popupPlacement | 下拉菜单位置     | `'bottom'`\|`'left'`\|`'top'`\|`'right'` | `'bottom'` |
-| items          | 菜单配置项       | `Array`                                  | []         |
-| children       | 按钮内容         | `String`                                 | --         |
+| 参数           | 说明                                                                                              | 类型                                  | 默认值     |
+| -------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------- | ---------- |
+| trigger        | 下拉菜单触发方式                                                                                  | `'click'`\|`'hover'`\|`'contextMenu'` | `'hover'`  |
+| popupPlacement | 菜单弹出位置`bottom`\|`left`\|`top`\|`right` \|`bottomright`\|`topright`\|`bottomleft`\|`topleft` | `string`                              | `'bottom'` |
+| items          | 菜单配置项                                                                                        | `itemProps`                           | --         |
+| children       | 触发菜单内容                                                                                      | `ReactNode`                           | --         |
+| onChange       | 菜单显示时状态变化触发的函数                                                                      | `Function`                            | --         |
+
+### itemProps
+| 参数      | 说明         | 类型                                   | 默认值        |
+| --------- | ------------ | -------------------------------------- | ------------- |
+| content   | 菜单列表内容 | `stirng`                               | --            |
+| className | 菜单列表类型 | `'menu-item'`\|`'menu-item-forbidden'` | `'menu-item'` |
 
 

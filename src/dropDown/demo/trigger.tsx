@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { DropDown } from 'rabbit-ui-antd';
+import { DropDown, Button } from 'rabbit-ui-antd';
 
 const menu = [
     {
@@ -21,4 +21,4 @@ const menu = [
     }
 ]
 
-export default () => <DropDown items={menu} trigger="click" popupPlacement="bottom"><button style={{ padding: "8px" }}>hover it</button></DropDown>;
+export default () => <DropDown items={menu} trigger="click" popupPlacement="bottomLeft"><Button>click it</Button></DropDown>;

@@ -21,7 +21,7 @@ describe('<DropDown />', () => {
                 className: "menu-item"
             }
         ]
-        const { container } = render(
+        render(
             <DropDown
                 items={menu}
             >
