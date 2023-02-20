@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Drawer } from 'rabbit-ui-antd';
+import { Drawer, Button } from "rabbit-ui-antd";
 import '../style/index.less'
 
 const App: React.FC = () => {
@@ -32,9 +32,9 @@ const App: React.FC = () => {
         <div style={containerStyle}>
             Render in this
             <div style={{ marginTop: 16 }}>
-                <button onClick={showDrawer}>
+                <Button onClick={showDrawer}>
                     Open
-                </button>
+                </Button>
             </div>
             <Drawer
                 title="Basic Drawer"
@@ -43,6 +43,7 @@ const App: React.FC = () => {
                 onClose={onClose}
                 open={open}
                 inline={true}
+                zIndex={0}
             >
                 <p>Some contents...</p>
             </Drawer>

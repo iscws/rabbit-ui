@@ -4,37 +4,16 @@
  */
 
 import React from 'react';
-import { Space } from 'rabbit-ui-antd';
+import { Space,Button } from 'rabbit-ui-antd';
 
 export default () => {
     return (
         <Space.Compact>
-            <button className='demo-btn'>Button 1</button>
-            <button className='demo-btn'>Button 2</button>
-            <button className='demo-btn'>Button 3</button>
-            <button className='demo-btn'>Button 4</button>
-            <button className='demo-btn'>Button 5</button>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+            <Button>Button 3</Button>
+            <Button>Button 4</Button>
+            <Button>Button 5</Button>
+            <Button>Button 6</Button>
         </Space.Compact>)
 };
-
-/*
-.demo-btn {
-    border: 1px solid;
-    border-radius: 8px;
-    height: 32px;
-    width: 80px;
-    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
-    &:hover {
-        cursor: pointer;
-        z-index: 1;
-        color: #4096ff;
-        border-color: #4096ff;
-        background-color: azure;
-    }
-    &:active {
-        color: skyblue;
-        border-color: skyblue;
-        background-color: #fff;
-    }
-}
-*/
