@@ -3,7 +3,7 @@ title: DropDown 下拉菜单
 nav:
   title: 组件
   order: 1
-group: 
+group:
   title: 导航
   order: 3
 ---
@@ -26,7 +26,6 @@ group:
 
 <code src="./demo/childrens.tsx"></code>
 
-
 ## API
 | 参数           | 说明                                                                                              | 类型                                  | 默认值     |
 | :-------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------- | :---------- |
@@ -43,3 +42,7 @@ group:
 | className | 菜单列表类型 | `menu-item`\|`menu-item-forbidden` | `menu-item` |
 
 
+| 参数      | 说明         | 类型                               | 默认值      |
+| --------- | ------------ | ---------------------------------- | ----------- |
+| content   | 菜单列表内容 | `stirng`                           | --          |
+| className | 菜单列表类型 | `menu-item`\|`menu-item-forbidden` | `menu-item` |

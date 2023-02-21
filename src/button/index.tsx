@@ -55,7 +55,7 @@ const Button: FC<ButtonProps> = (ButtonProps) => {
     circle: circle,
     loading: loading,
     // [`rabbit-btn-${type}`]: type,
-    [`${type}`]: type,
+    [`rabbit-components-${type}`]: type,
   });
   if (type === 'link' && href) {
     return (

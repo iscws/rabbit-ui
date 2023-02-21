@@ -13,7 +13,7 @@ group:
 按钮组件有三种大小、八种类型、三种模式：基本、圆形、加载中；按需选择对应的属性加入类名即可使用
 
 ## 代码演示
-
+gi
 <code src="./demo/size.tsx"></code>
 
 <code src="./demo/type.tsx"></code>

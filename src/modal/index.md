@@ -3,7 +3,7 @@ title: Modal 对话框
 nav:
   title: 组件
   order: 1
-group: 
+group:
   title: 反馈
   order: 6
 ---
