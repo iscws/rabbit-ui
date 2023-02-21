@@ -121,18 +121,9 @@ function concatCss() {
 
 }
 
-/**
- * 处理图片资源
- */
-function image() {
-    return gulp
-        .src(paths.image)
-        .pipe(gulp.dest(paths.dest.lib))
-        .pipe(gulp.dest(paths.dest.esm))
-}
 
 // 整体并行执行任务
-const build = gulp.parallel(buildScripts, copyLess, less2css, concatCss, image);
+const build = gulp.parallel(buildScripts, copyLess, less2css, concatCss);
 
 exports.build = build;
 
