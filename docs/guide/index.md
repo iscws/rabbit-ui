@@ -20,19 +20,35 @@ nav:
 
 ### 使用组件
 
-以使用`Switch`为例
+以使用`Button`组件为例
+
+#### 完整引入
+
+会引入所有组件的样式
 
 ```javascript
 import React from 'react';
-import { Switch } from 'rabbit-ui-antd';
-//引入样式
-import 'rabbit-ui-antd/lib/switch/style/css';
+import { Button } from 'rabbit-ui-antd';
+import 'rabbit-ui-antd/lib/index.css';
 
 const App = () => (
   <>
-    <Switch />
+    <Button>Button</Button>
   </>
 );
-
 export default App;
+```
+
+#### 按需引入
+
+```javascript
+import React from 'react';
+import { Button } from 'rabbit-ui-antd';
+import 'rabbit-ui-antd/lib/button/style/index.css';
+
+const App = () => (
+  <>
+    <Button>Button</Button>
+  </>
+);
 ```

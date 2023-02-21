@@ -2,6 +2,8 @@ import React, { Component, forwardRef } from 'react'
 import classNames from 'classnames';
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import KeyCode from 'rc-util/lib/KeyCode';
+import './style/index.less';
+
 
 export type SwitchChangeEventHandler = (
     checked: boolean,

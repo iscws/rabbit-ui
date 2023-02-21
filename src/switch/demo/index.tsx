@@ -1,11 +1,5 @@
-import '../../switch/style/index.less';
 import React, { useState } from 'react';
-import type { SwitchChangeEventHandler } from '../../switch';
-import Switch from '../../switch';
-
-const onChange: SwitchChangeEventHandler = (value, event) => {
-    console.log(`switch checked: ${value}`, event);
-}
+import { Switch } from 'rabbit-ui-antd';
 
 export default () => {
     const [disabled, setDisabled] = useState(false);
@@ -17,7 +11,6 @@ export default () => {
     return (
         <div style={{ margin: 20 }}>
             <Switch
-                onChange={onChange}
                 disabled={disabled}
                 checkedChildren="开"
                 unCheckedChildren="关"
