@@ -66,8 +66,8 @@ const Space: FC<SpaceProps> = (props) => {
     } else {
         gapStyle.alignItems = `flex-${align}`
     }
-    gapStyle.rowGap = horizontalSize
-    gapStyle.columnGap = verticalSize
+    gapStyle.rowGap = verticalSize
+    gapStyle.columnGap = horizontalSize
 
 
     const childNodes = toArray(children, { keepEmpty: true })
