@@ -33,6 +33,11 @@ export interface DropDownProps {
      * @default            (visible: boolean) => void) | undefined
      */
     onChange?: ((visible: boolean) => void) | undefined,
+    /**
+    * @description       关闭后是否销毁dropdown
+    * @default            false
+    */
+    destroyPopupOnHide?: boolean
 }
 
 export interface MenuProps {
@@ -90,7 +95,7 @@ const Menu: React.FC<MenuProps> = ({ items }) => {
     }
 
     return (
-        <div className={prefixCls}>
+        <div className={prefixCls} data-testid="trigger-element">
             <div className='menu'>
                 {
                     items && items.map((item, index) => {
@@ -130,28 +135,28 @@ const DropDown: React.FC<DropDownProps> = (
         trigger = 'hover',
         popupPlacement = 'bottom',
         onChange,
+        destroyPopupOnHide = false,
         children }
 ) => {
 
     return (
-        <>
-            <Trigger
-                popupPlacement={popupPlacement}
-                action={[trigger]}
-                builtinPlacements={builtinPlacements}
-                popup={<Menu items={items}></Menu>}
-                onPopupVisibleChange={onChange}
-                popupAlign={{
-                    overflow: {
-                        adjustX: 1,
-                        adjustY: 1,
-                    },
-                }}
-                alignPoint={trigger == 'contextMenu' ? true : false}
-            >
-                {children}
-            </Trigger>
-        </>
+        <Trigger
+            popupPlacement={popupPlacement}
+            action={[trigger]}
+            builtinPlacements={builtinPlacements}
+            popup={<Menu items={items}></Menu>}
+            onPopupVisibleChange={onChange}
+            destroyPopupOnHide={destroyPopupOnHide}
+            popupAlign={{
+                overflow: {
+                    adjustX: 1,
+                    adjustY: 1,
+                },
+            }}
+            alignPoint={trigger == 'contextMenu' ? true : false}
+        >
+            {children}
+        </Trigger>
     )
 };
 

@@ -8,8 +8,7 @@ export async function getRoutes() {
   return {
     routes,
     routeComponents: {
-<<<<<<< HEAD
-'404': React.lazy(() => import(/* webpackChunkName: "C:__Users__82068__Desktop__rabbit-UI__rabbit-ui__node_modules__dumi__dist__client__pages__404" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/dist/client/pages/404.js')),
+'404': React.lazy(() => import(/* webpackChunkName: "nm__dumi__dist__client__pages__404" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/dist/client/pages/404.js')),
 'dumi-context-layout': React.lazy(() => import(/* webpackChunkName: "dumi__tmp__dumi__theme__ContextWrapper" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/.dumi/tmp/dumi/theme/ContextWrapper.tsx')),
 'DocLayout': React.lazy(() => import(/* webpackChunkName: "nm__dumi__theme-default__layouts__DocLayout__index" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/theme-default/layouts/DocLayout/index.js')),
 'docs/guide/index': React.lazy(() => import(/* webpackChunkName: "docs__guide__index.md" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/docs/guide/index.md')),
@@ -22,23 +21,7 @@ export async function getRoutes() {
 'components/space/index': React.lazy(() => import(/* webpackChunkName: "space__index.md" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/src/space/index.md')),
 'components/switch/index': React.lazy(() => import(/* webpackChunkName: "switch__index.md" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/src/switch/index.md')),
 'components/tag/index': React.lazy(() => import(/* webpackChunkName: "tag__index.md" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/src/tag/index.md')),
-'demo-render': React.lazy(() => import(/* webpackChunkName: "C:__Users__82068__Desktop__rabbit-UI__rabbit-ui__node_modules__dumi__dist__client__pages__Demo__index" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/dist/client/pages/Demo/index.js')),
-=======
-'404': React.lazy(() => import(/* webpackChunkName: "nm__dumi__dist__client__pages__404" */'D:/Desktop/rabbit-ui/node_modules/dumi/dist/client/pages/404.js')),
-'dumi-context-layout': React.lazy(() => import(/* webpackChunkName: "dumi__tmp__dumi__theme__ContextWrapper" */'D:/Desktop/rabbit-ui/.dumi/tmp/dumi/theme/ContextWrapper.tsx')),
-'DocLayout': React.lazy(() => import(/* webpackChunkName: "nm__dumi__theme-default__layouts__DocLayout__index" */'D:/Desktop/rabbit-ui/node_modules/dumi/theme-default/layouts/DocLayout/index.js')),
-'docs/guide/index': React.lazy(() => import(/* webpackChunkName: "docs__guide__index.md" */'D:/Desktop/rabbit-ui/docs/guide/index.md')),
-'docs/index': React.lazy(() => import(/* webpackChunkName: "docs__index.md" */'D:/Desktop/rabbit-ui/docs/index.md')),
-'components/alert/index': React.lazy(() => import(/* webpackChunkName: "alert__index.md" */'D:/Desktop/rabbit-ui/src/alert/index.md')),
-'components/button/index': React.lazy(() => import(/* webpackChunkName: "button__index.md" */'D:/Desktop/rabbit-ui/src/button/index.md')),
-'components/Drawer/index': React.lazy(() => import(/* webpackChunkName: "Drawer__index.md" */'D:/Desktop/rabbit-ui/src/Drawer/index.md')),
-'components/dropDown/index': React.lazy(() => import(/* webpackChunkName: "dropDown__index.md" */'D:/Desktop/rabbit-ui/src/dropDown/index.md')),
-'components/modal/index': React.lazy(() => import(/* webpackChunkName: "modal__index.md" */'D:/Desktop/rabbit-ui/src/modal/index.md')),
-'components/space/index': React.lazy(() => import(/* webpackChunkName: "space__index.md" */'D:/Desktop/rabbit-ui/src/space/index.md')),
-'components/switch/index': React.lazy(() => import(/* webpackChunkName: "switch__index.md" */'D:/Desktop/rabbit-ui/src/switch/index.md')),
-'components/tag/index': React.lazy(() => import(/* webpackChunkName: "tag__index.md" */'D:/Desktop/rabbit-ui/src/tag/index.md')),
-'demo-render': React.lazy(() => import(/* webpackChunkName: "nm__dumi__dist__client__pages__Demo__index" */'D:/Desktop/rabbit-ui/node_modules/dumi/dist/client/pages/Demo/index.js')),
->>>>>>> c5d272a00a3809d2c2f7d46067eab302328b88dd
+'demo-render': React.lazy(() => import(/* webpackChunkName: "nm__dumi__dist__client__pages__Demo__index" */'C:/Users/82068/Desktop/rabbit-UI/rabbit-ui/node_modules/dumi/dist/client/pages/Demo/index.js')),
 },
   };
 }
