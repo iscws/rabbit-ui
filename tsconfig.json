@@ -12,9 +12,21 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "paths": {
-      "@@/*": [".dumi/tmp/*"]
+      "@@/*": [
+        ".dumi/tmp/*"
+      ]
     }
   },
-  "include": ["src", "typings.d.ts", ".dumi",".dumi/**/*",".dumirc.ts"],
-  "exclude": ["node_modules", "src/**/demo", "src/**/__tests__"]
+  "include": [
+    "src",
+    "typings.d.ts",
+    ".dumi",
+    // ".dumi/**/*",
+    // ".dumirc.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/demo",
+    "src/**/__tests__"
+  ]
 }
