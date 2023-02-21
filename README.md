@@ -43,5 +43,6 @@ const App = () => (
 
 ## 贡献者
 
-<!-- readme: collaborators,contributors -start -->
-<!-- readme: collaborators,contributors -end -->
+<a href="https://github.com/iscws/rabbit-ui/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=iscws/rabbit-ui" />
+</a>
