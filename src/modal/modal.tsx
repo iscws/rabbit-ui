@@ -17,14 +17,11 @@ import './style/index.less';
  * @param {closable} boolean 是否展示右上角的关闭按钮
  * @param {center} boolean 是否将对话框居中处理
  * @param {afterClose} func 在对话框完全关闭之后执行的函数
- *@param {useModal} boolean 内部变量：用于useModal的判断
- *@param {wrapClassName} string 对话框外层容器的类名
- *@param {wrapId} string 对话框外层容器的id
- *@param {outside} boolean 是否渲染在body下
- @param {type}  'simple' | 'default' 按钮样式
-
-
-
+ * @param {useModal} boolean 内部变量：用于useModal的判断
+ * @param {wrapClassName} string 对话框外层容器的类名
+ * @param {wrapId} string 对话框外层容器的id
+ * @param {outside} boolean 是否渲染在body下
+ * @param {type}  'simple' | 'default' 按钮样式
  *
  */
 

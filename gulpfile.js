@@ -4,6 +4,7 @@ const less = require('gulp-less')
 const autoprefixer = require('gulp-autoprefixer')
 const cssnano = require('gulp-cssnano')
 const through2 = require('through2')
+const concat = require('gulp-concat')
 
 const paths = {
     dest: {
@@ -12,6 +13,8 @@ const paths = {
         dist: 'dist', // umd文件存放的目录名 - 暂时不关心
     },
     styles: 'src/**/*.less', // 样式文件路径 - 暂时不关心
+    image: 'src/**/*.png',
+
     //scripts: ['src/**/*.{ts,tsx}', '!src/**/demo/*.{ts,tsx}'], // 脚本文件路径
     //避免打包时将测试文件一同处理
     scripts: [
@@ -103,8 +106,24 @@ function less2css() {
         .pipe(gulp.dest(paths.dest.esm));
 }
 
+/**
+ * 合成css文件
+ */
+function concatCss() {
+    return gulp
+        .src(paths.styles)
+        .pipe(less()) // 处理less文件
+        .pipe(autoprefixer()) // 根据browserslistrc增加前缀
+        .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
+        .pipe(concat('index.css'))
+        .pipe(gulp.dest(paths.dest.lib))
+        .pipe(gulp.dest(paths.dest.esm))
+
+}
+
+
 // 整体并行执行任务
-const build = gulp.parallel(buildScripts, copyLess, less2css);
+const build = gulp.parallel(buildScripts, copyLess, less2css, concatCss);
 
 exports.build = build;
 
