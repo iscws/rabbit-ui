@@ -19,3 +19,4 @@ tsconfig.build.json
 tsconfig.json
 yarn-error.log
 yarn.lock
+.dumirc.ts
