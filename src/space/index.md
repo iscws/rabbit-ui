@@ -44,7 +44,7 @@ group:
 | :------- | :------------| :---------------------------   | :---------------- |
 | align       | 对齐方式         | `'start'` \| `'end'` \| `'center'` \| `'baseline'` | `'start'`               |
 | direction   | 间距方向         | `'vertical'` \| `'horizontal'`         | `'horizontal'`         |
-| size        | 间距大小         | `number` \| `number[]`                 | 8                    |
+| size        | 间距大小         | `number` \| `[number,number]`                 | 8                    |
 | split       | 分隔符           | `ReactNode`                          | -                    |
 | wrap        | 是否自动换行      | `boolean   `                         | false                |
 
