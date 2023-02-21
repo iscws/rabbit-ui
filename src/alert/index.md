@@ -10,7 +10,7 @@ group:
 
 # Alert 组件
 
-警告提示，展现需要关注的信息。分为四种样式分别是`'info' `| `'positive'` | `'negative'` | `'warning'`
+警告提示，展现需要关注的信息。分为四种样式分别是`info `| `positive` | `negative` | `warning`
 
 ## 代码演示
 

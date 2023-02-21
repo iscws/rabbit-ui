@@ -42,15 +42,15 @@ group:
 
 | 属性        | 说明             | 类型                               | 默认值                |
 | :------- | :------------| :---------------------------   | :---------------- |
-| align       | 对齐方式         | `'start'` \| `'end'` \| `'center'` \| `'baseline'` | `'start'`               |
-| direction   | 间距方向         | `'vertical'` \| `'horizontal'`         | `'horizontal'`         |
+| align       | 对齐方式         | `start` \| `end` \| `center` \| `baseline` | `start`               |
+| direction   | 间距方向         | `vertical` \| `horizontal`         | `horizontal`         |
 | size        | 间距大小         | `number` \| `[number,number]`                 | 8                    |
 | split       | 分隔符           | `ReactNode`                          | -                    |
-| wrap        | 是否自动换行      | `boolean   `                         | false                |
+| wrap        | 是否自动换行      | `boolean   `                         | `false`                |
 
 ### Space.Compact
 
 | 属性        | 说明             | 类型                               | 默认值                |
 | :------- | :------------| :---------------------------   | :---------------- |
-| block       |将宽度调整为父元素宽度的选项| `boolean`       |  false                    |
-| direction   | 间距方向                 | `'vertical'` \| `'horizontal'`         | `'horizontal'`         |
+| block       |将宽度调整为父元素宽度的选项| `boolean`       |  `false`                    |
+| direction   | 间距方向                 | `vertical` \| `horizontal`         | `horizontal`         |

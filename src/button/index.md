@@ -30,11 +30,11 @@ group:
 | :--- | :--- | :--- | :--- |
 | size | 按钮大小 | `small`\|`large`\|`default` | `default` |
 | handleClick | 点击事件回调函数 | `(e: React.SyntheticEvent) => void` | `() => {return null;}` |
-| disabled | 禁用 | `boolean` | false |
-| circle | 圆形按钮 | `boolean` | false |
-| loading | 加载按钮 | `boolean` | false |
+| disabled | 禁用 | `boolean` | `false` |
+| circle | 圆形按钮 | `boolean` | `false` |
+| loading | 加载按钮 | `boolean` | `false` |
 | type | 按钮类型 | `primary`\|`success`\|`warning`\|`danger`\|`link` | `primary` |
-| herf | 要跳转的链接 | herf | -  |
+| herf | 要跳转的链接 | `string` | -  |
 | htmltype | 设置 button 原生的 type 值 | `string` | `'button'` |
 
 支持原生 button 的其他所有属性。

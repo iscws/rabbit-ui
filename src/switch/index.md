@@ -25,7 +25,7 @@ group:
 
 | 属性      | 说明             | 类型                    | 默认值 |
 | :-------- | :--------------- | :---------------------- | :----- |
-| checked   | 指定当前是否选中 | `boolean`                 | false  |
-| className | Switch器类名     | stri`ng                  | -      |
+| checked   | 指定当前是否选中 | `boolean`                 | `false`  |
+| className | Switch器类名     | `string`                  | -      |
 | onClick   | 点击时的回调函数 | `function(checked,event)` | -      |
-| disabled  | 是否禁用         | `boolean`                 | false  |
+| disabled  | 是否禁用         | `boolean`                 | `false`  |

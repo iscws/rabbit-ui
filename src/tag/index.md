@@ -27,6 +27,6 @@ group:
 | color    | 颜色       | `primary`\|`success`\|`warning`\|`danger` | `primary` |
 | size     | 大小       | `samll`\|`large`\|`default`             |  `default` |
 | text     | Tag 的文本 | `string`                                 | -      |
-| closable | 关闭标签   | `boolean`                                | false   |
+| closable | 关闭标签   | `boolean`                                | `false`   |
 
 <!-- <code src="./demo/basic.tsx"></code> -->
