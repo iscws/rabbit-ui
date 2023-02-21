@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from "react";
-import { Drawer } from "rabbit-ui-antd";
+import { Drawer, Button } from "rabbit-ui-antd";
 import '../style/index.less';
 
 
@@ -22,7 +22,7 @@ export default () => {
 
   return (
     <>
-      <button onClick={showDrawer}>open</button>
+      <Button onClick={showDrawer}>open</Button>
       <Drawer title="Basic Drawer" onClose={onClose} open={open}>
         <p>Some contents...</p>
         <p>Some contents...</p>

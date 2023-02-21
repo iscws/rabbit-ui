@@ -4,16 +4,17 @@
  */
 
 import React from 'react';
-import { Space } from 'rabbit-ui-antd';
+import { Space, Button } from 'rabbit-ui-antd';
 
 
 export default () => {
     return (
         <Space direction='vertical'>
-            <button>Button</button>
-            <button>Button</button>
-            <button>Button</button>
-            <button>Button</button>
-            <button>Button</button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
         </Space>)
 };

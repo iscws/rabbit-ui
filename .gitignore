@@ -15,7 +15,7 @@
 /types
 
 # dumi
-.dumi/tmp
+.dumi/tgitmp
 .dumi/tmp-test
 .dumi/tmp-production
 .umi

@@ -2,14 +2,14 @@
   padding: 6px 12px;
   color: #fff;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 14px;
   text-align: center;
   vertical-align: middle;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.5s ease;
 }
 .rabbit-btn:active {
   background-color: #6aafcb;
@@ -45,10 +45,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
 }
 .rabbit-btn .loading-enter-active {
   display: inline-block;
@@ -56,10 +56,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 14px;
   height: 14px;
   transition: all 0.5s;
@@ -70,10 +70,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 14px;
   height: 14px;
 }
@@ -83,35 +83,37 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 14px;
   height: 14px;
 }
 .rabbit-btn .loading-exit-active {
   display: inline-block;
+  height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 0px;
-  height: 0px;
+  height: 14px;
   transition: all 0.5s;
 }
 .rabbit-btn .loading-exit-done {
   display: inline-block;
+  height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 0px;
-  height: 0px;
+  height: 14px;
 }
 .rabbit-btn[disabled] {
   background-color: red;
@@ -145,10 +147,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
 }
 .btn-small .loading-enter-active {
   display: inline-block;
@@ -156,10 +158,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 10px;
   height: 10px;
   transition: all 0.5s;
@@ -170,10 +172,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 10px;
   height: 10px;
 }
@@ -183,10 +185,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 10px;
   height: 10px;
 }
@@ -195,10 +197,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 0px;
   transition: all 0.5s;
 }
@@ -207,16 +209,16 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 0px;
 }
 .btn-large {
   padding: 8px 16px;
   font-size: 28px;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 .btn-large.circle {
   width: 5rem;
@@ -232,10 +234,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
 }
 .btn-large .loading-enter-active {
   display: inline-block;
@@ -243,10 +245,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 26px;
   height: 26px;
   transition: all 0.5s;
@@ -257,10 +259,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 26px;
   height: 26px;
 }
@@ -270,10 +272,10 @@
   height: 0px;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 26px;
   height: 26px;
 }
@@ -281,10 +283,10 @@
   display: inline-block;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 0px;
   height: 0px;
   transition: all 0.5s;
@@ -293,10 +295,10 @@
   display: inline-block;
   margin: auto;
   margin-right: 5px;
-  background: url(icon/loading.png) no-repeat;
+  overflow: hidden;
   background-size: 100%;
   cursor: not-allowed;
-  animation: run 2s infinite;
+  animation: run 2s infinite linear;
   width: 0px;
   height: 0px;
 }

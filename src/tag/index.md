@@ -1,48 +1,32 @@
 ---
-title: Tag组件
+title: Tag 标签
 nav:
   title: 组件
   order: 1
+group: 
+  title: 数据展示
+  order: 5
 ---
 
-# 组件示例
+# Tag 标签
+
+用于设置标签
+
+## 代码演示
 
 <code src="./demo/basic.tsx"></code>
 
-## 基本用法
+<code src="./demo/size.tsx"></code>
 
-```tsx
-import { Tag } from 'rabbit-ui-antd';
-export default () => {
-  const handleClick = () => {
-    console.log('close');
-  };
-  return (
-    <div>
-      <h2>Closable</h2>
-      <Tag text="Tag1" closable onClose={handleClick} />
-      <Tag text="Tag2" closable={false} />
-      <h2>Color</h2>
-      <Tag text="Tag0" color="primary" />
-      <Tag text="Tag1" color="success" />
-      <Tag text="Tag2" color="warning" />
-      <Tag text="Tag3" color="danger" />
-      <h2>Size</h2>
-      <Tag text="Tag1" size="small" />
-      <Tag text="Tag2" />
-      <Tag text="Tag3" size="large" />
-    </div>
-  );
-};
-```
+<code src="./demo/color.tsx"></code>
 
 ## API
 
 | 属性     | 说明       | 类型                                   | 默认值  |
-| -------- | ---------- | -------------------------------------- | ------- |
-| color    | 颜色       | 'primary' 'success' 'warning' 'danger' | primary |
-| size     | 大小       | 'samll' 'large' 'default'              | default |
-| text     | Tag 的文本 | string                                 | ""      |
-| closable | 关闭标签   | boolean                                | false   |
+| :------- | :--------- | :------------------------------------- | :------ |
+| color    | 颜色       | `primary`\|`success`\|`warning`\|`danger` | `primary` |
+| size     | 大小       | `samll`\|`large`\|`default`             |  `default` |
+| text     | Tag 的文本 | `string`                                 | -      |
+| closable | 关闭标签   | `boolean`                                | `false`   |
 
 <!-- <code src="./demo/basic.tsx"></code> -->

@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Drawer } from "rabbit-ui-antd";
+import { Drawer, Button } from "rabbit-ui-antd";
 import type { DrawerProps } from '../index'
 import '../style/index.less';
 
@@ -38,9 +38,9 @@ const App: React.FC = () => {
             <input type="radio" name="choosePlacement" value="right" checked={placement === 'right'} onChange={onChange} /> right
             <input type="radio" name="choosePlacement" value="bottom" checked={placement === 'bottom'} onChange={onChange} /> bottom
             <input type="radio" name="choosePlacement" value="left" checked={placement === 'left'} onChange={onChange} /> left
-            <button onClick={showDrawer}>
+            <Button onClick={showDrawer}>
                 Open
-            </button>
+            </Button>
             <Drawer
                 title="Basic Drawer"
                 placement={placement}

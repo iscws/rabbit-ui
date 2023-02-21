@@ -3,7 +3,7 @@ import React, { createContext, CSSProperties, FC, ReactNode, useMemo } from 'rea
 import toArray from '../_utils/toArray';
 import Compact from './compact';
 import { SpaceItem } from './item';
-import './style'
+import './style/index.less'
 
 export const SpaceContext = createContext({
     latestIndex: 0,
@@ -66,8 +66,8 @@ const Space: FC<SpaceProps> = (props) => {
     } else {
         gapStyle.alignItems = `flex-${align}`
     }
-    gapStyle.rowGap = horizontalSize
-    gapStyle.columnGap = verticalSize
+    gapStyle.rowGap = verticalSize
+    gapStyle.columnGap = horizontalSize
 
 
     const childNodes = toArray(children, { keepEmpty: true })

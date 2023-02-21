@@ -1,7 +1,7 @@
 import classnames from 'classnames';
-import type { FC } from 'react';
-import React from 'react';
+import React, { FC, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { IconLoading } from '../icons';
 import './style/index.less';
 // export type ColorProps = 'primary' | 'success' | 'warning' | 'danger';
 export type ButtonHTMLTypes = 'submit' | 'button' | 'reset';
@@ -34,9 +34,18 @@ type AnchorButtonProps = {
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
+const loadingSize = {
+  'large': '24',
+  'default': '14',
+  'small': '10',
+}
+
 const Button: FC<ButtonProps> = (ButtonProps) => {
-  const { children, type, href, size, disabled, className, circle, loading, ...restProps } =
+  const { children, type, href, size = 'default', disabled, className, circle, loading, ...restProps } =
     ButtonProps;
+  // }, [loading])
+
+
 
   const classNames = classnames('rabbit-btn', className, {
     //根据父组件传进来的 size 来判断使用什么类名
@@ -46,7 +55,7 @@ const Button: FC<ButtonProps> = (ButtonProps) => {
     circle: circle,
     loading: loading,
     // [`rabbit-btn-${type}`]: type,
-    [`${type}`]: type,
+    [`rabbit-components-${type}`]: type,
   });
   if (type === 'link' && href) {
     return (
@@ -63,8 +72,18 @@ const Button: FC<ButtonProps> = (ButtonProps) => {
       disabled={disabled} //禁用按钮
       {...restProps}
     >
-      <CSSTransition in={loading} classNames="loading" timeout={500}>
-        <div />
+      <CSSTransition
+        in={loading}
+        classNames="loading"
+        timeout={500}
+      >
+        <div className='rabbit-btn-loading-icon'>
+          {loading && (
+            <i>
+              <IconLoading size={loadingSize[size]} />
+            </i>
+          )}
+        </div>
       </CSSTransition>
       {/* {loading ? <div className="loading" /> : null} */}
       {children}

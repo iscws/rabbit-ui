@@ -3,6 +3,9 @@ title: Space 间距
 nav:
   title: 组件
   order: 1
+group: 
+  title: 布局
+  order: 2
 ---
 
 # Space 间距
@@ -15,6 +18,7 @@ nav:
 
 * 适合行内元素的水平间距。
 * 可以设置各种水平对齐方式。
+* 表单组件之间紧凑连接且合并边框时，使用 Space.Compact 。
 
 ## 代码演示
 
@@ -38,15 +42,15 @@ nav:
 
 | 属性        | 说明             | 类型                               | 默认值                |
 | :------- | :------------| :---------------------------   | :---------------- |
-| align       | 对齐方式         | `'start'` \| `'end'` \| `'center'` \| `'baseline'` | `'start'`               |
-| direction   | 间距方向         | `'vertical'` \| `'horizontal'`         | `'horizontal'`         |
-| size        | 间距大小         | `number` \| `number[]`                 | 8                    |
+| align       | 对齐方式         | `start` \| `end` \| `center` \| `baseline` | `start`               |
+| direction   | 间距方向         | `vertical` \| `horizontal`         | `horizontal`         |
+| size        | 间距大小         | `number` \| `[number,number]`                 | 8                    |
 | split       | 分隔符           | `ReactNode`                          | -                    |
-| wrap        | 是否自动换行      | `boolean   `                         | false                |
+| wrap        | 是否自动换行      | `boolean   `                         | `false`                |
 
 ### Space.Compact
 
 | 属性        | 说明             | 类型                               | 默认值                |
 | :------- | :------------| :---------------------------   | :---------------- |
-| block       |将宽度调整为父元素宽度的选项| `boolean`       |  false                    |
-| direction   | 间距方向                 | `'vertical'` \| `'horizontal'`         | `'horizontal'`         |
+| block       |将宽度调整为父元素宽度的选项| `boolean`       |  `false`                    |
+| direction   | 间距方向                 | `vertical` \| `horizontal`         | `horizontal`         |

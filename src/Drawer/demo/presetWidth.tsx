@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Drawer } from 'rabbit-ui-antd';
+import { Drawer, Button } from "rabbit-ui-antd";
 import type { DrawerProps } from '../index';
 import '../style/index.less'
 
@@ -28,12 +28,12 @@ const App: React.FC = () => {
 
     return (
         <>
-            <button onClick={showDefaultDrawer}>
+            <Button onClick={showDefaultDrawer}>
                 Open Default Size (378px)
-            </button>
-            <button onClick={showLargeDrawer}>
+            </Button>
+            <Button onClick={showLargeDrawer}>
                 Open Large Size (736px)
-            </button>
+            </Button>
             <Drawer
                 title={`${size} Drawer`}
                 placement="right"
