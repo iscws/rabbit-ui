@@ -21,8 +21,8 @@
     "src",
     "typings.d.ts",
     ".dumi",
-    // ".dumi/**/*",
-    // ".dumirc.ts"
+    ".dumi/**/*",
+    ".dumirc.ts"
   ],
   "exclude": [
     "node_modules",
