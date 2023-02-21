@@ -13,6 +13,7 @@ const paths = {
         dist: 'dist', // umd文件存放的目录名 - 暂时不关心
     },
     styles: 'src/**/*.less', // 样式文件路径 - 暂时不关心
+    image: 'src/**/*.png',
 
     //scripts: ['src/**/*.{ts,tsx}', '!src/**/demo/*.{ts,tsx}'], // 脚本文件路径
     //避免打包时将测试文件一同处理
@@ -120,8 +121,18 @@ function concatCss() {
 
 }
 
+/**
+ * 处理图片资源
+ */
+function image() {
+    return gulp
+        .src(paths.image)
+        .pipe(gulp.dest(paths.dest.lib))
+        .pipe(gulp.dest(paths.dest.esm))
+}
+
 // 整体并行执行任务
-const build = gulp.parallel(buildScripts, copyLess, less2css, concatCss);
+const build = gulp.parallel(buildScripts, copyLess, less2css, concatCss, image);
 
 exports.build = build;
 
