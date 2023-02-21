@@ -23,7 +23,7 @@ const Tag: FC<TagProps> = (props) => {
   const [hide, setHide] = useState<boolean>(false);
   const { className, color, size, text, onClose, closable, ...restProps } = props;
   const classes = classNames('rabbit-tag', className, {
-    [`rabbit-tag-${color}`]: color,
+    [`tag-rabbit-components-${color}`]: color,
     [`rabbit-tag-${size}`]: size,
   });
 
