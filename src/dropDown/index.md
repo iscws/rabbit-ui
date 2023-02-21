@@ -27,6 +27,16 @@ group:
 <code src="./demo/childrens.tsx"></code>
 
 ## API
+<<<<<<< HEAD
+| 参数               | 说明                                                                                              | 类型                                  | 默认值     |
+| ------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------- | ---------- |
+| trigger            | 下拉菜单触发方式                                                                                  | `'click'`\|`'hover'`\|`'contextMenu'` | `'hover'`  |
+| popupPlacement     | 菜单弹出位置`bottom`\|`left`\|`top`\|`right` \|`bottomright`\|`topright`\|`bottomleft`\|`topleft` | `string`                              | `'bottom'` |
+| items              | 菜单配置项                                                                                        | `itemProps`                           | --         |
+| children           | 触发菜单内容                                                                                      | `ReactNode`                           | --         |
+| onChange           | 菜单显示时状态变化触发的函数                                                                      | `Function`                            | --         |
+| destroyPopupOnHide | 关闭后是否销毁dropdown                                                                            | `Boolean`                             | `false`    |
+=======
 | 参数           | 说明                                                                                              | 类型                                  | 默认值     |
 | :-------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------- | :---------- |
 | trigger        | 下拉菜单触发方式                                                                                  | `click`\|`hover`\|`contextMenu` | `hover`  |
@@ -34,6 +44,7 @@ group:
 | items          | 菜单配置项                                                                                        | `itemProps`                           | -         |
 | children       | 触发菜单内容                                                                                      | `ReactNode`                           | -         |
 | onChange       | 菜单显示时状态变化触发的函数                                                                      | `Function`                            | -         |
+>>>>>>> 8333b0f6ff5fc4177c3e68b675d6ece013b01fbe
 
 ### itemProps
 | 参数      | 说明         | 类型                                   | 默认值        |

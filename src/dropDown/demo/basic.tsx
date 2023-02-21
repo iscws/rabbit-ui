@@ -21,4 +21,5 @@ const menu = [
     }
 ]
 
-export default () => <DropDown items={menu} trigger="hover" popupPlacement="bottomLeft"><Button>hover it</Button></DropDown>;
+export default () => <DropDown items={menu} trigger="hover" popupPlacement="bottomLeft"
+><Button>hover it</Button></DropDown>;

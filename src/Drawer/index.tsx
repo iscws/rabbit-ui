@@ -180,6 +180,7 @@ const Drawer: React.FC<DrawerProps> = props => {
             {masked
                 ?
                 <div
+                    data-testid="mask-element"
                     className={classNames(
                         `${prefixCls}-mask`,
                         maskClassname,
@@ -205,6 +206,7 @@ const Drawer: React.FC<DrawerProps> = props => {
                     `${prefixCls}-wrapper`,
                     `${prefixCls}-${placement}`
                 )}
+                data-testid="drawer-element"
                 style={{
                     ...wrapperStyle
                 }}>
