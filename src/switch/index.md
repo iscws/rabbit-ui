@@ -1,11 +1,14 @@
 ---
-title: Switch开关
+title: Switch 开关
 nav:
   title: 组件
   order: 1
+group:
+  title: 数据录入
+  order: 4
 ---
 
-# Switch开关
+# Switch 开关
 
 开关选择器
 
@@ -22,7 +25,7 @@ nav:
 
 | 属性      | 说明             | 类型                    | 默认值 |
 | :-------- | :--------------- | :---------------------- | :----- |
-| checked   | 指定当前是否选中 | boolean                 | false  |
-| className | Switch器类名     | string                  | -      |
-| onClick   | 点击时的回调函数 | function(checked,event) | -      |
-| disabled  | 是否禁用         | boolean                 | false  |
+| checked   | 指定当前是否选中 | `boolean`                 | false  |
+| className | Switch器类名     | stri`ng                  | -      |
+| onClick   | 点击时的回调函数 | `function(checked,event)` | -      |
+| disabled  | 是否禁用         | `boolean`                 | false  |

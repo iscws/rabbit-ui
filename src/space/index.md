@@ -3,6 +3,9 @@ title: Space 间距
 nav:
   title: 组件
   order: 1
+group: 
+  title: 布局
+  order: 2
 ---
 
 # Space 间距
@@ -15,6 +18,7 @@ nav:
 
 * 适合行内元素的水平间距。
 * 可以设置各种水平对齐方式。
+* 表单组件之间紧凑连接且合并边框时，使用 Space.Compact 。
 
 ## 代码演示
 
