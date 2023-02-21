@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "target": "esnext",
-    "module": "commonjs",
-    "jsx": "react",
-    "declaration": true,
-    "declarationDir": "lib",
-    "strict": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@@/*": [
-        ".dumi/tmp/*"
-      ]
-    }
-  },
-  "include": [
-    "src",
-    "typings.d.ts",
-    ".dumi",
-    ".dumi/**/*",
-    ".dumirc.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/**/demo",
-    "src/**/__tests__"
-  ]
-=======
 {
   "compilerOptions": {
     "baseUrl": "./",
@@ -62,5 +29,4 @@
     "src/**/demo",
     "src/**/__tests__"
   ]
->>>>>>> 456cd6896668512186476bd73b7f561e9e309464
 }
