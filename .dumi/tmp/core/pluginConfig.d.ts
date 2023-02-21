@@ -236,7 +236,6 @@ srcDir?: string[]
 exclude?: {
 
 }[]
-peerDeps?: boolean
 })
 test?: {
 
@@ -247,7 +246,6 @@ editor?: string
 legacy?: {
 buildOnly?: boolean
 nodeModulesTransform?: boolean
-checkOutput?: boolean
 }
 classPropertiesLoose?: {
 
@@ -274,7 +272,6 @@ dir?: string
 entityDirs?: unknown
 codeBlockMode?: ("active" | "passive")
 entryFile?: string
-forceKebabCaseRouting?: boolean
 }
 autoAlias?: boolean
 analytics?: ({

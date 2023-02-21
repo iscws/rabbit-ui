@@ -1,0 +1,358 @@
+.rabbit-btn {
+  padding: 6px 12px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.rabbit-btn:active {
+  background-color: #6aafcb;
+}
+.rabbit-btn.circle {
+  width: 3.75rem;
+  height: 3.75rem;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: normal;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  box-shadow: none;
+}
+@keyframes run {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rabbit-btn.loading {
+  filter: opacity(50%);
+  pointer-events: none;
+}
+.rabbit-btn .loading-enter {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+}
+.rabbit-btn .loading-enter-active {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 14px;
+  height: 14px;
+  transition: all 0.5s;
+}
+.rabbit-btn .loading-enter-done {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 14px;
+  height: 14px;
+}
+.rabbit-btn .loading-exit {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 14px;
+  height: 14px;
+}
+.rabbit-btn .loading-exit-active {
+  display: inline-block;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 0px;
+  height: 14px;
+  transition: all 0.5s;
+}
+.rabbit-btn .loading-exit-done {
+  display: inline-block;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 0px;
+  height: 14px;
+}
+.rabbit-btn[disabled] {
+  background-color: red;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.rabbit-btn[disabled]:hover {
+  background-color: #ad0606;
+}
+.rabbit-btn[disabled]:active {
+  background-color: #000;
+}
+.rabbit-btn.link {
+  text-decoration: none;
+}
+.btn-small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.btn-small.circle {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.btn-small .loading {
+  width: 10px;
+  height: 10px;
+}
+.btn-small .loading-enter {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+}
+.btn-small .loading-enter-active {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 10px;
+  height: 10px;
+  transition: all 0.5s;
+}
+.btn-small .loading-enter-done {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 10px;
+  height: 10px;
+}
+.btn-small .loading-exit {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 10px;
+  height: 10px;
+}
+.btn-small .loading-exit-active {
+  display: inline-block;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 0px;
+  transition: all 0.5s;
+}
+.btn-small .loading-exit-done {
+  display: inline-block;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 0px;
+}
+.btn-large {
+  padding: 8px 16px;
+  font-size: 28px;
+  border-radius: 15px;
+}
+.btn-large.circle {
+  width: 5rem;
+  height: 5rem;
+}
+.btn-large .loading {
+  width: 26px;
+  height: 26px;
+}
+.btn-large .loading-enter {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+}
+.btn-large .loading-enter-active {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 26px;
+  height: 26px;
+  transition: all 0.5s;
+}
+.btn-large .loading-enter-done {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 26px;
+  height: 26px;
+}
+.btn-large .loading-exit {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 26px;
+  height: 26px;
+}
+.btn-large .loading-exit-active {
+  display: inline-block;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 0px;
+  height: 0px;
+  transition: all 0.5s;
+}
+.btn-large .loading-exit-done {
+  display: inline-block;
+  margin: auto;
+  margin-right: 5px;
+  overflow: hidden;
+  background-size: 100%;
+  cursor: not-allowed;
+  animation: run 2s infinite linear;
+  width: 0px;
+  height: 0px;
+}
+.primary {
+  background-color: #1890ff;
+}
+.primary:hover {
+  background-color: #0076e4;
+}
+.success {
+  background-color: #88f336;
+}
+.success:hover {
+  background-color: #6de80e;
+}
+.info {
+  background-color: #17a2b8;
+}
+.info:hover {
+  background-color: #117a8b;
+}
+.warning {
+  background-color: #fadb14;
+}
+.warning:hover {
+  background-color: #d6ba05;
+}
+.danger {
+  background-color: #dc3545;
+}
+.danger:hover {
+  background-color: #bd2130;
+}
+.link {
+  background-color: #17a2b8;
+}
+.link:hover {
+  background-color: #117a8b;
+}
+.submit {
+  background-color: #1890ff;
+}
+.submit:hover {
+  background-color: #0076e4;
+}
+.reset {
+  background-color: #dc3545;
+}
+.reset:hover {
+  background-color: #bd2130;
+}
+.menu {
+  background-color: #6f42c1;
+}
+.menu:hover {
+  background-color: #59339d;
+}
