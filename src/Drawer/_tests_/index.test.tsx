@@ -17,7 +17,7 @@ describe('<Drawer />', () => {
     //测试遮罩能否正常隐藏
     test('should hidden mask', () => {
         const { queryByTestId } = render(<Drawer open={false} onClose={jest.fn()}></Drawer>);
-        //当open为false时mask隐藏 查询结果为null
+        //当open为false时mask隐藏,查询结果为null
         expect(queryByTestId('mask-element') === null);
     });
 
