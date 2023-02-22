@@ -42,8 +42,3 @@ group:
 | --------- | ------------ | ---------------------------------- | ----------- |
 | content   | 菜单列表内容 | `stirng`                           | -           |
 | className | 菜单列表类型 | `menu-item`\|`menu-item-forbidden` | `menu-item` |
-
-| 参数      | 说明         | 类型                               | 默认值      |
-| --------- | ------------ | ---------------------------------- | ----------- |
-| content   | 菜单列表内容 | `stirng`                           | --          |
-| className | 菜单列表类型 | `menu-item`\|`menu-item-forbidden` | `menu-item` |

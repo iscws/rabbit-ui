@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[![Build Status](https://img.shields.io/badge/npm-v2.0.1-%231081c2)](https://www.npmjs.com/package/rabbit-ui-antd) ![](https://img.shields.io/badge/license-ISC-%238fbc07)
+[![Build Status](https://img.shields.io/badge/npm-v2.1.3-%231379b3)](https://www.npmjs.com/package/rabbit-ui-antd) ![](https://img.shields.io/badge/license-MIT-%2389b20f)
 
 Rabbit UI，是一款基于 Dumi，样式参考 antd，由 React + TypeScript 开发的组件库 。
 
@@ -29,16 +29,27 @@ npm install rabbit-ui-antd
 
 ## 🔨 使用
 
-```typescript
-import { Switch } from 'rabbit-ui-antd';
-//引入样式
-import 'rabbit-ui-antd/lib/switch/style/css';
+```React
+import { Button } from 'rabbit-ui-antd';
+//引入全部样式
+import 'rabbit-ui-antd/lib/index.css';
 
 const App = () => (
   <>
-    <Switch />
+    <Button>Button</Button>
   </>
 );
+```
+
+## 🎉 快速开始
+
+```powershell
+git clone https://github.com/iscws/rabbit-ui.git
+
+npm install
+
+npm run dev
+
 ```
 
 ## 贡献者
