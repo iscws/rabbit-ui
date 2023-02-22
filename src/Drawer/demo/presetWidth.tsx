@@ -5,12 +5,10 @@
 
 import React, { useState } from 'react';
 import { Drawer, Button } from "rabbit-ui-antd";
-import type { DrawerProps } from '../index';
-import '../style/index.less'
 
 const App: React.FC = () => {
     const [open, setOpen] = useState(false);
-    const [size, setSize] = useState<DrawerProps['size']>();
+    const [size, setSize] = useState('default');
 
     const showDefaultDrawer = () => {
         setSize('default');

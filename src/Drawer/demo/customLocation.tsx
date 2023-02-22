@@ -5,12 +5,10 @@
 
 import React, { useState } from 'react';
 import { Drawer, Button } from "rabbit-ui-antd";
-import type { DrawerProps } from '../index'
-import '../style/index.less';
 
 const App: React.FC = () => {
     const [open, setOpen] = useState(false);
-    const [placement, setPlacement] = useState<DrawerProps['placement']>('left');
+    const [placement, setPlacement] = useState('left');
 
     const showDrawer = () => {
         setOpen(true);
@@ -27,13 +25,6 @@ const App: React.FC = () => {
 
     return (
         <>
-
-            {/* <Radio.Group value={placement} onChange={onChange}>
-                    <Radio value="top">top</Radio>
-                    <Radio value="right">right</Radio>
-                    <Radio value="bottom">bottom</Radio>
-                    <Radio value="left">left</Radio>
-                </Radio.Group> */}
             <input type="radio" name="choosePlacement" value="top" checked={placement === 'top'} onChange={onChange} /> top
             <input type="radio" name="choosePlacement" value="right" checked={placement === 'right'} onChange={onChange} /> right
             <input type="radio" name="choosePlacement" value="bottom" checked={placement === 'bottom'} onChange={onChange} /> bottom

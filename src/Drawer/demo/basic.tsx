@@ -5,7 +5,6 @@
 
 import React, { useState } from "react";
 import { Drawer, Button } from "rabbit-ui-antd";
-import '../style/index.less';
 
 
 export default () => {

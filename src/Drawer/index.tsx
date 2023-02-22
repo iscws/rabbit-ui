@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react'
+import './style/index.less';
 
 export interface DrawerProps {
     inline?: boolean

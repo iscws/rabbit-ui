@@ -5,7 +5,7 @@ import { demos as dm0, frontmatter as fm0, toc as toc0, texts as txt0 } from 'D:
 import { demos as dm1, frontmatter as fm1, toc as toc1, texts as txt1 } from 'D:/Desktop/rabbit-ui/docs/index.md?type=meta';
 import { demos as dm2, frontmatter as fm2, toc as toc2, texts as txt2 } from 'D:/Desktop/rabbit-ui/src/alert/index.md?type=meta';
 import { demos as dm3, frontmatter as fm3, toc as toc3, texts as txt3 } from 'D:/Desktop/rabbit-ui/src/button/index.md?type=meta';
-import { demos as dm4, frontmatter as fm4, toc as toc4, texts as txt4 } from 'D:/Desktop/rabbit-ui/src/Drawer/index.md?type=meta';
+import { demos as dm4, frontmatter as fm4, toc as toc4, texts as txt4 } from 'D:/Desktop/rabbit-ui/src/drawer/index.md?type=meta';
 import { demos as dm5, frontmatter as fm5, toc as toc5, texts as txt5 } from 'D:/Desktop/rabbit-ui/src/dropDown/index.md?type=meta';
 import { demos as dm6, frontmatter as fm6, toc as toc6, texts as txt6 } from 'D:/Desktop/rabbit-ui/src/modal/index.md?type=meta';
 import { demos as dm7, frontmatter as fm7, toc as toc7, texts as txt7 } from 'D:/Desktop/rabbit-ui/src/space/index.md?type=meta';
@@ -40,7 +40,7 @@ export const filesMeta = {
     texts: txt3,
     demos: dm3,
   },
-  'components/Drawer/index': {
+  'components/drawer/index': {
     frontmatter: fm4,
     toc: toc4,
     texts: txt4,
